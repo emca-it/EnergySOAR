@@ -50,7 +50,7 @@ Edit TheHive configuration
 
 Add Cortex bridge settings 
 
-```conf
+```
 cortex {
   # Check job update time intervalcortex
   refreshDelay = 5 seconds
@@ -104,7 +104,7 @@ Edit TheHive configuration
 
 Add Cortex plugin settings 
 
-```conf
+```
 play.modules.enabled += org.thp.thehive.connector.cortex.CortexModule
 cortex {
   servers = [
