@@ -3,7 +3,7 @@ Energy SOAR User Guide
 
 .. toctree::
         :maxdepth: 2
-        :caption: Energy_SOAR_installation_guilde
+        :caption: Energy_SOAR_installation_guide
 
        02-0-0-Installation/02-0-0-Installation.md
 
