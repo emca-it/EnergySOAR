@@ -1,4 +1,5 @@
-# Energy SOAR installation guide #
+Energy SOAR installation guide
+------
 
 ## Install ##
 
