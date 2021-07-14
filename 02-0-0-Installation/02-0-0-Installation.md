@@ -1,8 +1,10 @@
 # Energy SOAR installation guilde #
 
+## Install ##
+
 Run as root in inallation package directory
-```
-./install.sh -i
+```bash
+# ./install.sh -i
 ```
 
 For a minimal architecture install
@@ -11,8 +13,9 @@ For a minimal architecture install
 * Elasticsearch 7
 
 After instalation check service status
-```
-systemctl status thehive cortex n8n
+
+```bash
+# systemctl status thehive cortex n8n
 ```
 
 If services are runing then open Cortex URL - `http://{IP}:9001`.
@@ -40,12 +43,14 @@ Copy the API key
 ![Copy the API key](/media/01-00-00-api_key.png)
 
 Edit TheHive configuration
-```
+
+```bash
 # vi /etc/thehive/application.conf
 ```
 
 Add Cortex bridge settings 
-```
+
+```conf
 cortex {
   # Check job update time intervalcortex
   refreshDelay = 5 seconds
@@ -61,8 +66,9 @@ cortex {
 ```
 
 Restart TheHive
-```
-systemctl restart thehive
+
+```bash
+# systemctl restart thehive
 ```
 
 Login into TheHive
@@ -92,13 +98,13 @@ Copy the API key
 
 Edit TheHive configuration
 
-```
-vi /etc/thehive/application.conf
+```bash
+# vi /etc/thehive/application.conf
 ```
 
 Add Cortex plugin settings 
 
-```
+```conf
 play.modules.enabled += org.thp.thehive.connector.cortex.CortexModule
 cortex {
   servers = [
