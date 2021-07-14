@@ -4,6 +4,7 @@ Install
 -------------
 
 Run as root in inallation package directory
+
 .. prompt:: bash $
 
     ./install.sh -i
