@@ -1,10 +1,11 @@
-Energy SOAR installation guilde
-=============
+# Energy SOAR installation guilde #
+
+## Install ##
 
 Run as root in inallation package directory
-
-    # ./install.sh -i
-
+```bash
+# ./install.sh -i
+```
 
 For a minimal architecture install
 * TheHive
@@ -13,9 +14,9 @@ For a minimal architecture install
 
 After instalation check service status
 
-
-    # systemctl status thehive cortex n8n
-
+```bash
+# systemctl status thehive cortex n8n
+```
 
 If services are runing then open Cortex URL - `http://{IP}:9001`.
 
@@ -43,29 +44,32 @@ Copy the API key
 
 Edit TheHive configuration
 
-
-    # vi /etc/thehive/application.conf
-
+```bash
+# vi /etc/thehive/application.conf
+```
 
 Add Cortex bridge settings 
 
-    cortex {
-    # Check job update time intervalcortex
-    refreshDelay = 5 seconds
-    # Maximum number of successive errors before give up
-    maxRetryOnError = 3
-    # Check remote Cortex status time interval
-    statusCheckInterval = 1 minute
-    baseUrl: "http://127.0.0.1:9001",
-    adminkey: "${ADMIN_API_KEY}"
-    adminlogin: "admin"
-    adminpassword: "admin"
-    }
+```conf
+cortex {
+  # Check job update time intervalcortex
+  refreshDelay = 5 seconds
+  # Maximum number of successive errors before give up
+  maxRetryOnError = 3
+  # Check remote Cortex status time interval
+  statusCheckInterval = 1 minute
+  baseUrl: "http://127.0.0.1:9001",
+  adminkey: "${ADMIN_API_KEY}"
+  adminlogin: "admin"
+  adminpassword: "admin"
+}
+```
 
 Restart TheHive
 
-    # systemctl restart thehive
-
+```bash
+# systemctl restart thehive
+```
 
 Login into TheHive
 Create User with org-admin role.
@@ -94,29 +98,30 @@ Copy the API key
 
 Edit TheHive configuration
 
-
-    # vi /etc/thehive/application.conf
-
+```bash
+# vi /etc/thehive/application.conf
+```
 
 Add Cortex plugin settings 
 
-
-    play.modules.enabled += org.thp.thehive.connector.cortex.CortexModule
-    cortex {
-    servers = [
-        {
-            name = local
-            url = "http://12.0.0.1:9001"
-            auth {
-                type = "bearer"
-                key = "${USER_API_KEY}"
-            }
-            # HTTP client configuration (SSL and proxy)
-            wsConfig {}
-            # List TheHive organisation which can use this Cortex server. All ("*") by default
-            includedTheHiveOrganisations = ["*"]
-            # List TheHive organisation which cannot use this Cortex server. None by default
-            # excludedTheHiveOrganisations = []
+```conf
+play.modules.enabled += org.thp.thehive.connector.cortex.CortexModule
+cortex {
+  servers = [
+    {
+        name = local
+        url = "http://12.0.0.1:9001"
+        auth {
+            type = "bearer"
+            key = "${USER_API_KEY}"
         }
-    ]
+        # HTTP client configuration (SSL and proxy)
+        wsConfig {}
+        # List TheHive organisation which can use this Cortex server. All ("*") by default
+        includedTheHiveOrganisations = ["*"]
+        # List TheHive organisation which cannot use this Cortex server. None by default
+        # excludedTheHiveOrganisations = []
     }
+  ]
+}
+```
