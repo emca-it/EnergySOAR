@@ -1,4 +1,4 @@
-# Energy SOAR installation guilde #
+# Energy SOAR installation guide #
 
 ## Install ##
 
