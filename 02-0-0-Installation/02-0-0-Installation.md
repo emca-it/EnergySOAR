@@ -5,6 +5,7 @@ Install
 
 Run as root in inallation package directory
 .. prompt:: bash $
+
     ./install.sh -i
 
 
@@ -16,13 +17,17 @@ For a minimal architecture install
 After instalation check service status
 
 .. prompt:: bash $
+
     systemctl status thehive cortex n8n
 
 If services are runing then open Cortex URL - `http://{IP}:9001`.
 
 Click Update Database button
 
-![Click Update Database button](/media/02-00-00-db_update.png)
+.. figure:: /media/02-00-00-db_update.png
+    :align: center
+    
+    Click Update Database button
 
 Create administrator account
 
@@ -45,11 +50,13 @@ Copy the API key
 Edit TheHive configuration
 
 .. prompt:: bash $
+
     vi /etc/thehive/application.conf
 
 Add Cortex bridge settings 
 
 .. code-block:: yml
+
     cortex {
     # Check job update time intervalcortex
     refreshDelay = 5 seconds
@@ -66,6 +73,7 @@ Add Cortex bridge settings
 Restart TheHive
 
 .. prompt:: bash $
+
     systemctl restart thehive
 
 Login into TheHive
@@ -96,11 +104,13 @@ Copy the API key
 Edit TheHive configuration
 
 .. prompt:: bash $
+
     vi /etc/thehive/application.conf
 
 Add Cortex plugin settings 
 
 .. code-block:: yml
+
     play.modules.enabled += org.thp.thehive.connector.cortex.CortexModule
     cortex {
     servers = [
