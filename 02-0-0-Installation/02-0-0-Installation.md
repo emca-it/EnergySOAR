@@ -1,4 +1,4 @@
-## Energy SOAR installation guilde
+# Energy SOAR installation guilde #
 
 Run as root in inallation package directory
 ```bash
