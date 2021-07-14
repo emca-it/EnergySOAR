@@ -1,9 +1,9 @@
 Energy SOAR installation guide
 ------
 
-## Install ##
+## Install
 
 Run as root in inallation package directory
 ```bash
-# ./install.sh -i
+./install.sh -i
 ```
