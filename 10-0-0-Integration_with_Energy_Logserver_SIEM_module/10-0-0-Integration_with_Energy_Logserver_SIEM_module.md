@@ -1,21 +1,21 @@
 
 ## Integration with Energy Logserver SIEM
 
-### Create API key
+**Create API key**
 
 Create new (non-admin) user and generate API key.
 
-![Create API key Energy SOAR](/media/01-00-02-api_create.png)
+![](/media/01-00-02-api_create.png)
 
 Click Reveal
 
-![Reveal the API key](/media/01-00-01-api_methods.png)
+![](/media/01-00-01-api_methods.png)
 
 Copy the API key
 
-![Copy the API key](/media/01-00-00-api_key.png)
+![](/media/01-00-00-api_key.png)
 
-### Edit Alert
+**Edit Alert**
 
 Add configuration in the Alert service config.
 
@@ -36,7 +36,7 @@ Restart the Alert service
 # systemctl restart alert
 ```
 
-### Alert rule configuration
+**Alert rule configuration**
 
 Add in the alert rule configuration
 
