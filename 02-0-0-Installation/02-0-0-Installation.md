@@ -22,25 +22,25 @@ If services are runing then open Cortex URL - `http://{IP}:9001`.
 
 Click Update Database button
 
-![Click Update Database button](/media/02-00-00-db_update.png)
+![](/media/02-00-00-db_update.png)
 
 Create administrator account
 
-![Create administrator account](/media/02-00-01-create_admin.png)
+![](/media/02-00-01-create_admin.png)
 
 Login into Cortex
 
 Create and copy the administrator's account API key.
 
-![Create API key Energy SOAR](/media/01-00-02-api_create.png)
+![](/media/01-00-02-api_create.png)
 
 Click Reveal
 
-![Reveal the API key](/media/01-00-01-api_methods.png)
+![](/media/01-00-01-api_methods.png)
 
 Copy the API key
 
-![Copy the API key](/media/01-00-00-api_key.png)
+![](/media/01-00-00-api_key.png)
 
 Edit TheHive configuration
 
@@ -86,15 +86,15 @@ Login as Cortex administrator's account.
 
 Create and copy the user's account API key.
 
-![Create API key Energy SOAR](/media/01-00-02-api_create.png)
+![](/media/01-00-02-api_create.png)
 
 Click Reveal
 
-![Reveal the API key](/media/01-00-01-api_methods.png)
+![](/media/01-00-01-api_methods.png)
 
 Copy the API key
 
-![Copy the API key](/media/01-00-00-api_key.png)
+![](/media/01-00-00-api_key.png)
 
 Edit TheHive configuration
 
