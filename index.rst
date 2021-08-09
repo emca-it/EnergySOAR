@@ -27,9 +27,9 @@ Energy SOAR User Guide
        
 .. toctree::
         :maxdepth: 2
-        :caption: User_guides
+        :caption: User_guide
         
-       05-0-0-User_guides/05-0-0-User_guides.md
+       05-0-0-User_guide/05-0-0-User_guide.md
        
        
 .. toctree::
