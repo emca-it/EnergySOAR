@@ -9,5 +9,16 @@ View more: <https://energysoar.com>
 | Component    | Description  |
 | ------------- |---------------|
 | Case | A tool to organize information from multiple alerts.|
-| Task      | A piece of work assigned to an analyst.|
+| Task      | A piece of work assigned to an analyst. |
 | Case template | Provides list of standard tasks that analyst can follow when evaluating cases. |
+
+
++------------------------+-----------------------------------------------------------------------------------+
+| Components      | Description                                                                              |
++==============+=============================================================================================+
+| Case            | A tool to organize information from multiple alerts.                                     |
++------------------------+-----------------------------------------------------------------------------------+
+| Task            | A piece of work assigned to an analyst.                                                  |
++------------------------+-----------------------------------------------------------------------------------+
+| Case template   | Provides list of standard tasks that analyst can follow when evaluating cases.           |
++------------------------+-----------------------------------------------------------------------------------+
