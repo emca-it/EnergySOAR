@@ -3,13 +3,52 @@ Energy SOAR User Guide
 
 .. toctree::
         :maxdepth: 2
-        :caption: Energy_SOAR_installation_guide
+        :caption: Overview
         
-       00-0-0-About.md
+       01-0-0-Overview/01-0-0-Overview.md
+       
+.. toctree::
+        :maxdepth: 2
+        :caption: Installation
+        
        02-0-0-Installation/02-0-0-Installation.md
+       
+.. toctree::
+        :maxdepth: 2
+        :caption: Architecture
+        
+       03-0-0-Architecture/03-0-0-Architecture.md
+       
+.. toctree::
+        :maxdepth: 2
+        :caption: Configuration
+        
+       04-0-0-Configuration/04-0-0-Configuration.md
+       
+.. toctree::
+        :maxdepth: 2
+        :caption: User_guides
+        
+       05-0-0-User_guides/05-0-0-User_guides.md
+       
+       
+.. toctree::
+        :maxdepth: 2
+        :caption: Operations
+        
+       06-0-0-Operations/06-0-0-Operations.md
 
 .. toctree::
         :maxdepth: 2
-        :caption: Integration_with_Energy_Logserver
+        :caption: Integrations
 
-       10-0-0-Integration_with_Energy_Logserver_SIEM_module/10-0-0-Integration_with_Energy_Logserver_SIEM_module.md
+       07-0-0-Integration_with_Energy_Logserver_SIEM_module/10-0-0-Integration_with_Energy_Logserver_SIEM_module.md
+
+       
+.. toctree::
+        :maxdepth: 2
+        :caption: API
+        
+       08-0-0-API/08-0-0-API.md
+
+
