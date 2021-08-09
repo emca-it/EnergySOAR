@@ -6,7 +6,7 @@ Energy SOAR will make your life not only easier but also safer. By connecting wi
 View more: <https://energysoar.com>
 
 ### Components
-
+```
 +-----------------+------------------------------------------------------------------------------------------+
 | Components      | Description                                                                              |
 +=================+==========================================================================================+
@@ -16,3 +16,4 @@ View more: <https://energysoar.com>
 +-----------------+------------------------------------------------------------------------------------------+
 | Case template   | Provides list of standard tasks that analyst can follow when evaluating cases.           |
 +-----------------+------------------------------------------------------------------------------------------+
+```
