@@ -31,13 +31,22 @@ Initialize TheHive data create sample users and test case/alert create.
 
 Sample users
 
-+----------+----------+
-| User     | Password |
-+==========+==========+
-| socadmin | socadmin |
-+----------+----------+
-| socuser  | socuser  |
-+----------+----------+
-| socro    | socro    |
-+----------+----------+
+<table>
+    <tr>
+        <th>User</th>
+        <th>Password</th>
+    </tr>
+    <tr>
+        <td>socadmin</td>
+        <td>socadmin</td>
+    </tr>
+    <tr>
+        <td>socuser</td>
+        <td>socuser</td>
+    </tr>
+    <tr>
+        <td>socro</td>
+        <td>socro</td>
+    </tr>
+</table>
 
