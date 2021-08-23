@@ -32,7 +32,7 @@ Initialize TheHive data create sample users and test case/alert create.
 Sample users
 +----------+----------+
 | User     | Password |
-+----------+----------+
++==========+==========+
 | socadmin | socadmin |
 +----------+----------+
 | socuser  | socuser  |
