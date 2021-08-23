@@ -31,7 +31,7 @@ Initialize TheHive data create sample users and test case/alert create.
 
 Sample users
 
-<table>
+<table border="1px">
     <tr>
         <th>User</th>
         <th>Password</th>
