@@ -30,6 +30,7 @@ Initialize Cortex data is needed to integrate with TheHive. During this step is 
 Initialize TheHive data create sample users and test case/alert create.
 
 Sample users
+
 +----------+----------+
 | User     | Password |
 +==========+==========+
@@ -39,3 +40,4 @@ Sample users
 +----------+----------+
 | socro    | socro    |
 +----------+----------+
+
