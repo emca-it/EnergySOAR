@@ -71,6 +71,7 @@ Observables are pieces of information added to a case.
 </table>
 
 Perform the following steps to add an observable:
+
 1.	Click Add observable(s) button:
 ![](/media/05-0-0-add-ovservable.png)
 2.	Create new observable(s) window appears:
