@@ -72,12 +72,12 @@ Observables are pieces of information added to a case.
 
 Perform the following steps to add an observable:
 1.	Click Add observable(s) button:
-[](/media/05-0-0-add-ovservable.png)
+![](/media/05-0-0-add-ovservable.png)
 2.	Create new observable(s) window appears:
-[](/media/05-0-5-create-new-observable.png)
+![](/media/05-0-5-create-new-observable.png)
 3.	Select type e.g. ip, domain, url, mail.
 If you choose file type, you can upload a file. Zipped archives are supported.
-[](/media/05-0-1-drop-observable-file.png)
+![](/media/05-0-1-drop-observable-file.png)
 4.	You can add one single observables or many observables at once - one observable per line.
 5.	Select appropriate TLP flag.
 6.	(Optional) IOC flag indicates observables classified as True Positive. Only IOC-flagged observables are exported to MISP instances.
@@ -88,13 +88,13 @@ If you choose file type, you can upload a file. Zipped archives are supported.
 On Observable List you can check if observables have been seen in other cases:
 -	Black eye: Observable seen in other cases,
 -	Red eye: Observable seen in other cases and flagged as IOC there.
-[](/media/05-0-2-observable-list.png)
+![](/media/05-0-2-observable-list.png)
 You can display details and check cases where the observable has been seen:
-[](/media/05-0-4-observable-details.png)
+![](/media/05-0-4-observable-details.png)
 After uploading file-type observables hashes are automatically calculated:
-[](/media/05-0-6-obervable-file-details.png)
+![](/media/05-0-6-obervable-file-details.png)
 If you want to download file observable, it will be zipped and password protected:
-[](/media/05-0-3-observable-protected-file.png)
+![](/media/05-0-3-observable-protected-file.png)
 You can run various analyzers (e.g. VirusTotal, MaxMind_GeoIP) and responders (e.g. block IP, domain, e-mail) against observables.
 
 ### Organisation
