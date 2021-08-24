@@ -12,59 +12,59 @@ Observables are pieces of information added to a case.
 <table style="border-color: #00000;" border="1">
 <tbody>
 <tr style="height: 33px;">
+<th style="height: 33px; text-align: center;" width="154">
+autonomous-system
+</th>
+<th style="height: 33px; text-align: center;" width="154">
+fqdn
+</th>
+<th style="height: 33px; text-align: center;" width="154">
+mail
+</th>
+<th style="height: 33px; text-align: center;" width="154">
+registry
+</th>
+</tr>
+<tr style="height: 33px;">
 <td style="height: 33px; text-align: center;" width="154">
-<p>autonomous-system</p>
+domain
 </td>
 <td style="height: 33px; text-align: center;" width="154">
-<p>fqdn</p>
+hash
 </td>
 <td style="height: 33px; text-align: center;" width="154">
-<p>mail</p>
+mail-subject
 </td>
 <td style="height: 33px; text-align: center;" width="154">
-<p>registry</p>
+uri_path
 </td>
 </tr>
 <tr style="height: 33px;">
 <td style="height: 33px; text-align: center;" width="154">
-<p>domain</p>
+file
 </td>
 <td style="height: 33px; text-align: center;" width="154">
-<p>hash</p>
+hostname
 </td>
 <td style="height: 33px; text-align: center;" width="154">
-<p>mail-subject</p>
+other
 </td>
 <td style="height: 33px; text-align: center;" width="154">
-<p>uri_path</p>
-</td>
-</tr>
-<tr style="height: 33px;">
-<td style="height: 33px; text-align: center;" width="154">
-<p>file</p>
-</td>
-<td style="height: 33px; text-align: center;" width="154">
-<p>hostname</p>
-</td>
-<td style="height: 33px; text-align: center;" width="154">
-<p>other</p>
-</td>
-<td style="height: 33px; text-align: center;" width="154">
-<p>url</p>
+url
 </td>
 </tr>
 <tr style="height: 33.5px;">
 <td style="height: 33.5px; text-align: center;" width="154">
-<p>filename</p>
+filename
 </td>
 <td style="height: 33.5px; text-align: center;" width="154">
-<p>ip</p>
+ip
 </td>
 <td style="height: 33.5px; text-align: center;" width="154">
-<p>regexp</p>
+regexp
 </td>
 <td style="height: 33.5px; text-align: center;" width="154">
-<p>user-agent</p>
+user-agent
 </td>
 </tr>
 </tbody>
