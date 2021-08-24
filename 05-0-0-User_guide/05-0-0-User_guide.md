@@ -12,18 +12,18 @@ Observables are pieces of information added to a case.
 <table style="border-color: #00000;" border="1">
 <tbody>
 <tr style="height: 33px;">
-<th style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center;" width="154">
 autonomous-system
-</th>
-<th style="height: 33px; text-align: center;" width="154">
+</td>
+<td style="height: 33px; text-align: center;" width="154">
 fqdn
-</th>
-<th style="height: 33px; text-align: center;" width="154">
+</td>
+<td style="height: 33px; text-align: center;" width="154">
 mail
-</th>
-<th style="height: 33px; text-align: center;" width="154">
+</td>
+<td style="height: 33px; text-align: center;" width="154">
 registry
-</th>
+</td>
 </tr>
 <tr style="height: 33px;">
 <td style="height: 33px; text-align: center;" width="154">
