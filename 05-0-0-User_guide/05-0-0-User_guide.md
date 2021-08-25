@@ -223,58 +223,58 @@ Observables are pieces of information added to a case.
 <table style="width: 100%; border: 1px solid #e1e4e5;">
 <tbody>
 <tr style="height: 33px;">
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 autonomous-system
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 fqdn
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 mail
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 registry
 </td>
 </tr>
 <tr style="height: 33px;">
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 domain
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 hash
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 mail-subject
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 uri_path
 </td>
 </tr>
 <tr style="height: 33px;">
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 file
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 hostname
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 other
 </td>
-<td style="height: 33px; text-align: center;" width="154">
+<td style="height: 33px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 url
 </td>
 </tr>
 <tr style="height: 33.5px;">
-<td style="height: 33.5px; text-align: center;" width="154">
+<td style="height: 33.5px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 filename
 </td>
-<td style="height: 33.5px; text-align: center;" width="154">
+<td style="height: 33.5px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 ip
 </td>
-<td style="height: 33.5px; text-align: center;" width="154">
+<td style="height: 33.5px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 regexp
 </td>
-<td style="height: 33.5px; text-align: center;" width="154">
+<td style="height: 33.5px; text-align: center; border: 1px solid #e1e4e5;" width="154">
 user-agent
 </td>
 </tr>

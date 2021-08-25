@@ -9,20 +9,20 @@ View more: <https://energysoar.com>
 <table style="width: 100%; border: 1px solid #e1e4e5;">
 <tbody>
 <tr>
-<th>Components</th>
-<th>Description</th>
+<th style="border: 1px solid #e1e4e5;">Components</th>
+<th style="border: 1px solid #e1e4e5;">Description</th>
 </tr>
 <tr>
-<td>Case</td>
-<td>A tool to organize information from multiple alerts.</td>
+<td style="border: 1px solid #e1e4e5;">Case</td>
+<td style="border: 1px solid #e1e4e5;">A tool to organize information from multiple alerts.</td>
 </tr>
 <tr>
-<td>Task</td>
-<td>A piece of work assigned to an analyst.</td>
+<td style="border: 1px solid #e1e4e5;">Task</td>
+<td style="border: 1px solid #e1e4e5;">A piece of work assigned to an analyst.</td>
 </tr>
 <tr>
-<td>Case template</td>
-<td>Provides list of standard tasks that analyst can follow when evaluating cases.</td>
+<td style="border: 1px solid #e1e4e5;">Case template</td>
+<td style="border: 1px solid #e1e4e5;">Provides list of standard tasks that analyst can follow when evaluating cases.</td>
 </tr>
 </tbody>
 </table>
