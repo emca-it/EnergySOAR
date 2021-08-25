@@ -67,9 +67,11 @@ Energy SOAR uses HOCON as configuration file format. This format gives enough fl
 #### TheHive
 TheHive is delivered with following files, in the folder `/etc/thehive`:
 
-logback.xml containing the log policy
-secret.conf containing a secret key used to create sessions. This key should be unique per instance (in the case of a cluster, this key should be the same for all nodes of this cluster)
-application.conf
+`logback.xml` containing the log policy
+
+`secret.conf` containing a secret key used to create sessions. This key should be unique per instance (in the case of a cluster, this key should be the same for all nodes of this cluster)
+`application.conf` 
+
 HOCON file format let you organise the configuration to have separate files for each purpose. It is the possible to create a /etc/thehive/application.conf.d folder and have several files inside that will be included in the main file /etc/thehive/application.conf.
 
 At the end, the following configuration structure is possible:
