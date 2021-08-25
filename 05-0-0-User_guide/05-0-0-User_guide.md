@@ -2,13 +2,62 @@
 
 ### Administration
 
+#### User Profiles management
+
+##### Permissions
+A Profile is a set of permissions attached to a User and an Organisation. It defines what the user can do on an object hold by the organisation. TheHive has a finite list of permissions:
+
+- manageOrganisation (1) : the user can create, update an organisation
+- manageConfig (1): the user can update configuration
+- manageProfile (1): the user can create, update and delete profiles
+- manageTag (1): the user can create, update and delete tags
+- manageCustomField (1): the user can create, update and delete custom fields
+- manageCase: the user can create, update and delete cases
+- manageObservable: the user can create, update and delete observables
+- manageAlert: the user can create, update and import alerts
+- manageUser: the user can create, update and delete users
+- manageCaseTemplate: the user can create, update and delete case template
+- manageTask: the user can create, update and delete tasks
+- manageShare: the user can share case, task and observable with other organisation
+- manageAnalyse (2): the user can execute analyse
+- manageAction (2): the user can execute actions
+- manageAnalyzerTemplate (2): the user can create, update and delete analyzer template (previously named report template)
+
+(1) Organisations, configuration, profiles and tags are global objects. The related permissions are effective only on “admin” organisation. (2) Actions, analysis and template is available only if Cortex connector is enabled
+
+**NOTE**
+**Read** information doesn’t require specific permission. By default, users in an organisation can see all data shared with that organisation (cf. shares, discussed in Organisations,Users and sharing).
+
+##### Profiles
+We distinguish two types of profiles:
+
+- Administration Profiles
+- Organisation Profiles
+
+The management page is accessible from the header menu through the Admin > Profiles menu and required a use with the manageProfile permission (refer to the section above).
+
+TheHive comes with default profiles but they can be updated and removed (if not used). New profiles can be created.
+
+![](/media/05-2-0-profiles-list.png)
+
+Once the New Profile button is clicked, a dialog is opened asking for the profile type, a name for the profile and a selection of permissions. Multiple selection can be made using CTRL+click.
+
+![](/media/05-2-1-add-profile.png)
+
+If it is used, a profile can’t be remove but can be updated.
+
+Default profiles are:
+
+- admin: can manage all global objects and users. Can’t create case.
+- analyst: can manage cases and other related objects (observables, tasks, …), including shring them
+- org-admin: all permissions except those related to global objects
+- read-only: no permission
+
 ### Alerts
 
-### Cases
+### Responders
 
-#### Responders
-
-##### Responders list
+#### Responders list
 -	Symantec Endpoint Protection Unquarantine Host_0_1
 -	AMPforEndpoints_SCDAdd_1_0
 -	Crowdstrike_Falcon_Custom_IOC_API_1_0
@@ -47,9 +96,9 @@
 -	Symantec Messaging Gateway Unblock Domain_0_1
 -	AMPforEndpoints_SCDRemove_1_0
 
-#### Analyzers
+### Analyzers
 
-##### Analyzers list
+#### Analyzers list
 -	IPVoid_1_0
 -	OpenCTI_SearchObservable_1_0
 -	SEKOIAIntelligenceCenter_Indicators_1_0
@@ -215,7 +264,7 @@
 -	Onyphe_Summary_1_0
 -	AnyRun_Sandbox_Analysis_1_0
 
-
+### Cases
 
 #### Observables
 Observables are pieces of information added to a case. 
@@ -280,6 +329,15 @@ user-agent
 </tr>
 </tbody>
 </table>
+
+##### How to add new observable types
+You can edit observable types in the administrator panel.
+
+Admin > Observable
+![](/media/05-0-0-7-observable-edit.png)
+
+##### How to add observables into Case
+
 
 Perform the following steps to add an observable:
 
