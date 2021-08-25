@@ -2,6 +2,26 @@
 
 ### Administration
 
+#### Manage analyzer template
+TheHive will display the analysis summary the same way for all analyzers: display a tag using taxonomies and level color.
+
+##### List analyzer templates
+The management page is accessible from the header menu through the Admin > Analyzer templates menu and required a use with the manageAnalyzerTemplate permission (refer to Profiles and permissions).
+![](/media/05-3-0-analyzer-template.png)
+
+Analyzer templates are still customisable via the UI and can also be imported.
+
+##### Import analyzer templates
+TheHive Project provides a set of analyzer templates (we use the same report-templates.zip archive for backward compatibility reasons).
+
+The template archive is available at https://download.thehive-project.org/report-templates.zip.
+
+To import the zip file, click on the Import templates, this opens the import dialog. Drop the zip files or click to select it from your storage and finally click Yes, import template archive.
+
+![](/media/05-3-1-import-analyzer-template.png)
+
+Note that analyzer templates are global and common to all the organisations.
+
 #### User Profiles management
 
 ##### Permissions
@@ -26,6 +46,7 @@ A Profile is a set of permissions attached to a User and an Organisation. It def
 (1) Organisations, configuration, profiles and tags are global objects. The related permissions are effective only on “admin” organisation. (2) Actions, analysis and template is available only if Cortex connector is enabled
 
 **NOTE**
+
 **Read** information doesn’t require specific permission. By default, users in an organisation can see all data shared with that organisation (cf. shares, discussed in Organisations,Users and sharing).
 
 ##### Profiles
@@ -52,6 +73,12 @@ Default profiles are:
 - analyst: can manage cases and other related objects (observables, tasks, …), including shring them
 - org-admin: all permissions except those related to global objects
 - read-only: no permission
+
+##### Observable types
+You can edit observable types in the administrator panel.
+
+Admin > Observable
+![](/media/05-0-0-7-observable-edit.png)
 
 ### Alerts
 
@@ -329,12 +356,6 @@ user-agent
 </tr>
 </tbody>
 </table>
-
-##### How to add new observable types
-You can edit observable types in the administrator panel.
-
-Admin > Observable
-![](/media/05-0-0-7-observable-edit.png)
 
 ##### How to add observables into Case
 
