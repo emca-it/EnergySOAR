@@ -23,6 +23,7 @@ Example installation
 ====> Do You wish to initialize Cortex data? [y/n] y
 [..]
 ====> Do You wish to initialize TheHive data? [y/n] y
+[..]
 ```
 
 Initialize Cortex data is needed to integrate with TheHive. During this step is created api user and configured in TheHive configuration.
@@ -31,22 +32,26 @@ Initialize TheHive data create sample users and test case/alert create.
 
 Sample users
 
-<table border="1px">
-    <tr>
-        <th>User</th>
-        <th>Password</th>
+<table style="border: 1px solid #e1e4e5;">
+    <tr style="border: 1px solid #e1e4e5;">
+        <th style="border: 1px solid #e1e4e5;">User</th>
+        <th style="border: 1px solid #e1e4e5;">Password</th>
     </tr>
-    <tr>
-        <td>socadmin</td>
-        <td>socadmin</td>
+    <tr style="border: 1px solid #e1e4e5;">
+        <td style="border: 1px solid #e1e4e5;">admin</td>
+        <td style="border: 1px solid #e1e4e5;">secret</td>
     </tr>
-    <tr>
-        <td>socuser</td>
-        <td>socuser</td>
+    <tr style="border: 1px solid #e1e4e5;">
+        <td style="border: 1px solid #e1e4e5;">socadmin</td>
+        <td style="border: 1px solid #e1e4e5;">socadmin</td>
     </tr>
-    <tr>
-        <td>socro</td>
-        <td>socro</td>
+    <tr style="border: 1px solid #e1e4e5;">
+        <td style="border: 1px solid #e1e4e5;">socuser</td>
+        <td style="border: 1px solid #e1e4e5;">socuser</td>
+    </tr>
+    <tr style="border: 1px solid #e1e4e5;">
+        <td style="border: 1px solid #e1e4e5;">socro</td>
+        <td style="border: 1px solid #e1e4e5;">socro</td>
     </tr>
 </table>
 
