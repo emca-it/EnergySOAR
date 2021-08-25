@@ -220,7 +220,7 @@
 #### Observables
 Observables are pieces of information added to a case. 
 
-<table style="border-color: #00000;" border="1">
+<table style="width: 100%; border: 1px solid #e1e4e5;">
 <tbody>
 <tr style="height: 33px;">
 <td style="height: 33px; text-align: center;" width="154">

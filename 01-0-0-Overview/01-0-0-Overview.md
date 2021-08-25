@@ -6,7 +6,7 @@ Energy SOAR will make your life not only easier but also safer. By connecting wi
 View more: <https://energysoar.com>
 
 ### Components
-<table style="width: 100%; border-color: #000000;" border="1">
+<table style="width: 100%; border: 1px solid #e1e4e5;">
 <tbody>
 <tr>
 <th>Components</th>
