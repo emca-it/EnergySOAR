@@ -2,10 +2,9 @@
 
 ### Cortex
 
-#### Application Configuration
 As described in the section above, Analyzers can only be configured using the Web interface and their associated configuration is stored in the underlying Elasticsearch database. However, the Cortex appplication configuration is stored in the `/etc/cortex/application.conf` file.
 
-##### Database
+#### Database
 
 Cortex relies on the Elasticsearch 5.x (Cortex 3 also supports Elasticsearch 6.x) search engine to store all persistent data.
 Elasticsearch is not part of the Cortex package. It must be installed and configured
@@ -98,7 +97,7 @@ of the page (`search.pagesize`) and how long pages are kept in Elasticsearch
 
 XPack and SearchGuard are optional and exclusive. If Cortex finds a valid configuration for XPack, SearchGuard configuration is ignored.
 
-##### Analyzers and Responders
+#### Analyzers and Responders
 Cortex is able to run workers (analyzers and responders) installed locally or available as Docker image. Settings `analyzer.urls` and in `responder.urls` list paths or urls where Cortex looks for analyzers and responders. Theses settings accept:
 1. a path to a directory that Cortex scans to locate workers
 1. a path or an URL to a JSON file containing a JSON array of worker definitions
@@ -150,7 +149,7 @@ responder {
 }
 ```
 
-##### Authentication
+#### Authentication
 Like TheHive, Cortex supports local, LDAP, Active Directory (AD), X.509 SSO and/or API keys for authentication and OAuth2.
 
 Please note that API keys can only be used to interact with the Cortex API (for example when TheHive is interfaced with a Cortex instance, it must use an API key to authenticate to it). API keys cannot be used to authenticate to the Web UI. By default, Cortex relies on local credentials stored in Elasticsearch.
@@ -280,7 +279,7 @@ session {
 }
 ```
 
-###### OAuth2/OpenID Connect
+##### OAuth2/OpenID Connect
 
 To enable authentication using OAuth2/OpenID Connect, edit the `application.conf` file and supply the values of `auth.oauth2` according to your environment. In addition, you need to supply:
 
@@ -289,7 +288,7 @@ To enable authentication using OAuth2/OpenID Connect, edit the `application.conf
 - `auth.sso.attributes.groups`: name of the attribute containing the OAuth2 user's groups (mandatory using groups mappings)
 - `auth.sso.attributes.roles`: name of the attribute containing the OAuth2 user's roles in retreived user info (mandatory using simple mapping)
 
-####### Important notes
+###### Important notes
 
 
 Authenticate the user using an external OAuth2 authenticator server. The configuration is:
@@ -345,14 +344,14 @@ auth {
 ```
 
 
-##### Cache
-###### Performance
+#### Cache
+##### Performance
 In order to increase Cortex performance, a cache is configured to prevent
 repetitive database solicitation. Cache retention time can be configured for
 users and organizations (default is 5 minutes). If a user is updated, the cache is
 automatically invalidated.
 
-###### Analyzer Results
+##### Analyzer Results
 Analyzer results (job reports) can also be cached. If an analyzer is executed against the same observable,
 the previous report can be returned without re-executing the analyzer. The cache is used only
 if the second job occurs within `cache.job` (the default is 10 minutes).
@@ -367,7 +366,7 @@ cache {
 
 **Note**: it is possible to bypass the cache altogether (for example to get extra fresh results) through the API as explained in the [API Guide](../api/api-guide.md#run) or by setting the cache to *Custom* in the Cortex UI for each analyzer and specifying `0` as the number of minutes.
 
-##### Streaming (a.k.a The Flow)
+#### Streaming (a.k.a The Flow)
 The user interface is automatically updated when data is changed in the
 back-end. To do this, the back-end sends events to all the connected front-ends.
 The mechanism used to notify the front-end is called long polling and its
@@ -396,7 +395,7 @@ stream.longpolling {
 }
 ```
 
-###### Entity Size Limit
+##### Entity Size Limit
 The Play framework used by Cortex sets the HTTP body size limit to 100KB by
 default for textual content (json, xml, text, form data) and 10MB for file
 uploads. This could be too small in some cases so you may want to change it with
@@ -415,7 +414,7 @@ also set the `client_max_body_size` parameter in your NGINX server configuration
 to the highest value among the two: file upload and text size as defined in Cortex
 `application.conf` file.
 
-##### HTTPS
+#### HTTPS
 Enable HTTPS directly on Cortex is not supported anymore. You must install a reverse proxy in front of Cortex.
 Below an example of NGINX configuration:
 ```
