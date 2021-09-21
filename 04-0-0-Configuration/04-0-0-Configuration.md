@@ -565,3 +565,14 @@ include "/etc/thehive/application.conf.d/misp.conf"
 ## Webhooks
 include "/etc/thehive/application.conf.d/webhooks.conf"
 ```
+
+### SSL
+Energy SOAR instalation script create self-signed certificates. Those certificates are stored under `/etc/thehive/ssl/` directory.
+
+You can setup your own path in `/etc/nginx/conf.d/energysoar.conf`.
+
+```
+    ssl_certificate     /etc/thehive/ssl/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/thehive/ssl/nginx-selfsigned.key;
+```
+
