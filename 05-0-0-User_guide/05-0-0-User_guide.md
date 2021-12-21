@@ -412,7 +412,7 @@ To create a connection between two nodes, click on the grey dot on the right sid
 
 An IF node has two connections to different nodes: one for when the statement is true and one for when the statement is false.
 
---connection image--
+![](/media/Connection_ifnode.8e006dce.gif)
 
 #### Workflows List
 
@@ -469,19 +469,19 @@ If an application you need does not have a dedicated Node yet, you can access th
 
 Regular nodes perform an action, like fetching data or creating an entry in a calendar. Regular nodes are named for the application they represent and are listed under Regular Nodes in the Editor UI.
 
---Regular Nodes image--
+![](/media/Regular_nodes.d3cec3e9.png)
 
 ###### Example
 
 A Google Sheets node can be used to retrieve or write data to a Google Sheet.
 
---Sheets_node image--
+![](/media/Google_sheets.d9ee72a3.png)
 
 ##### Trigger nodes
 
 Trigger nodes start workflows and supply the initial data.
 
---Trigger_nodes image--
+![](/media/Trigger_nodes.5bd536aa.png)
 
 Trigger nodes can be app or core nodes.
 
@@ -489,7 +489,7 @@ Trigger nodes can be app or core nodes.
 
 * **App Trigger nodes** start the workflow when an event happens in an app. App Trigger nodes are named like the application they represent followed by "Trigger" and are listed under Trigger Nodes in the Editor. For example, a Telegram trigger node can be used to trigger a workflow when a message is sent in a Telegram chat.
 
---Telegram trigger image--
+![](/media/telegram_trigger.fae8dcd9.png)
 
 ##### Node settings
 
@@ -503,7 +503,7 @@ The node operations are illustrated with icons that appear on top of the node wh
 * **Copy**: Duplicate the selected node
 * **Play**: Run the selected node
 
---Node settings image--
+![](/media/Node_settings.36ddf764.gif)
 
 To access the node parameters and settings, double-click on the node.
 
@@ -523,8 +523,8 @@ The node settings allow you to configure the look and execution of the node. The
 * **Retry On Fail**: If active, the node tries to execute a failed attempt multiple times until it succeeds
 * **Continue On Fail**: If active, the workflow continues even if the execution of the node fails. When this happens, the node passes along input data from previous nodes, so the workflow should account for unexpected output data.
 
---Node parameters image--
+![](/media/Node_parameters.090b2d35.gif)
 
 If a node is not correctly configured or is missing some required information, a **warning sign** is displayed on the top right corner of the node. To see what parameters are incorrect, double-click on the node and have a look at fields marked with red and the error message displayed in the respective warning symbol.
 
---Node error image--
+![](/media/Node_error.e189f05d.gif)
