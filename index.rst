@@ -42,7 +42,7 @@ Energy SOAR User Guide
         :maxdepth: 2
         :caption: Integrations
 
-       07-0-0-Integration_with_Energy_Logserver_SIEM_module/10-0-0-Integration_with_Energy_Logserver_SIEM_module.md
+       07-0-0-Integrations/07-0-0-Integration.md
 
        
 .. toctree::
