@@ -1,4 +1,4 @@
-## Integration with SIEM
+## Integrations
 ### Energy Logserver SIEM
 
 **Create API key**
@@ -59,7 +59,7 @@ hive_observable_data_mapping:
    message: "Audit username"
    tags: ["src: SIEM"]
 ```
-## Workflow integration
+### Workflow integration
 To boost your workflow automation you can connect with widely external services.
 
 List of automation nodes:
