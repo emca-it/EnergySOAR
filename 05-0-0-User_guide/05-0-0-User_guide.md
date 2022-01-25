@@ -472,27 +472,27 @@ You'll need to obtain the credentials for the Typeform Trigger node.
 12.	Click the Create button to save your credentials in Energy SOAR.
 
 You will also need to create a form in Typeform to collect incident reports with the following questions:
-•	What is your name? (optional) (Short Text)
-•	What is your email address? (optional) (Email)
-•	What is incident’s category? (Multiple Choice)
+*	What is your name? (optional) (Short Text)
+*	What is your email address? (optional) (Email)
+*	What is incident’s category? (Multiple Choice)
 
  ![](/05-0-0-User_guide/workflow-typeform-form.png) 
  
-•	Severity (Multiple Choice)
+*	Severity (Multiple Choice)
 
 ![](/05-0-0-User_guide/workflow-typeform-form2.png)
 
-•	Description (Long Text)
+*	Description (Long Text)
 
 **Building the Workflow**
 
 This workflow would use the following nodes:
-•	Typeform Trigger - Start the workflow when a form receives a report
-•	Set - Set the workflow data
-•	FunctionItem - Calculate severity and alert reference
-•	TheHive - Create alert and case
-•	IF - Conditional logic to decide the flow of the workflow
-•	NoOp - Do nothing (optional)
+*	Typeform Trigger - Start the workflow when a form receives a report
+*	Set - Set the workflow data
+*	FunctionItem - Calculate severity and alert reference
+*	TheHive - Create alert and case
+*	IF - Conditional logic to decide the flow of the workflow
+*	NoOp - Do nothing (optional)
 
 The final workflow should look like the following image:
 
