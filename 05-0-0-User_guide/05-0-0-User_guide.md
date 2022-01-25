@@ -405,14 +405,15 @@ SOC analysts have to handle many repetitive tasks. With Energy SOAR you can buil
 Workflows helps you to interconnect different apps with an API with each other to share and manipulate its data without a single line of code. It is an easy to use, user-friendly and highly customizable module, which uses an intuitive user interface for you to design your unique scenarios very fast. 
 A workflow is a collection of nodes connected together to automate a process.
 A workflow can be started manually (with the Start node) or by Trigger nodes. When a workflow is started, it executes all the active and connected nodes. The workflow execution ends when all the nodes have processed their data. You can view your workflow executions in the Execution log, which can be helpful for debugging.
+
 ![](/05-0-0-User_guide/execute_workflow.gif)
 
-*Activating a workflow*
+**Activating a workflow**
 Workflows that start with a Trigger node or a Webhook node need to be activated in order to be executed. This is done via the Active toggle in the Workflow UI.
 Active workflows enable the Trigger and Webhook nodes to receive data whenever a condition is met (e.g., Monday at 10:00, an update in a Trello board) and in turn trigger the workflow execution.
 All the newly created workflows are deactivated by default.
 
-*Sharing a workflow*
+**Sharing a workflow**
 
 Workflows are saved in JSON format. You can export your workflows as JSON files or import JSON files into your system.
 You can export a workflow as a JSON file in two ways:
@@ -422,7 +423,7 @@ You can import JSON files as workflows in two ways:
 *	Import: Click Import from File or Import from URL under the Workflow menu in the sidebar and select the JSON file or paste the link to a workflow.
 *	Copy-Paste: Copy the JSON workflow to the clipboard (Ctrl + c) and paste it (Ctrl + v) into the Workflow UI.
 
-*Workflow settings*
+**Workflow settings**
 
 On each workflow, it is possible to set some custom settings and overwrite some of the global default settings from the Workflow > Settings menu.
 
@@ -437,7 +438,9 @@ The following settings are available:
 *	Save Execution Progress: If the execution data of each node should be saved. If set to "Yes", the workflow resumes from where it stopped in case of an error. However, this might increase latency.
 *	Timeout Workflow: Toggle to enable setting a duration after which the current workflow execution should be cancelled.
 *	Timeout After: Only available when Timeout Workflow is enabled. Set the time in hours, minutes, and seconds after which the workflow should timeout. 
-Failed workflows
+
+**Failed workflows**
+
 If your workflow execution fails, you can retry the execution. To retry a failed workflow:
 1.	Open the Executions list from the sidebar.
 2.	For the workflow execution you want to retry, click on the refresh icon under the Status column.
@@ -447,8 +450,167 @@ If your workflow execution fails, you can retry the execution. To retry a failed
 
 You can also use the Error Trigger node, which triggers a workflow when another workflow has an error. Once a workflow fails, this node gets details about the failed workflow and the errors.
 
+#### Crate your first workflow
 
+##### Automate Incident Reporting with Typeform
+Let’s create your first workflow in Energy SOAR. The workflow will create a new alert and promote it to a case whenever a user submits a high severity incident.
+
+**Prerequisites**
+
+You'll need to obtain the credentials for the Typeform Trigger node.
+1.	Create a Typeform account: https://www.typeform.com/
+2.	Open the Typeform dashboard: https://admin.typeform.com/
+3.	Click on your avatar on the top right and select 'Settings'.
+4.	Click on Personal tokens under the Profile section in the sidebar.
+5.	Click on the Generate a new token button.
+6.	Enter a name in the Token name field.
+7.	Click on the Generate token button.
+8.	Click on the Copy button to copy the access token.
+9.	In Energy SOAR choose Workflows > Credentials > New > Typeform API.
+10.	Enter a name for your credentials in the Credentials Name field.
+11.	Paste the access token in the Access Token field.
+12.	Click the Create button to save your credentials in Energy SOAR.
+
+You will also need to create a form in Typeform to collect incident reports with the following questions:
+•	What is your name? (optional) (Short Text)
+•	What is your email address? (optional) (Email)
+•	What is incident’s category? (Multiple Choice)
+
+ ![](/05-0-0-User_guide/workflow-typeform-form.png) 
  
+•	Severity (Multiple Choice)
+
+![](/05-0-0-User_guide/workflow-typeform-form2.png)
+
+•	Description (Long Text)
+
+**Building the Workflow**
+
+This workflow would use the following nodes:
+•	Typeform Trigger - Start the workflow when a form receives a report
+•	Set - Set the workflow data
+•	FunctionItem - Calculate severity and alert reference
+•	TheHive - Create alert and case
+•	IF - Conditional logic to decide the flow of the workflow
+•	NoOp - Do nothing (optional)
+
+The final workflow should look like the following image:
+
+![](/05-0-0-User_guide/workflow-getting-started-final.png)
+
+1.	Typeform Trigger node
+
+We'll use the Typeform Trigger node for starting the workflow. Add a Typeform Trigger node by clicking on the + button on the top right of the Workflow UI. Click on the Typeform Trigger node under the section marked Trigger.
+
+Double click on the node to enter the Node Editor. Select Credentials from the Typeform API dropdown list.
+
+Select the form that you created from the Form dropdown list. We'll let the other fields stay as they are.
+
+Now save your workflow so that the webhook in the Typeform Trigger node can be activated. Since you’ll be using the test webhooks while building the workflow, the node only stays active for 120 seconds after you click the Execute Node button.
+
+After clicking on the Execute Node button, submit a response to your form in Typeform.
+
+![](/05-0-0-User_guide/workflow-getting-started-trigger.png)
+ 
+
+2.	Set node
+
+We'll use the Set node to ensure that only the data that we set in this node gets passed on to the next nodes in the workflow.
+
+Add the Set node by clicking on the + button and selecting the Set node. Click on Add Value and select String from the dropdown list. Enter title in the Name field. Since the Value (title) would be a dynamic piece of information, click on the gears icon next to the field, and select Add Expression.
+
+This will open up the Variable Selector. From the left panel, select the following variable:
+Nodes > Typeform Trigger > Output Data > JSON > What is incident’s category?
+Also add Incident Report prefix, so the expression would look like this:
+Incident Report - {{$node["Typeform Trigger"].json["What is incident's category?"]}}
+
+Close the Edit Expression window. Click on Add Value and select String from the dropdown list. Enter description in the Name field. Since the Value (description) would be a dynamic piece of information, click on the gears icon next to the field, and select Add Expression.
+This will open up the Variable Selector. From the left panel, select the following variables:
+Nodes > Typeform Trigger > Output Data > JSON > What is your name?
+Nodes > Typeform Trigger > Output Data > JSON > What is your email address?
+Nodes > Typeform Trigger > Output Data > JSON > Description?
+
+Also add Name, E-mail, Details prefixes. Full expression:
+Name: `{{$node["Typeform Trigger"].json["First up, what's your full name"]}}`
+
+E-mail: `{{$node["Typeform Trigger"].json["And your email address?"]}}`
+
+Details: `{{$node["Typeform Trigger"].json["Could you tell us what happened exactly?"]}}`
+
+Close the Edit Expression window. Click on Add Value and select Number from the dropdown list. Enter severity in the Name field. Since the Value (severity) would be a dynamic piece of information, click on the gears icon next to the field, and select Add Expression.
+This will open up the Variable Selector. Delete the 0 in the Expression field on the right. From the left panel, select the following variable:
+Nodes > Typeform Trigger > Output Data > JSON > Severity
+Toggle Keep Only Set to true. We set this option to true to ensure that only the data that we have set in this node get passed on to the next nodes in the workflow. Click on the Execute Node button on the top right to set the data for the workflow.
+
+![](/05-0-0-User_guide/workflow-getting-started-expression.png)
+ 
+3.	FunctionItem node
+
+To create Energy SOAR alert in workflow we have to provide SourceRef number. We’ll use the FunctionItem node to generate that random number.
+Add the FunctionItem node by clicking on the + button and selecting the FunctionItem node.
+Clear JavaScript Code window and insert the following code:
+
+```
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+item.number= getRandomInt(20000000);
+item.number=item.number.toString(16);
+item.severity=parseInt(item.severity);
+return item;
+```
+
+We use parseInt function to convert string severity value into an integer.
+
+4.	Create alert node
+Add TheHive node by clicking on the + button and selecting the TheHive node. Double click on the node and click on TheHive name to change it to Create alert.
+
+Since the Title would be a dynamic piece of information, click on the gears icon next to the field, and select Add Expression.
+
+This will open up the Variable Selector. From the left panel, select the following variable:
+Nodes > Set > Output Data > JSON > title
+
+Close the Edit Expression window. In Description field add expression:
+Nodes > Set > Output Data > JSON > description
+
+Close the Edit Expression window. In Severity field add expression:
+Nodes > FunctionItem > Output Data > JSON > severity
+
+Close the Edit Expression window. In SourceRef field add expression:
+Nodes > FunctionItem > Output Data > JSON > number
+
+Click on the Execute Node button on the top right to create alert.
+
+5.	IF node
+Add the IF node by clicking on the + button and selecting the IF node. This is a conditional logic node that allows us to alter the flow of the workflow depending on the data that we get from the previous node(s).
+Double click on the node, click on the Add Condition button and select Number from the menu. Since the Value 1 (severity) would be a dynamic piece of information, click on the gears icon next to the field, and select Add Expression.
+This will open up the Variable Selector. Delete the 0 in the Expression field on the right. From the left panel, select the following variable:
+Nodes > Create alert > Output Data > JSON > severity
+For the Operation field, we'll set it to 'Larger'. For Value 2, enter 2. This will ensure that the IF node returns true only if the severity is higher than 2 (above medium level). Feel free to change this to some other value. Click on the Execute Node button on the top right to check if the severity is larger than 2 or not.
+
+![](/05-0-0-User_guide/workflow-getting-started-if.png)
+
+
+6.	Promote alert node
+
+Add TheHive node by clicking on the + button and selecting the TheHive node. Double click on the node and click on TheHive name to change it to Promote alert.
+
+Select ‘Promote’ from the Operation dropdown list.
+In Alert ID field add expression:
+Nodes > Create alert > Output Data > JSON > _id
+
+![](/05-0-0-User_guide/workflow-getting-started-expression2.png)
+
+
+7.	NoOp node
+If the score is smaller than 3, we don't want the workflow to do anything. We'll use the NoOp node for that. Adding this node here is optional, as the absence of this node won't make a difference to the functioning of the workflow. Add the NoOp node by clicking on the + button and selecting the NoOp node. Connect this node with the false output of the IF node.
+To test the workflow, click on the Execute Workflow button at the bottom of the Workflow UI.
+Don't forget to save the workflow and then click on the Activate toggle on the top right of the screen to set it to true and activate the workflow. 
+Green checkmarks indicate successful workflow execution:
+
+![](/05-0-0-User_guide/workflow-getting-started-final2.png)
+
+Congratulations on creating you first workflow with Energy SOAR.
 
 
 #### Connection
