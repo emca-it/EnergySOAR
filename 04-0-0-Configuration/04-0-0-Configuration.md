@@ -6,11 +6,9 @@ As described in the section above, Analyzers can only be configured using the We
 
 #### Database
 
-Cortex relies on the Elasticsearch 5.x (Cortex 3 also supports Elasticsearch 6.x) search engine to store all persistent data.
+Cortex relies on the Elasticsearch 7.x search engine to store all persistent data.
 Elasticsearch is not part of the Cortex package. It must be installed and configured
-as a standalone instance which can be located on the same machine. For more
-information on how to set up Elasticsearch, please refer to [Elasticsearch
-installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/_installation.html).
+as a standalone instance which can be located on the same machine.
 
 Three settings are required to connect to Elasticsearch:
  * the base name of the index
@@ -515,7 +513,7 @@ TheHive is delivered with following files, in the folder `/etc/thehive`:
 `secret.conf` containing a secret key used to create sessions. This key should be unique per instance (in the case of a cluster, this key should be the same for all nodes of this cluster)
 `application.conf` 
 
-HOCON file format let you organise the configuration to have separate files for each purpose. It is the possible to create a /etc/thehive/application.conf.d folder and have several files inside that will be included in the main file /etc/thehive/application.conf.
+HOCON file format let you organise the configuration to have separate files for each purpose. It is the possible to create a /etc/thehive/application.conf.d folder and have several files inside that will be included in the main file `/etc/thehive/application.conf`.
 
 At the end, the following configuration structure is possible:
 
@@ -576,3 +574,5 @@ You can setup your own path in `/etc/nginx/conf.d/energysoar.conf`.
     ssl_certificate_key /etc/thehive/ssl/nginx-selfsigned.key;
 ```
 
+### License
+Energy SOAR license patch configuration is located in file `/etc/thehive/application.conf.d/license.conf` by default it is `license.path: "/etc/thehive/"`.
