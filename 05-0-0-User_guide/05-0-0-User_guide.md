@@ -81,13 +81,13 @@ Admin > Observable
 ![](/media/05-0-0-7-observable-edit.png)
 
 #### Kill user session
-If someone exceed your license then you can kick him from User management panel.
+Everytime you can manage logged user sessions as admin user. In organizations administration page you can kill user session. This user will be immediatelly logout.
 
 Select user organization
-![](/05-0-0-User_guide/administartion-kill-session.png)
+![](/05-0-0-User_guide/administration-kill-session.png)
 
 And click "Kill session" button.
-![](/05-0-0-User_guide/administartion-kill-session2.png)
+![](/05-0-0-User_guide/administration-kill-session2.png)
 
 ### Alerts
 

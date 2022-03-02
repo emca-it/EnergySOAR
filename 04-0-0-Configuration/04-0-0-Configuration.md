@@ -455,17 +455,12 @@ play.http.secret.key="dgngu325mbnbc39cxas4l5kb24503836y2vsvsg465989fbsvop9d09ds6
 
 In the case of a cluster of Energy SOAR nodes, all nodes should have the same secret.conf file with the same secret key. The secret is used to generate user sessions.
 
-#### License
-
-##### License path
-License path is stored in configuration file ` /etc/thehive/application.conf.d/license.conf`. By default it is ` license.path: "/etc/thehive/"`.
-
-##### Kill user session
-Everytime you can manage logged user sessions as admin user. In organizations administration page you can kill user session. This user will be immediatelly logout.
-
-![](/04-0-0-Configuration/license_01.png)
-
 #### Service
+
+##### License
+
+###### License path
+License path is stored in configuration file ` /etc/thehive/application.conf.d/license.conf`. By default it is ` license.path: "/etc/thehive/"`.
 
 ##### Listen address & port
 By default the application listens on all interfaces and port 9000. This is possible to specify listen address and ports with following parameters in the application.conf file:
@@ -583,6 +578,3 @@ You can setup your own path in `/etc/nginx/conf.d/energysoar.conf`.
     ssl_certificate     /etc/thehive/ssl/nginx-selfsigned.crt;
     ssl_certificate_key /etc/thehive/ssl/nginx-selfsigned.key;
 ```
-
-### License
-Energy SOAR license patch configuration is located in file `/etc/thehive/application.conf.d/license.conf` by default it is `license.path: "/etc/thehive/"`.
