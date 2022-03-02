@@ -25,8 +25,7 @@ Add configuration in the Alert service config.
 
 ```yaml
 hive_connection:
-  hive_host: <url>
-  hive_port: 9000
+  hive_host: https://<Energy_SOAR_IP>/base
   hive_apikey: <api_key>
 ```
 
