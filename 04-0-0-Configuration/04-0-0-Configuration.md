@@ -457,6 +457,16 @@ In the case of a cluster of Energy SOAR nodes, all nodes should have the same se
 
 #### Service
 
+##### License
+
+###### License path
+License path is stored in configuration file ` /etc/thehive/application.conf.d/license.conf`. By default it is ` license.path: "/etc/thehive/"`.
+
+###### Kill user session
+Everytime you can manage logged user sessions as admin user. In organizations administration page you can kill user session. This user will be immediatelly logout.
+
+![](/04-0-0-Configuration/license_01.png)
+
 ##### Listen address & port
 By default the application listens on all interfaces and port 9000. This is possible to specify listen address and ports with following parameters in the application.conf file:
 
