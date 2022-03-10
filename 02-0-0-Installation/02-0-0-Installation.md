@@ -3,6 +3,13 @@
 ## Install ##
 
 Run as root in installation package directory
+
+For non-interactive (recommended):
+```bash
+# ./install.sh -n
+```
+
+For interactive:
 ```bash
 # ./install.sh -i
 ```
@@ -11,12 +18,15 @@ For a minimal architecture install
 * TheHive
 * Cortex
 * Elasticsearch 7
+* Cassandra 4
 
-Example installation
+Example *interactive* installation
 ```bash
 ====> Do You wish to install the ENERGY SOAR TheHive, as well as the other TheHive dependencies? [y/n] y
 [..]
 ====> Do You wish to install the ENERGY SOAR Cortex, as well as the other Cortex dependencies? [y/n] y
+[..]
+====> Do You wish to install the Cassandra 4? [y/n] y
 [..]
 ====> Do You wish to install the Elasticsearch 7? [y/n] y
 [..]
@@ -28,7 +38,12 @@ Example installation
 
 Initialize Cortex data is needed to integrate with TheHive. During this step is created api user and configured in TheHive configuration.
 
-Initialize TheHive data create sample users and test case/alert create.
+Initialize TheHive data:
+- create sample users
+- create sample case/alert
+- import Analyzer templates
+- import MISP Taxonomoies
+- configure Cortex plugin
 
 Sample users
 
