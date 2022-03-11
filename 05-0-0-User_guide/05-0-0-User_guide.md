@@ -84,10 +84,50 @@ Admin > Observable
 Everytime you can manage logged user sessions as admin user. In organizations administration page you can kill user session. This user will be immediatelly logout.
 
 Select user organization
-![](/05-0-0-User_guide/administration-kill-session.png)
+![](administration-kill-session.png)
 
 And click "Kill session" button.
-![](/05-0-0-User_guide/administration-kill-session2.png)
+![](administration-kill-session2.png)
+
+### Reports
+#### Create and edit
+Go to Reports on top menu
+
+Click Create new report on the left
+
+![](reports_create_button.png)
+
+Now you can see New Report view.
+
+![](reports_create.png)
+
+Select dashboard: there you should select exising dashboard. 
+
+Schedule types:
+- Run once
+- Daily
+- Weekly
+- Montly
+- Cron format (UNIX cron format)
+
+Send Email: select if you would like to recive report on e-mail.
+
+#### List
+On reports list you see all created reports.
+
+![](reports_list.png)
+
+**Reports statuses:**
+- Created: Going to create the report
+- Generated: Report was generated and you can download or it was sent
+- Error: An error occurs. Please check logs
+
+**Actions:**
+- Enable/Disable
+- Edit
+- Download
+- Delete
+
 
 ### Alerts
 
@@ -505,7 +545,7 @@ This workflow would use the following nodes:
 
 The final workflow should look like the following image:
 
-![](/05-0-0-User_guide/workflow-getting-started-final.png)
+![](workflow-getting-started-final.png)
 
 1.	Typeform Trigger node
 
@@ -597,7 +637,7 @@ This will open up the Variable Selector. Delete the 0 in the Expression field on
 Nodes > Create alert > Output Data > JSON > severity
 For the Operation field, we'll set it to 'Larger'. For Value 2, enter 2. This will ensure that the IF node returns true only if the severity is higher than 2 (above medium level). Feel free to change this to some other value. Click on the Execute Node button on the top right to check if the severity is larger than 2 or not.
 
-![](/05-0-0-User_guide/workflow-getting-started-if.png)
+![](workflow-getting-started-if.png)
 
 
 6.	Promote alert node
@@ -608,7 +648,7 @@ Select ‘Promote’ from the Operation dropdown list.
 In Alert ID field add expression:
 Nodes > Create alert > Output Data > JSON > _id
 
-![](/05-0-0-User_guide/workflow-getting-started-expression2.png)
+![](workflow-getting-started-expression2.png)
 
 
 7.	NoOp node
@@ -617,7 +657,7 @@ To test the workflow, click on the Execute Workflow button at the bottom of the 
 Don't forget to save the workflow and then click on the Activate toggle on the top right of the screen to set it to true and activate the workflow. 
 Green checkmarks indicate successful workflow execution:
 
-![](/05-0-0-User_guide/workflow-getting-started-final2.png)
+![](workflow-getting-started-final2.png)
 
 Congratulations on creating you first workflow with Energy SOAR.
 
