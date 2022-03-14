@@ -1,5 +1,6 @@
 ## Integrations
 ### Energy Logserver SIEM
+This integration send alerts from Energy Logserver SIEM to Energy SOAR.
 
 **Create API key**
 
@@ -37,7 +38,7 @@ Restart the Alert service
 
 **Alert rule configuration**
 
-Add in the alert rule configuration
+Configure details in the alert rule configuration
 
 ```yaml
 alert: hivealerter
@@ -58,4 +59,33 @@ hive_observable_data_mapping:
    message: "Audit username"
    tags: ["src: SIEM"]
 ```
-- 
+
+**Custom message**
+
+By default Energy Logserver SIEM send a json with all alert fields. You can customize your message using markdown.
+
+For example:
+
+```
+alert_text: "## Summary\r\n
+\r\n\r\n
+|  |  |\r\n
+|---|---|\r\n
+| IP | {} |\r\n
+| Rule | {} |\r\n
+\r\n\r\n
+Log: `{}`\r\n
+Full log: \r\n
+```\r\n
+{}\r\n
+```\r\n
+"
+alert_text_args:
+  - data.srcip
+  - rule.description
+  - full_log
+  - previous_output
+```
+
+Preview:
+![](markdown_example.png)
