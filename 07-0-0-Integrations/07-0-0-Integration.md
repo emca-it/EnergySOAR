@@ -88,4 +88,5 @@ alert_text_args:
 ```
 
 Preview:
+
 ![](markdown_example.png)
