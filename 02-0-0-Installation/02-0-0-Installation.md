@@ -2,6 +2,13 @@
 
 ## Install ##
 
+Supported OSes:
+- Red Hat Linux 7
+- Red Hat Linux 8
+- Centos Linux/Stream 7
+- Centos Linux/Stream 8
+- Oracle Linux 8
+
 Run as root in installation package directory
 
 For non-interactive (recommended):
