@@ -42,6 +42,11 @@ A Profile is a set of permissions attached to a User and an Organisation. It def
 - manageAnalyse (2): the user can execute analyse
 - manageAction (2): the user can execute actions
 - manageAnalyzerTemplate (2): the user can create, update and delete analyzer template (previously named report template)
+- manageWorkflows: the user can create, update and delete workflows
+- listWorkflows: the user can see a list of workflows
+- viewWorkflows: the user can see workflow details
+- manageReports: the user can create, update and delete reports
+- listReports: the user can see a list of reports
 
 (1) Organisations, configuration, profiles and tags are global objects. The related permissions are effective only on “admin” organisation. (2) Actions, analysis and template is available only if Cortex connector is enabled
 
