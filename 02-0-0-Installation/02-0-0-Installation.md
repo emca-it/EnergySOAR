@@ -46,34 +46,36 @@ Example *interactive* installation
 Initialize Cortex data is needed to integrate with TheHive. During this step is created api user and configured in TheHive configuration.
 
 Initialize TheHive data:
+- import MISP Taxonomies
 - create sample users
 - create sample case/alert
 - import Analyzer templates
-- import MISP Taxonomoies
 - configure Cortex plugin
 
 Sample users
 
 <table style="border: 1px solid #e1e4e5;">
-    <tr style="border: 1px solid #e1e4e5;">
-        <th style="border: 1px solid #e1e4e5;">User</th>
-        <th style="border: 1px solid #e1e4e5;">Password</th>
-    </tr>
-    <tr style="border: 1px solid #e1e4e5;">
-        <td style="border: 1px solid #e1e4e5;">admin</td>
-        <td style="border: 1px solid #e1e4e5;">secret</td>
-    </tr>
-    <tr style="border: 1px solid #e1e4e5;">
-        <td style="border: 1px solid #e1e4e5;">socadmin</td>
-        <td style="border: 1px solid #e1e4e5;">socadmin</td>
-    </tr>
-    <tr style="border: 1px solid #e1e4e5;">
-        <td style="border: 1px solid #e1e4e5;">socuser</td>
-        <td style="border: 1px solid #e1e4e5;">socuser</td>
-    </tr>
-    <tr style="border: 1px solid #e1e4e5;">
-        <td style="border: 1px solid #e1e4e5;">socro</td>
-        <td style="border: 1px solid #e1e4e5;">socro</td>
-    </tr>
+    <tbody>
+        <tr style="border: 1px solid #e1e4e5;">
+            <th style="border: 1px solid #e1e4e5; padding: 3px;">User</th>
+            <th style="border: 1px solid #e1e4e5; padding: 3px;">Password</th>
+        </tr>
+        <tr style="border: 1px solid #e1e4e5;">
+            <td style="border: 1px solid #e1e4e5; padding: 3px;">admin</td>
+            <td style="border: 1px solid #e1e4e5; padding: 3px;">secret</td>
+        </tr>
+        <tr style="border: 1px solid #e1e4e5;">
+            <td style="border: 1px solid #e1e4e5; padding: 3px;">socadmin</td>
+            <td style="border: 1px solid #e1e4e5; padding: 3px;">socadmin</td>
+        </tr>
+        <tr style="border: 1px solid #e1e4e5;">
+            <td style="border: 1px solid #e1e4e5; padding: 3px;">socuser</td>
+            <td style="border: 1px solid #e1e4e5; padding: 3px;">socuser</td>
+        </tr>
+        <tr style="border: 1px solid #e1e4e5;">
+            <td style="border: 1px solid #e1e4e5; padding: 3px;">socro</td>
+            <td style="border: 1px solid #e1e4e5; padding: 3px;">socro</td>
+        </tr>
+    </tbody>
 </table>
 
