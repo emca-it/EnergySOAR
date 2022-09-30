@@ -586,4 +586,4 @@ To change a system language you need ovverride provided jar files.
 cp -R EnergySOAR_*/jar/* /opt
 ```
 
-To get your language pack please contact with (us)[https://energysoar.com/#contact].
+To get your language pack please contact with us <https://energysoar.com/#contact>.
