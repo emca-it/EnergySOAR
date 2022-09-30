@@ -578,3 +578,12 @@ You can setup your own path in `/etc/nginx/conf.d/energysoar.conf`.
     ssl_certificate     /etc/thehive/ssl/nginx-selfsigned.crt;
     ssl_certificate_key /etc/thehive/ssl/nginx-selfsigned.key;
 ```
+
+### Change system language
+To change a system language you need ovverride provided jar files.
+
+```
+cp -R EnergySOAR_*/jar/* /opt
+```
+
+To get your language pack please contact with (us)[https://energysoar.com/#contact].
