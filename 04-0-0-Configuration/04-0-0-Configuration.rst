@@ -428,10 +428,11 @@ the following settings in the `application.conf` file:
 
 .. code-block::
 
-    ### Max textual content length
-    play.http.parser.maxMemoryBuffer=1M
-    ### Max file size
-    play.http.parser.maxDiskBuffer=1G
+   ### Max textual content length
+   play.http.parser.maxMemoryBuffer=1M
+   ### Max file size
+   play.http.parser.maxDiskBuffer=1G
+
 
 .. note::
    If you are using a NGINX reverse proxy in front of Cortex, be aware that it doesn't distinguish between text data and a file upload. So, you should also set the `client_max_body_size` parameter in your NGINX server configuration to the highest value among the two: file upload and text size as defined in Cortex `application.conf` file.
@@ -540,13 +541,14 @@ These values are set with default parameters:
 
 .. code-block::
 
-    # Max file size
-    play.http.parser.maxDiskBuffer: 128MB
+   # Max file size
+   play.http.parser.maxDiskBuffer: 128MB
 
 
 .. code-block::
-    # Max textual content length
-    play.http.parser.maxMemoryBuffer: 256kB
+
+   # Max textual content length
+   play.http.parser.maxMemoryBuffer: 256kB
     
 If you feel that these should be updated, edit /etc/thehive/application.conf file and update these parameters accordingly.
 
@@ -573,24 +575,26 @@ HOCON file format let you organise the configuration to have separate files for 
 At the end, the following configuration structure is possible:
 
 .. code-block::
-    /etc/thehive
-    |-- application.conf
-    |-- application.conf.d
-    |   |-- secret.conf
-    |   |-- service.conf
-    |   |-- database.conf
-    |   |-- storage.conf
-    |   |-- cluster.conf
-    |   |-- authentication.conf
-    |   |-- cortex.conf
-    |   |-- misp.conf
-    |   |-- webhooks.conf
-    |-- logback.xml
+
+   /etc/thehive
+   |-- application.conf
+   |-- application.conf.d
+   |   |-- secret.conf
+   |   |-- service.conf
+   |   |-- database.conf
+   |   |-- storage.conf
+   |   |-- cluster.conf
+   |   |-- authentication.conf
+   |   |-- cortex.conf
+   |   |-- misp.conf
+   |   |-- webhooks.conf
+   |-- logback.xml
 
 
 And the content of `/etc/thehive/application.conf`:
 
 .. code-block::
+
     ## Include Play secret key
     # More information on secret key at https://www.playframework.com/documentation/2.8.x/ApplicationSecret
     include "/etc/thehive/application.conf.d/secret.conf"

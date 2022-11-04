@@ -6,9 +6,9 @@ Install
 
 Supported OSes:
 
-- Red Hat Linux 8
-- Centos Linux/Stream 8
 - Oracle Linux 8
+- Red Hat Linux 8 
+- Centos Linux/Stream 8
 
 .. tabs::
 
@@ -20,7 +20,7 @@ Supported OSes:
    
       .. code-block:: console
    
-         ./install.sh -n
+        # ./install.sh -n
          
       Non-interactive mode install this services by default:
 
@@ -46,7 +46,7 @@ Supported OSes:
 
       .. code-block:: console
 
-         ./install.sh -i
+        # ./install.sh -i
 
       Minimal single node architecture services:
 
