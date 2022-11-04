@@ -1,2 +1,2 @@
-Sphinx~=1.8
-jinja2==3.0.0
+sphinx-tabs
+myst-parser

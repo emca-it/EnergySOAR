@@ -11,19 +11,19 @@ Energy SOAR User Guide
         :maxdepth: 2
         :caption: Installation
         
-       02-0-0-Installation/02-0-0-Installation.md
+       02-0-0-Installation/02-0-0-Installation.rst
        
 .. toctree::
         :maxdepth: 2
         :caption: Architecture
         
-       03-0-0-Architecture/03-0-0-Architecture.md
+       03-0-0-Architecture/03-0-0-Architecture.rst
        
 .. toctree::
         :maxdepth: 2
         :caption: Configuration
         
-       04-0-0-Configuration/04-0-0-Configuration.md
+       04-0-0-Configuration/04-0-0-Configuration.rst
        
 .. toctree::
         :maxdepth: 2
