@@ -43,6 +43,8 @@ Energy SOAR User Guide
         :caption: Integrations
 
        07-0-0-Integrations/07-0-0-Integration.md
+       07-0-0-Integrations/how-to-create-an-analyzer.md
+       07-0-0-Integrations/how-to-create-a-responder.md
 
        
 .. toctree::
