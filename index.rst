@@ -42,7 +42,7 @@ Energy SOAR User Guide
         :maxdepth: 2
         :caption: Integrations
 
-       07-0-0-Integrations/07-0-0-Integration.md
+       07-0-0-Integrations/07-0-0-Integration.rst
 
        
 .. toctree::
