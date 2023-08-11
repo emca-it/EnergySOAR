@@ -44,7 +44,6 @@ Energy SOAR User Guide
 
        07-0-0-Integrations/07-0-0-Integration.rst
 
-       
 .. toctree::
         :maxdepth: 2
         :caption: API
