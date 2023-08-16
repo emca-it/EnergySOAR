@@ -1,13 +1,13 @@
 SentinelOne
 ===========
 
-SentinelOne_Hash_Blacklister
-----------------------------
+SentinelOne-Unisolate
+---------------------
 
 .. rubric:: Details
 
 ===========================  =====================
-Author                       Joe Vasquez
+Author                       EMCA Software
 Version                      1.0
 License                      AGPL-V3
 Requires Registration        No
@@ -18,15 +18,75 @@ DataType Supported           thehive:case_artifact
 
 .. rubric:: Description
 
-Add SHA1 hash to SentinelOne Blacklist via API v2.1.
+Reconnect a host in SentinelOne
 
 .. rubric:: Configuration
 
-===================  ====================================================================================================
-Name                 Description
-s1_console_url       Console URL
-s1_api_key           API Key, don't forget this will expire!
-s1_account_id        Account ID
-s1_blacklist_ostype  OS type, must be one of the following: macos, windows, linux, or windows_legacy.  Default is windows
-===================  ====================================================================================================
+==============  =======================
+Name            Description
+s1_console_url  SentinelOne console URL
+s1_api_key      SentinelOne API Key
+s1_account_id   SentinelOne Account ID
+s1_verify_ssl   Verify SSL Certificate
+==============  =======================
+
+
+SentinelOne-Scan
+----------------
+
+.. rubric:: Details
+
+===========================  =====================
+Author                       EMCA Software
+Version                      1.0
+License                      AGPL-V3
+Requires Registration        Yes
+Requires Subscription        Yes
+Free Subscription Available  No
+DataType Supported           thehive:case_artifact
+===========================  =====================
+
+.. rubric:: Description
+
+Initiate a scan on SentinelOne
+
+.. rubric:: Configuration
+
+==============  ==============
+Name            Description
+s1_console_url  S1 console URL
+s1_api_key      S1 API key
+s1_account_id   Account ID
+s1_verify_ssl   Verify SSL
+==============  ==============
+
+
+SentinelOne-Isolate
+-------------------
+
+.. rubric:: Details
+
+===========================  =====================
+Author                       EMCA Software
+Version                      1.0
+License                      AGPL-V3
+Requires Registration        No
+Requires Subscription        No
+Free Subscription Available  No
+DataType Supported           thehive:case_artifact
+===========================  =====================
+
+.. rubric:: Description
+
+Isolate a host in SentinelOne
+
+.. rubric:: Configuration
+
+==============  =======================
+Name            Description
+s1_console_url  SentinelOne console URL
+s1_api_key      SentinelOne API Key
+s1_account_id   SentinelOne Account ID
+s1_verify_ssl   Verify SSL Certificate
+==============  =======================
 

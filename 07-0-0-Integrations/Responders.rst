@@ -8,11 +8,18 @@ Responders
    Responders/AMPforEndpoints/AMPforEndpoints
    Responders/AzureTokenRevoker/AzureTokenRevoker
    Responders/CheckPoint/CheckPoint
+   Responders/CheckPointBlockIP/CheckPointBlockIP
+   Responders/CheckPointUnblockIP/CheckPointUnblockIP
    Responders/DNS-RPZ/DNS-RPZ
    Responders/DomainToolsIris_AddRiskyDNSTag/DomainToolsIris_AddRiskyDNSTag
    Responders/DomainToolsIris_CheckMaliciousTags/DomainToolsIris_CheckMaliciousTags
    Responders/Duo_Security/Duo_Security
    Responders/FalconCustomIOC/FalconCustomIOC
+   Responders/FortiMailBlockRecipient/FortiMailBlockRecipient
+   Responders/FortiMailBlockSender/FortiMailBlockSender
+   Responders/FortiMailConnectionTest/FortiMailConnectionTest
+   Responders/FortiMailUnblockRecipient/FortiMailUnblockRecipient
+   Responders/FortiMailUnblockSender/FortiMailUnblockSender
    Responders/Gmail/Gmail
    Responders/KnowBe4/KnowBe4
    Responders/MSDefenderEndpoints/MSDefenderEndpoints
@@ -26,7 +33,19 @@ Responders
    Responders/RT4/RT4
    Responders/Redmine/Redmine
    Responders/RiskIQ/RiskIQ
+   Responders/RunWorkflow/RunWorkflow
+   Responders/SEPBlockHash/SEPBlockHash
+   Responders/SEPQuarantineHost/SEPQuarantineHost
+   Responders/SEPUnblockHash/SEPUnblockHash
+   Responders/SEPUnquarantineHost/SEPUnquarantineHost
+   Responders/SMGBlockDomain/SMGBlockDomain
+   Responders/SMGBlockEmail/SMGBlockEmail
+   Responders/SMGBlockIP/SMGBlockIP
+   Responders/SMGUnblockDomain/SMGUnblockDomain
+   Responders/SMGUnblockEmail/SMGUnblockEmail
+   Responders/SMGUnblockIP/SMGUnblockIP
    Responders/SendGrid/SendGrid
+   Responders/SentinelOne/SentinelOne
    Responders/SentinelOne/SentinelOne
    Responders/Shuffle/Shuffle
    Responders/UmbrellaBlacklister/UmbrellaBlacklister

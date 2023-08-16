@@ -5,8 +5,8 @@ Integrations
 .. toctree::
     :maxdepth: 1
 
-    responders
-    analyzers
+    Responders
+    Analyzers
 
 Energy Logserver SIEM
 ---------------------

@@ -40,6 +40,7 @@ Analyzers
    Analyzers/EmailRep/EmailRep
    Analyzers/EmergingThreats/EmergingThreats
    Analyzers/EmlParser/EmlParser
+   Analyzers/EnrichmentEngine/EnrichmentEngine
    Analyzers/FalconSandbox/FalconSandbox
    Analyzers/FileInfo/FileInfo
    Analyzers/FireEyeiSight/FireEyeiSight
