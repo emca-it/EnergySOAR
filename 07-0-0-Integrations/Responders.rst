@@ -14,6 +14,7 @@ Responders
    Responders/DomainToolsIris_AddRiskyDNSTag/DomainToolsIris_AddRiskyDNSTag
    Responders/DomainToolsIris_CheckMaliciousTags/DomainToolsIris_CheckMaliciousTags
    Responders/Duo_Security/Duo_Security
+   Responders/Eset/Eset
    Responders/FalconCustomIOC/FalconCustomIOC
    Responders/FortiMailBlockRecipient/FortiMailBlockRecipient
    Responders/FortiMailBlockSender/FortiMailBlockSender
