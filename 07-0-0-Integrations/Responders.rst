@@ -23,6 +23,7 @@ Responders
    Responders/FortiMailUnblockSender/FortiMailUnblockSender
    Responders/Gmail/Gmail
    Responders/KnowBe4/KnowBe4
+   Responders/LDAP/LDAP
    Responders/MSDefenderEndpoints/MSDefenderEndpoints
    Responders/MSDefenderOffice365/MSDefenderOffice365
    Responders/MailIncidentStatus/MailIncidentStatus
