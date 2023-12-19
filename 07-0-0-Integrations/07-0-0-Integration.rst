@@ -7,6 +7,7 @@ Integrations
 
     Responders
     Analyzers
+    how-to-write-analyzer.md
 
 Energy Logserver SIEM
 ---------------------
