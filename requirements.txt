@@ -1,3 +1,4 @@
 sphinx-tabs
 myst-parser
 recommonmark
+sphinx-rtd-theme
