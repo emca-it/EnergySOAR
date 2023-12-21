@@ -15,7 +15,7 @@ You have knowledge of:
 Install the following tools:
 
 - Git: You can find instructions on how to install Git `here <https://git-scm.com/downloads>`_.
-- Node.js and npm: You can find instructions on how to install both using nvm (Node Version Manager) `here <https://github.com/nvm-sh/nvm>`_. The current minimum version is 14.15. In case you already have Node.js and npm installed, you can check the current version with the following command:
+- Node.js and npm: You can find instructions on how to install both using nvm (Node Version Manager) `here <https://github.com/nvm-sh/nvm>`_. The current minimum version is 16. In case you already have Node.js and npm installed, you can check the current version with the following command:
 
   .. code-block:: bash
 
