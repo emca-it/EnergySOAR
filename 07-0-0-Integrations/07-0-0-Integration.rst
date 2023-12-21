@@ -8,6 +8,7 @@ Integrations
     Responders
     Analyzers
     how-to-write-analyzer.md
+    how-to-write-automation-node.rst
 
 Energy Logserver SIEM
 ---------------------
