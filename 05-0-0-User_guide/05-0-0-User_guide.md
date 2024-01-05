@@ -3,7 +3,7 @@
 ### Administration
 
 #### Manage analyzer template
-TheHive will display the analysis summary the same way for all analyzers: display a tag using taxonomies and level color.
+Energy SOAR will display the analysis summary the same way for all analyzers: display a tag using taxonomies and level color.
 
 ##### List analyzer templates
 The management page is accessible from the header menu through the Admin > Analyzer templates menu and required a use with the manageAnalyzerTemplate permission (refer to Profiles and permissions).
@@ -12,7 +12,7 @@ The management page is accessible from the header menu through the Admin > Analy
 Analyzer templates are still customisable via the UI and can also be imported.
 
 ##### Import analyzer templates
-TheHive Project provides a set of analyzer templates (we use the same report-templates.zip archive for backward compatibility reasons).
+Energy SOAR Project provides a set of analyzer templates (we use the same report-templates.zip archive for backward compatibility reasons).
 
 The template archive is available at https://download.thehive-project.org/report-templates.zip.
 
@@ -25,7 +25,7 @@ Note that analyzer templates are global and common to all the organisations.
 #### User Profiles management
 
 ##### Permissions
-A Profile is a set of permissions attached to a User and an Organisation. It defines what the user can do on an object hold by the organisation. TheHive has a finite list of permissions:
+A Profile is a set of permissions attached to a User and an Organisation. It defines what the user can do on an object hold by the organisation. Energy SOAR has a finite list of permissions:
 
 - manageOrganisation (1) : the user can create, update an organisation
 - manageConfig (1): the user can update configuration
@@ -48,7 +48,7 @@ A Profile is a set of permissions attached to a User and an Organisation. It def
 - manageReports: the user can create, update and delete reports
 - listReports: the user can see a list of reports
 
-(1) Organisations, configuration, profiles and tags are global objects. The related permissions are effective only on “admin” organisation. (2) Actions, analysis and template is available only if Cortex connector is enabled
+(1) Organisations, configuration, profiles and tags are global objects. The related permissions are effective only on “admin” organisation. (2) Actions, analysis and template is available only if Energy SOAR Automation connector is enabled
 
 **NOTE**
 
@@ -62,7 +62,7 @@ We distinguish two types of profiles:
 
 The management page is accessible from the header menu through the Admin > Profiles menu and required a use with the manageProfile permission (refer to the section above).
 
-TheHive comes with default profiles but they can be updated and removed (if not used). New profiles can be created.
+Energy SOAR comes with default profiles but they can be updated and removed (if not used). New profiles can be created.
 
 ![](/media/05-2-0-profiles-list.png)
 
@@ -332,7 +332,7 @@ This workflow would use the following nodes:
 *	Typeform Trigger - Start the workflow when a form receives a report
 *	Set - Set the workflow data
 *	FunctionItem - Calculate severity and alert reference
-*	TheHive - Create alert and case
+*	Energy SOAR Base - Create alert and case
 *	IF - Conditional logic to decide the flow of the workflow
 *	NoOp - Do nothing (optional)
 
@@ -405,7 +405,7 @@ return item;
 We use parseInt function to convert string severity value into an integer.
 
 4.	Create alert node
-Add TheHive node by clicking on the + button and selecting the TheHive node. Double click on the node and click on TheHive name to change it to Create alert.
+Add Energy SOAR Base node by clicking on the + button and selecting the Energy SOAR Base node. Double click on the node and click on Energy SOAR Base name to change it to Create alert.
 
 Since the Title would be a dynamic piece of information, click on the gears icon next to the field, and select Add Expression.
 
@@ -435,7 +435,7 @@ For the Operation field, we'll set it to 'Larger'. For Value 2, enter 2. This wi
 
 6.	Promote alert node
 
-Add TheHive node by clicking on the + button and selecting the TheHive node. Double click on the node and click on TheHive name to change it to Promote alert.
+Add Energy SOAR Base node by clicking on the + button and selecting the Energy SOAR node. Double click on the node and click on Energy SOAR name to change it to Promote alert.
 
 Select ‘Promote’ from the Operation dropdown list.
 In Alert ID field add expression:
