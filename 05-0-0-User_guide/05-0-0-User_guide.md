@@ -11,16 +11,6 @@ The management page is accessible from the header menu through the Admin > Analy
 
 Analyzer templates are still customisable via the UI and can also be imported.
 
-##### Import analyzer templates
-Energy SOAR Project provides a set of analyzer templates (we use the same report-templates.zip archive for backward compatibility reasons).
-
-The template archive is available at https://download.thehive-project.org/report-templates.zip.
-
-To import the zip file, click on the Import templates, this opens the import dialog. Drop the zip files or click to select it from your storage and finally click Yes, import template archive.
-
-![](/media/05-3-1-import-analyzer-template.png)
-
-Note that analyzer templates are global and common to all the organisations.
 
 #### User Profiles management
 
