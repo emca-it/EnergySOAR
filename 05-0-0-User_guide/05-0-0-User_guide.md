@@ -662,7 +662,7 @@ List of automation nodes:
 - ERPNext
 - Error Trigger
 - Eventbrite Trigger
-- Execute Command
+- Execute Command (a.o. Python, Bash scripts)
 - Execute Workflow
 - Facebook Graph API
 - Facebook Trigger
