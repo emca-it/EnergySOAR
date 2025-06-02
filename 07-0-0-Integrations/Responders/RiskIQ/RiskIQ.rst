@@ -28,7 +28,7 @@ username              API username of the RiskIQ Illuminate or PassiveTotal acco
 api_key               API key of the RiskIQ Illuminate or PassiveTotal account
 project_visibility    Visiblity for new RiskIQ Illuminate projects (analyst, team, or public).
 project_prefix        Prefix to add when auto-generating project names from case names.
-thehive_artifact_tag  Tag to apply to artifact in Energy SOAR Base when is has been pushed to a RiskIQ Illuminate Project (leave blank to skip tagging).
+energysoar_artifact_tag  Tag to apply to artifact in Energy SOAR Base when is has been pushed to a RiskIQ Illuminate Project (leave blank to skip tagging).
 riq_artifact_tag      Tag to apply to artifact in RiskIQ Illuminate when is has been pushed to an Illuminate Project (leave blank to skip tagging).
 ====================  =============================================================================================================================
 

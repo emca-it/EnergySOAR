@@ -33,7 +33,7 @@ mail_subject_prefix          Prefix of the mail subject
 mail_html_style_tag_content  The css content of the style tag for the HTML mail body. Define table, th, hd, .first, and .second elements.
 tlp_amber_mail_addresses     Mail addresses which are allowed to receive tlp:amber classified incidents
 tlp_green_mail_domains       Mail domains which are allowed to receive tlp:green classified incidents
-thehive_url                  URL pointing to your Energy SOAR Base installation, e.g. 'http://127.0.0.1:9000'
-thehive_apikey               Energy SOAR Base API key which is used get tasks and other elements of the incident
+energysoar_url                  URL pointing to your Energy SOAR Base installation, e.g. 'http://127.0.0.1:9000'
+energysoar_apikey               Energy SOAR Base API key which is used get tasks and other elements of the incident
 ===========================  ============================================================================================================
 

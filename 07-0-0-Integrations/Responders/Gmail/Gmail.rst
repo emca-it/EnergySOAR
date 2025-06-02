@@ -24,8 +24,8 @@ Move emails from a given domain to trash
 
 ====================  ========================================
 Name                  Description
-thehive_url           URL for thehive instance
-thehive_api_key       API key for Energy SOAR Base instance
+energysoar_url           URL for Energy SOAR Base instance
+energysoar_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -58,8 +58,8 @@ Move emails from a given sender to trash
 
 ====================  ========================================
 Name                  Description
-thehive_url           URL for thehive instance
-thehive_api_key       API key for Energy SOAR Base instance
+energysoar_url           URL for Energy SOAR Base instance
+energysoar_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -92,8 +92,8 @@ Move a given message into the trash folder
 
 ====================  ========================================
 Name                  Description
-thehive_url           URL for thehive instance
-thehive_api_key       API key for Energy SOAR Base instance
+energysoar_url           URL for Energy SOAR Base instance
+energysoar_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -126,8 +126,8 @@ Remove a message filter for a given domain
 
 ====================  ========================================
 Name                  Description
-thehive_url           URL for thehive instance
-thehive_api_key       API key for Energy SOAR Base instance
+energysoar_url           URL for Energy SOAR Base instance
+energysoar_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -160,8 +160,8 @@ Remove a message filter for a given sender
 
 ====================  ========================================
 Name                  Description
-thehive_url           URL for thehive instance
-thehive_api_key       API key for Energy SOAR Base instance
+energysoar_url           URL for Energy SOAR Base instance
+energysoar_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id

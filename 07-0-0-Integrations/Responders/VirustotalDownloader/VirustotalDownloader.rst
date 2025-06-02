@@ -26,8 +26,8 @@ Download a file from Virustotal by its hash
 =================  ===============================================================================
 Name               Description
 virustotal_apikey  Virustotal API key which should be used to download files
-thehive_url        URL pointing to your Energy SOAR Base installation, e.g. 'http://127.0.0.1:9000'
-thehive_apikey     Energy SOAR Base API key which is used to add the downloaded file back to the alert/case
+energysoar_url        URL pointing to your Energy SOAR Base installation, e.g. 'http://127.0.0.1:9000'
+energysoar_apikey     Energy SOAR Base API key which is used to add the downloaded file back to the alert/case
 =================  ===============================================================================
 
 

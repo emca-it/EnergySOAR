@@ -33,9 +33,9 @@ Owner                Default owner to assign newly created tickets (optional)
 Status               Default ticket status to assign newly created tickets (optional)
 custom_field_list    Name:Value of Custom Fields in RT to set on every ticket created (e.g.: 'How Reported:TheHive' sets CF.{How Reported} = Energy SOAR Base on every new ticket)
 tag_to_template_map  Mapping table of tags to templates (e.g.: 'phishing:phish_letter' maps anything tagged as 'phishing' to the 'phish_letter' template)
-thehive_cf_rtticket  Name of a case custom field in Energy SOAR Base in which RT ticket #s will be saved upon successful case-level Responder run (optional)
-thehive_url          Energy SOAR Base Base URL, e.g., https://thehive.domain.local:9000 (optional: only needed to process Cases)
-thehive_token        Energy SOAR Base API token for authentication (optional: only needed to process Cases)
+energysoar_cf_rtticket  Name of a case custom field in Energy SOAR Base in which RT ticket #s will be saved upon successful case-level Responder run (optional)
+energysoar_url          Energy SOAR Base Base URL, e.g., https://energysoar.domain.local:9000 (optional: only needed to process Cases)
+energysoar_token        Energy SOAR Base API token for authentication (optional: only needed to process Cases)
 ===================  ====================================================================================================================================================
 
 
@@ -70,11 +70,11 @@ The following need to be configured under **Organization --> Responders** prior 
 
 ``tag_to_template_map`` - **Required** - Tags to Templates mapping (can be overriden by custom tag on observables). Should be colon-separated tag-to-template values. E.g.
 
-``thehive_cf_rtticket`` - Name of a case custom field in Energy SOAR Base in which RT ticket #s will be saved upon successful case-level Responder run (Optional - Energy SOAR Base Custom Field should be of type 'String')
+``energysoar_cf_rtticket`` - Name of a case custom field in Energy SOAR Base in which RT ticket #s will be saved upon successful case-level Responder run (Optional - Energy SOAR Base Custom Field should be of type 'String')
 
-``thehive_url`` - Energy SOAR Base Base URL, e.g., https://thehive.domain.local:9000 (Optional - only needed to process Cases)
+``energysar_url`` - Energy SOAR Base Base URL, e.g., https://energysoar.domain.local:9000 (Optional - only needed to process Cases)
 
-``thehive_token`` - Energy SOAR Base API token for authentication (Optional - only needed to process Cases)
+``energysar_token`` - Energy SOAR Base API token for authentication (Optional - only needed to process Cases)
 
 .. code-block::
 
@@ -92,7 +92,7 @@ Workflow
 #. `Create Template(s) <#Templates>`_
 #. As new observables arrive, appropriately `tag <#Tags-to-Modify-RT4-Responder-Behavior>`_ them
 #. Run the RT4-CreateTicket responder
-#. When complete, the ticket(s) should be created and the ``thehive_cf_rtticket`` custom field on Energy SOAR Base cases (if present) should be populated with the URL to any created ticket
+#. When complete, the ticket(s) should be created and the ``energysar_cf_rtticket`` custom field on Energy SOAR Base cases (if present) should be populated with the URL to any created ticket
 
 Templates
 """""""""
