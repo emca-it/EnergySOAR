@@ -45,7 +45,7 @@ thehive_token        Energy SOAR Base API token for authentication (optional: on
 Request Tracker 4 Energy SOAR Automation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Summary: Creates RT tickets from TheHive
+Summary: Creates RT tickets from Energy SOAR 
 
 Applies To: Case Observables (Artifacts), Alerts, Cases
 
