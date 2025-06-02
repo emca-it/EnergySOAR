@@ -573,20 +573,20 @@ Further it is necessary:
 #. Password_PaloAltoNGFW - password for the user in the PaloAltoNGFW system
 #. Security\ *rule*\ * - the name of the security rule in the PaloAltoNGFW system. The following standard rule names have been established:\ :raw-html-m2r:`<br>`
    4.1 To block/unblock user:\ :raw-html-m2r:`<br>`
-   4.1.1 "TheHive Block internal user"\ :raw-html-m2r:`<br>`
-   4.1.2 "TheHive Block external user"  
+   4.1.1 "Energy SOAR Base Block internal user"\ :raw-html-m2r:`<br>`
+   4.1.2 "Energy SOAR Base Block external user"  
 
 4.2 To block/unblock network addresses:
-4.2.1 "TheHive Block internal IP address"\ :raw-html-m2r:`<br>`
-4.2.2 "TheHive Block external IP address"  
+4.2.1 "Energy SOAR Base Block internal IP address"\ :raw-html-m2r:`<br>`
+4.2.2 "Energy SOAR Base Block external IP address"  
 
 4.3 To block/unblock FQDN:\ :raw-html-m2r:`<br>`
-4.3.1 "TheHive Block external Domain"\ :raw-html-m2r:`<br>`
-4.3.2 "TheHive Block internal Domain"  
+4.3.1 "Energy SOAR Base Block external Domain"\ :raw-html-m2r:`<br>`
+4.3.2 "Energy SOAR Base Block internal Domain"  
 
 4.4 To block/unblock ports: 
-4.4.1 "TheHive Block port for internal communication"\ :raw-html-m2r:`<br>`
-4.4.2 "TheHive Block port for external communication"  
+4.4.1 "Energy SOAR Base Block port for internal communication"\ :raw-html-m2r:`<br>`
+4.4.2 "Energy SOAR Base Block port for external communication"  
 
 4.5 EnergySOARBase_instance - url address of The Hive system (used only for case and alert types).
 It is important for each organization to have its own user with the API!
