@@ -18,7 +18,7 @@ DataType Supported           energysoar:case_artifact:mail, energysoar:case_arti
 
 .. rubric:: Description
 
-Reset User Password (New pass have to be configured in responder configs, as hive doen't support passing data on reponder invokation).
+Reset User Password (New pass have to be configured in responder configs, as Energy SOAR Base doen't support passing data on reponder invocation).
 
 .. rubric:: Configuration
 

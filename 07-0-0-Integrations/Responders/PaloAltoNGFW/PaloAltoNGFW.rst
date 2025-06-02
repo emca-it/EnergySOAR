@@ -588,7 +588,7 @@ Further it is necessary:
 4.4.1 "Energy SOAR Base Block port for internal communication"\ :raw-html-m2r:`<br>`
 4.4.2 "Energy SOAR Base Block port for external communication"  
 
-4.5 EnergySOARBase_instance - url address of The Hive system (used only for case and alert types).
+4.5 EnergySOARBase_instance - url address of Energy SOAR Base system (used only for case and alert types).
 It is important for each organization to have its own user with the API!
 
 4.6 EnergySOARBase_API_key - API key to connect to Energy SOAR Base system\ :raw-html-m2r:`<br>`
