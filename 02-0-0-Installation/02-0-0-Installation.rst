@@ -22,12 +22,10 @@ Supported OSes:
    
         # ./install.sh -n
          
-      Non-interactive mode install this services by default:
+      Non-interactive mode install this services and it's dependencies by default:
 
-      * TheHive
-      * Cortex
-      * Elasticsearch 7
-      * Cassandra 4
+      * Energy SOAR Base
+      * Energy SOAR Automation
       
       After service installation it load some sample data. 
       
@@ -50,34 +48,28 @@ Supported OSes:
 
       Minimal single node architecture services:
 
-      * TheHive
-      * Cortex
-      * Elasticsearch 7
-      * Cassandra 4
+      * Energy SOAR Base
+      * Energy SOAR Automation
 
       Example *interactive* installation
 
       .. code-block:: console
    
-         ====> Do You wish to install the ENERGY SOAR TheHive, as well as the other TheHive dependencies? [y/n] y
+         ====> Do You wish to install the ENERGY SOAR Base, as well as the other Energy SOAR Base dependencies? [y/n] y
          [..]
-         ====> Do You wish to install the ENERGY SOAR Cortex, as well as the other Cortex dependencies? [y/n] y
+         ====> Do You wish to install the ENERGY SOAR Automation, as well as the other Energy SOAR Automation dependencies? [y/n] y
          [..]
-         ====> Do You wish to install the Cassandra 4? [y/n] y
+         ====> Do You wish to initialize Energy SOAR Automation data? [y/n] y
          [..]
-         ====> Do You wish to install the Elasticsearch 7? [y/n] y
-         [..]
-         ====> Do You wish to initialize Cortex data? [y/n] y
-         [..]
-         ====> Do You wish to initialize TheHive data? [y/n] y
+         ====> Do You wish to initialize Energy SOAR Base data? [y/n] y
          [..]
          
 
       .. note::
       
-         Initialize Cortex data is needed to integrate with TheHive. During this step is created api user and configured in TheHive configuration.
+         Initialize Energy SOAR Automation data is needed to integrate with Energy SOAR Base. During this step is created api user and configured in Energy SOAR Base configuration.
 
-      Initialize TheHive data:
+      Initialize Energy SOAR Base data:
 
       - import MISP Taxonomies
       - create sample users

@@ -870,8 +870,8 @@ List of automation nodes:
 - Tapfiliate
 - Telegram
 - Telegram Trigger
-- TheHive
-- TheHive Trigger
+- Energy SOAR Base
+- Energy SOAR Base Trigger
 - TimescaleDB
 - Todoist
 - Toggl Trigger

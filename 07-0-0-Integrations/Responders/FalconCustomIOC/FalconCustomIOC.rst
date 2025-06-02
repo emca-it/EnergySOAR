@@ -14,7 +14,7 @@ Website                      https://www.crowdstrike.com/blog/tech-center/import
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact
+DataType Supported           energysoar:alert, energysoar:case_artifact
 ===========================  ==================================================================================================
 
 .. rubric:: Description

@@ -13,7 +13,7 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact:mail, thehive:case_artifact:other
+DataType Supported           energysoar:case_artifact:mail, energysoar:case_artifact:other
 ===========================  =======================================================
 
 .. rubric:: Description
@@ -46,7 +46,7 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact:mail, thehive:case_artifact:other
+DataType Supported           energysoar:case_artifact:mail, energysoar:case_artifact:other
 ===========================  =======================================================
 
 .. rubric:: Description
@@ -78,7 +78,7 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact:mail, thehive:case_artifact:other
+DataType Supported           energysoar:case_artifact:mail, energysoar:case_artifact:other
 ===========================  =======================================================
 
 .. rubric:: Description
@@ -101,7 +101,7 @@ VerifySSL   set to false to bypass SSL verification
 .. rubric:: Additional details from the README file:
 
 
-This module provides responders for TheHive Cortex to interface with LDAP services, enabling automated actions such as changing user passwords, locking and unlocking user accounts.
+This module provides responders for Energy SOAR Base Cortex to interface with LDAP services, enabling automated actions such as changing user passwords, locking and unlocking user accounts.
 
 Responders Included:
 ^^^^^^^^^^^^^^^^^^^^

@@ -13,7 +13,7 @@ License                      MIT
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  ===================================
 
 .. rubric:: Description
@@ -25,7 +25,7 @@ Move emails from a given domain to trash
 ====================  ========================================
 Name                  Description
 thehive_url           URL for thehive instance
-thehive_api_key       API key for TheHive instance
+thehive_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -47,7 +47,7 @@ License                      MIT
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  ===================================
 
 .. rubric:: Description
@@ -59,7 +59,7 @@ Move emails from a given sender to trash
 ====================  ========================================
 Name                  Description
 thehive_url           URL for thehive instance
-thehive_api_key       API key for TheHive instance
+thehive_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -81,7 +81,7 @@ License                      MIT
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  ===================================
 
 .. rubric:: Description
@@ -93,7 +93,7 @@ Move a given message into the trash folder
 ====================  ========================================
 Name                  Description
 thehive_url           URL for thehive instance
-thehive_api_key       API key for TheHive instance
+thehive_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -115,7 +115,7 @@ License                      MIT
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  ===================================
 
 .. rubric:: Description
@@ -127,7 +127,7 @@ Remove a message filter for a given domain
 ====================  ========================================
 Name                  Description
 thehive_url           URL for thehive instance
-thehive_api_key       API key for TheHive instance
+thehive_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -149,7 +149,7 @@ License                      MIT
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  ===================================
 
 .. rubric:: Description
@@ -161,7 +161,7 @@ Remove a message filter for a given sender
 ====================  ========================================
 Name                  Description
 thehive_url           URL for thehive instance
-thehive_api_key       API key for TheHive instance
+thehive_api_key       API key for Energy SOAR Base instance
 gmail_domain          Gsuite Domain
 gmail_project_id      GCP Project ID
 gmail_private_key_id  Service account private key id
@@ -199,7 +199,7 @@ can be used to implement message filters and delete message in a mailbox of a Gm
 **Constrains:**
 
 
-* TheHive API key needs to provide **read** AND **write** permissions
+* Energy SOAR Base API key needs to provide **read** AND **write** permissions
 * The Gmail user **MUST** be part of a Gsuite domain.
 * Gsuite domain **MUST** have an *service account* enabled with domain-wide delegation.
 * The *service account* **MUST** be configured with the following OAuth Scopes:

@@ -13,7 +13,7 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  =====================
 
 .. rubric:: Description
@@ -46,7 +46,7 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  =====================
 
 .. rubric:: Description

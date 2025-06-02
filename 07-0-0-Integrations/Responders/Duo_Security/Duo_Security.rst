@@ -13,7 +13,7 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  ==========================================
 
 .. rubric:: Description
@@ -42,7 +42,7 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 ===========================  ==========================================
 
 .. rubric:: Description
@@ -62,11 +62,10 @@ Secret_Key       Secret Key
 .. rubric:: Additional details from the README file:
 
 
-CortexResponder_DuoUserAccount
+Responder_DuoUserAccount
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Rep. for Cortex Responder (TheHive project - https://github.com/TheHive-Project/CortexDocs)
-to Lock/Unlock User Accounts in the Duo Admin Portal (Cisco Security)
+Lock/Unlock User Accounts in the Duo Admin Portal (Cisco Security)
 
 There are two Responder available in order to change the status of a User in Duo Security via the AdminAPI (https://duo.com/docs/adminapi)
 
@@ -81,9 +80,9 @@ How to install:
 ~~~~~~~~~~~~~~~
 
 
-* copy the folders "DuoLockUserAccount" & "DuoUnlockUserAccount" into your Cortex responders path
+* copy the folders "DuoLockUserAccount" & "DuoUnlockUserAccount" into your Energy SOAR Automations path
 * install necessary python modules from the requirements.txt (\ **pip install -r requirements.txt**\ )
-* restart Cortex to initialize the new Responder "\ **systemctl restart cortex**\ "
+* restart Energy SOAR Automation to initialize the new Responder
 * add the ResponderConfig 
 * 
   .. image:: assets/ResponderConfig.jpg
@@ -96,17 +95,17 @@ How to install:
      :target: assets/Responders.jpg
      :alt: Responders
 
-Add Observable type in TheHive**
+Add Observable type in Energy SOAR Base**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* per default TheHive has no "username" Observable type, so we have to add this in the Admin settings
+* per default Energy SOAR Base has no "username" Observable type, so we have to add this in the Admin settings
 * 
   .. image:: assets/AddObservableType.jpg
      :target: assets/AddObservableType.jpg
      :alt: AddObservableType
 
-Run the Responder action in TheHive
+Run the Responder action in Energy SOAR Base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have add an observable, you can now take action and lock/unlock the User in Duo Security

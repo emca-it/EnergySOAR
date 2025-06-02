@@ -14,7 +14,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -29,8 +29,8 @@ Hostname_PaloAltoNGFW                        Hostname PaloAltoNGFW
 User_PaloAltoNGFW                            User PaloAltoNGFW
 Password_PaloAltoNGFW                        User PaloAltoNGFW
 Security_rule_for_block_external_IP_address  Name external name security rule for IP address
-TheHive_instance                             URL of the TheHive instance to query
-TheHive_API_key                              TheHive API key with read access
+EnergySOARBase_instance                      URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                       Energy SOAR Base API key with read access
 ===========================================  ===============================================
 
 
@@ -47,7 +47,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -62,8 +62,8 @@ Hostname_PaloAltoNGFW                    Hostname PaloAltoNGFW
 User_PaloAltoNGFW                        User PaloAltoNGFW
 Password_PaloAltoNGFW                    User PaloAltoNGFW
 Security_rule_for_block_external_domain  Name external security rule for domains
-TheHive_instance                         URL of the TheHive instance to query
-TheHive_API_key                          TheHive API key with read access
+EnergySOARBase_instance                  URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                   Energy SOAR Base API key with read access
 =======================================  =======================================
 
 
@@ -80,7 +80,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -95,8 +95,8 @@ Hostname_PaloAltoNGFW                  Hostname PaloAltoNGFW
 User_PaloAltoNGFW                      User PaloAltoNGFW
 Password_PaloAltoNGFW                  User PaloAltoNGFW
 Security_rule_for_block_external_user  Name security rule for external users
-TheHive_instance                       URL of the TheHive instance to query
-TheHive_API_key                        TheHive API key with read access
+EnergySOARBase_instance                URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                 Energy SOAR Base API key with read access
 =====================================  =====================================
 
 
@@ -113,7 +113,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -128,8 +128,8 @@ Hostname_PaloAltoNGFW                        Hostname PaloAltoNGFW
 User_PaloAltoNGFW                            User PaloAltoNGFW
 Password_PaloAltoNGFW                        User PaloAltoNGFW
 Security_rule_for_block_internal_IP_address  Name internal security rule for IP address
-TheHive_instance                             URL of the TheHive instance to query
-TheHive_API_key                              TheHive API key with read access
+EnergySOARBase_instance                      URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                       Energy SOAR Base API key with read access
 ===========================================  ==========================================
 
 
@@ -146,7 +146,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -161,8 +161,8 @@ Hostname_PaloAltoNGFW                    Hostname PaloAltoNGFW
 User_PaloAltoNGFW                        User PaloAltoNGFW
 Password_PaloAltoNGFW                    User PaloAltoNGFW
 Security_rule_for_block_internal_domain  Name internal security rule for domains
-TheHive_instance                         URL of the TheHive instance to query
-TheHive_API_key                          TheHive API key with read access
+EnergySOARBase_instance                  URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                   Energy SOAR Base API key with read access
 =======================================  =======================================
 
 
@@ -179,7 +179,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -194,8 +194,8 @@ Hostname_PaloAltoNGFW                  Hostname PaloAltoNGFW
 User_PaloAltoNGFW                      User PaloAltoNGFW
 Password_PaloAltoNGFW                  User PaloAltoNGFW
 Security_rule_for_block_internal_user  Name internal security rule for users
-TheHive_instance                       URL of the TheHive instance to query
-TheHive_API_key                        TheHive API key with read access
+EnergySOARBase_instance                URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                 Energy SOAR Base API key with read access
 =====================================  =====================================
 
 
@@ -212,7 +212,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -227,8 +227,8 @@ Hostname_PaloAltoNGFW                                Hostname PaloAltoNGFW
 User_PaloAltoNGFW                                    User PaloAltoNGFW
 Password_PaloAltoNGFW                                User PaloAltoNGFW
 Security_rule_for_block_port_external_communication  Name external security rule for port communications
-TheHive_instance                                     URL of the TheHive instance to query
-TheHive_API_key                                      TheHive API key with read access
+EnergySOARBase_instance                       URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                               Energy SOAR Base API key with read access
 ===================================================  ===================================================
 
 
@@ -245,7 +245,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -260,8 +260,8 @@ Hostname_PaloAltoNGFW                                Hostname PaloAltoNGFW
 User_PaloAltoNGFW                                    User PaloAltoNGFW
 Password_PaloAltoNGFW                                User PaloAltoNGFW
 Security_rule_for_block_port_internal_communication  Name internal security rule for port communications
-TheHive_instance                                     URL of the TheHive instance to query
-TheHive_API_key                                      TheHive API key with read access
+EnergySOARBase_instance                       URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                               Energy SOAR Base API key with read access
 ===================================================  ===================================================
 
 
@@ -278,7 +278,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -293,8 +293,8 @@ Hostname_PaloAltoNGFW                  Hostname PaloAltoNGFW
 User_PaloAltoNGFW                      User PaloAltoNGFW
 Password_PaloAltoNGFW                  User PaloAltoNGFW
 Address_group_for_external_IP_address  Name external Address Group for IP address
-TheHive_instance                       URL of the TheHive instance to query
-TheHive_API_key                        TheHive API key with read access
+EnergySOARBase_instance                URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                 Energy SOAR Base API key with read access
 =====================================  ==========================================
 
 
@@ -311,7 +311,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -326,8 +326,8 @@ Hostname_PaloAltoNGFW                      Hostname PaloAltoNGFW
 User_PaloAltoNGFW                          User PaloAltoNGFW
 Password_PaloAltoNGFW                      User PaloAltoNGFW
 Address_group_for_unblock_external_domain  Name external Address Group for domains
-TheHive_instance                           URL of the TheHive instance to query
-TheHive_API_key                            TheHive API key with read access
+EnergySOARBase_instance                    URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                     Energy SOAR Base API key with read access
 =========================================  =======================================
 
 
@@ -344,7 +344,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -359,8 +359,8 @@ Hostname_PaloAltoNGFW                  Hostname PaloAltoNGFW
 User_PaloAltoNGFW                      User PaloAltoNGFW
 Password_PaloAltoNGFW                  User PaloAltoNGFW
 Security_rule_for_block_external_user  Name security rule for external users
-TheHive_instance                       URL of the TheHive instance to query
-TheHive_API_key                        TheHive API key with read access
+EnergySOARBase_instance                URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                 Energy SOAR Base API key with read access
 =====================================  =====================================
 
 
@@ -377,7 +377,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -392,8 +392,8 @@ Hostname_PaloAltoNGFW                  Hostname PaloAltoNGFW
 User_PaloAltoNGFW                      User PaloAltoNGFW
 Password_PaloAltoNGFW                  User PaloAltoNGFW
 Address_group_for_internal_IP_address  Name internal Address Group for IP address
-TheHive_instance                       URL of the TheHive instance to query
-TheHive_API_key                        TheHive API key with read access
+EnergySOARBase_instance                URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                 Energy SOAR Base API key with read access
 =====================================  ==========================================
 
 
@@ -410,7 +410,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -425,8 +425,8 @@ Hostname_PaloAltoNGFW                      Hostname PaloAltoNGFW
 User_PaloAltoNGFW                          User PaloAltoNGFW
 Password_PaloAltoNGFW                      User PaloAltoNGFW
 Address_group_for_unblock_internal_domain  Name internal Address Group for domains
-TheHive_instance                           URL of the TheHive instance to query
-TheHive_API_key                            TheHive API key with read access
+EnergySOARBase_instance                    URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                     Energy SOAR Base API key with read access
 =========================================  =======================================
 
 
@@ -443,7 +443,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -458,8 +458,8 @@ Hostname_PaloAltoNGFW                  Hostname PaloAltoNGFW
 User_PaloAltoNGFW                      User PaloAltoNGFW
 Password_PaloAltoNGFW                  User PaloAltoNGFW
 Security_rule_for_block_internal_user  Name security rule for internal users
-TheHive_instance                       URL of the TheHive instance to query
-TheHive_API_key                        TheHive API key with read access
+EnergySOARBase_instance                URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                 Energy SOAR Base API key with read access
 =====================================  =====================================
 
 
@@ -476,7 +476,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -491,8 +491,8 @@ Hostname_PaloAltoNGFW                          Hostname PaloAltoNGFW
 User_PaloAltoNGFW                              User PaloAltoNGFW
 Password_PaloAltoNGFW                          User PaloAltoNGFW
 Service_group_for_external_port_communication  Name external Service Group for port communication
-TheHive_instance                               URL of the TheHive instance to query
-TheHive_API_key                                TheHive API key with read access
+EnergySOARBase_instance                        URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                         Energy SOAR Base API key with read access
 =============================================  ==================================================
 
 
@@ -509,7 +509,7 @@ Website                      https://www.paloaltonetworks.com/
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:alert, thehive:case_artifact, thehive:case
+DataType Supported           energysoar:alert, energysoar:case_artifact, energysoar:case
 ===========================  ==================================================
 
 .. rubric:: Description
@@ -524,8 +524,8 @@ Hostname_PaloAltoNGFW                          Hostname PaloAltoNGFW
 User_PaloAltoNGFW                              User PaloAltoNGFW
 Password_PaloAltoNGFW                          User PaloAltoNGFW
 Service_group_for_internal_port_communication  Name internal Service Group for port communication
-TheHive_instance                               URL of the TheHive instance to query
-TheHive_API_key                                TheHive API key with read access
+EnergySOARBase_instance                        URL of the Energy SOAR Base instance to query
+EnergySOARBase_API_key                         Energy SOAR Base API key with read access
 =============================================  ==================================================
 
 
@@ -546,10 +546,8 @@ Installation
 need install:
 
 
-#. pip install cortexutils
 #. pip install requests
 #. pip install pan-os-python
-#. pip install thehive4py
 
 ToDo
 ^^^^
@@ -590,19 +588,19 @@ Further it is necessary:
 4.4.1 "TheHive Block port for internal communication"\ :raw-html-m2r:`<br>`
 4.4.2 "TheHive Block port for external communication"  
 
-4.5 TheHive_instance - url address of The Hive system (used only for case and alert types).
+4.5 EnergySOARBase_instance - url address of The Hive system (used only for case and alert types).
 It is important for each organization to have its own user with the API!
 
-4.6 TheHive_API_key - API key to connect to TheHive system\ :raw-html-m2r:`<br>`
+4.6 EnergySOARBase_API_key - API key to connect to Energy SOAR Base system\ :raw-html-m2r:`<br>`
 Note: the specified safety rules must be created in PaloAltoNGFW, and also placed in the order of their application.\ :raw-html-m2r:`<br>`
-Types of data used to work in TheHive system:
+Types of data used to work in Energy SOAR Base system:
 
 
 #. Network address - 'ip'
 #. FQDN - 'hostname'
 #. port-protocol - 'port-protocol'
 #. Username - 'username'\ :raw-html-m2r:`<br>`
-   Note: types 'port-protocol' and 'username' need to be created in TheHive system. By default, TheHive does not have these data types in the Observable type, so you must add it in the admin settings.\ :raw-html-m2r:`<br>`
+   Note: types 'port-protocol' and 'username' need to be created in Energy SOAR Base system. By default, Energy SOAR Base does not have these data types in the Observable type, so you must add it in the admin settings.\ :raw-html-m2r:`<br>`
 
    .. image:: assets/AddObservableType.jpg
       :target: assets/AddObservableType.jpg

@@ -13,12 +13,12 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case, thehive:alert, thehive:case_task
+DataType Supported           energysoar:case, energysoar:alert, energysoar:case_task
 ===========================  ==============================================
 
 .. rubric:: Description
 
-Send an email with information from a TheHive case or alert
+Send an email with information from a Energy SOAR Base case or alert
 
 .. rubric:: Configuration
 

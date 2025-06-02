@@ -13,7 +13,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `MSDefender-IsolateMachine <https://securitycenter.windows.com>`_
 ===========================  =================================================================
 
@@ -45,7 +45,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `MSDefender-PushIOC-Alert <https://securitycenter.windows.com>`_
 ===========================  ================================================================
 
@@ -77,7 +77,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `MSDefender-PushIOC-Block <https://securitycenter.windows.com>`_
 ===========================  ================================================================
 
@@ -109,7 +109,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `MSDefender-UnisolateMachine <https://securitycenter.windows.com>`_
 ===========================  ===================================================================
 
@@ -141,7 +141,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `MSDefender-FullVirusscan <https://securitycenter.windows.com>`_
 ===========================  ================================================================
 
@@ -164,7 +164,7 @@ oAuthUri          Azure oAuth2 authentication endpoint
 .. rubric:: Additional details from the README file:
 
 
-Cortex responder for Microsoft Defender for Endpoints (formerly know as Microsoft ATP)
+Energy SOAR Automation for Microsoft Defender for Endpoints (formerly know as Microsoft ATP)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 With this responder you can

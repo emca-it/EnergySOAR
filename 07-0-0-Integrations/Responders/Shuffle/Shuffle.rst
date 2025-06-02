@@ -14,7 +14,7 @@ Website                      https://github.com/frikky/shuffle
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case, thehive:alert
+DataType Supported           energysoar:case, energysoar:alert
 ===========================  =================================
 
 .. rubric:: Description

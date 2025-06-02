@@ -13,7 +13,7 @@ License                      AGPL-V3
 Requires Registration        No
 Requires Subscription        No
 Free Subscription Available  No
-DataType Supported           thehive:case, thehive:case_task
+DataType Supported           energysoar:case, energysoar:case_task
 ===========================  ===============================
 
 .. rubric:: Description

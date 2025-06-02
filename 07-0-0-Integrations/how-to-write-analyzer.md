@@ -198,9 +198,6 @@ The list of Energy SOAR datatypes supported by the analyzer. Currently Energy
 - url
 - user-agent
 
-If you need additional datatypes for your analyzer, please let us know at
-[support@thehive-project.org](mailto:support@thehive-project.org).
-
 #### baseConfig
 Name used to group configuration items common to several analyzer. This
 prevent the user to enter the same API key for all analyzer flavors.
@@ -415,10 +412,10 @@ For example, the VirusTotal analyzer comes in two flavors hence it has 4 HTML
  templates:
 
 ```bash
-thehive-templates/VirusTotal_GetReport_3_0
+base-templates/VirusTotal_GetReport_3_0
 |-- long.html
 `-- short.html
-thehive-templates/VirusTotal_Scan_3_0
+base-templates/VirusTotal_Scan_3_0
 |-- long.html
 `-- short.html
 ```

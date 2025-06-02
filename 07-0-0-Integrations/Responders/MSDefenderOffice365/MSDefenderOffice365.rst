@@ -16,7 +16,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `MSDefenderOffice365_block <https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/defender-for-office-365?view=o365-worldwide>`_
 ===========================  =======================================================================================================================================================
 
@@ -48,7 +48,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `MSDefenderOffice365_unblock <https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/defender-for-office-365?view=o365-worldwide>`_
 ===========================  =========================================================================================================================================================
 

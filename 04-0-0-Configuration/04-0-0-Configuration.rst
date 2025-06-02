@@ -2,16 +2,16 @@
 Configuration
 =================
 
-Cortex
+Automation
 ------
 
-As described in the section above, Analyzers can only be configured using the Web interface and their associated configuration is stored in the underlying Elasticsearch database. However, the Cortex appplication configuration is stored in the `/etc/cortex/application.conf` file.
+As described in the section above, Analyzers can only be configured using the Web interface and their associated configuration is stored in the underlying Elasticsearch database. However, the Energy SOAR Automation appplication configuration is stored in the `/etc/energysoar-automation/application.conf` file.
 
 Database
 ^^^^^^^^
 
-Cortex relies on the Elasticsearch 7.x search engine to store all persistent data.
-Elasticsearch is not part of the Cortex package. It must be installed and configured
+Energy SOAR Automation can utilize the Elasticsearch 7.x search engine to store persistent data, but its use is not mandatory.
+Elasticsearch is not part of the Energy SOAR Automation package. It must be installed and configured
 as a standalone instance which can be located on the same machine.
 
 Three settings are required to connect to Elasticsearch:
@@ -26,9 +26,9 @@ The default settings are:
     ### Elasticsearch
     search {
       # Name of the index
-      index = cortex
+      index = automation
       # Name of the Elasticsearch cluster
-      cluster = hive
+      cluster = energysoar
       # Address of the Elasticsearch instance
       host = ["127.0.0.1:9300"]
       # Scroll keepalive
@@ -88,32 +88,32 @@ same cluster name:
     }
 
 
-Cortex uses the [TCP transport](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/modules-network.html#_transport_and_http_protocols)
-port (9300/tcp by default). Cortex cannot use the HTTP transport as of this writing (9200/tcp).
+Energy SOAR Automation uses the [TCP transport](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/modules-network.html#_transport_and_http_protocols)
+port (9300/tcp by default). Energy SOAR Automation cannot use the HTTP transport as of this writing (9200/tcp).
 
-Cortex creates specific index schema (mapping) versions in Elasticsearch. Version numbers are
+Energy SOAR Automation creates specific index schema (mapping) versions in Elasticsearch. Version numbers are
 appended to the index base name (the 8th version of the schema uses the index
-`cortex_8` if `search.index = cortex`). When too many documents are requested, it uses the
+`automation_8` if `search.index = automation`). When too many documents are requested, it uses the
 [scroll](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-scroll.html)
 feature: the results are retrieved through pagination. You can specify the size
 of the page (`search.pagesize`) and how long pages are kept in Elasticsearch
 (`search.keepalive`) before purging.
 
-XPack and SearchGuard are optional and exclusive. If Cortex finds a valid configuration for XPack, SearchGuard configuration is ignored.
+XPack and SearchGuard are optional and exclusive. If Energy SOAR Automation finds a valid configuration for XPack, SearchGuard configuration is ignored.
 
 Analyzers and Responders
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-Cortex is able to run workers (analyzers and responders) installed locally or available as Docker image. Settings `analyzer.urls` and in `responder.urls` list paths or urls where Cortex looks for analyzers and responders. Theses settings accept:
-1. a path to a directory that Cortex scans to locate workers
+Energy SOAR Automation is able to run workers (analyzers and responders) installed locally or available as Docker image. Settings `analyzer.urls` and in `responder.urls` list paths or urls where Energy SOAR Automation looks for analyzers and responders. Theses settings accept:
+1. a path to a directory that Energy SOAR Automation scans to locate workers
 1. a path or an URL to a JSON file containing a JSON array of worker definitions
 
 Worker definition is a JSON object that describe the worker, how to configure it and how to run it. If it contains a field "command", worker can be run using process runner (i.e. the command is executed). If it contains a field "dockerImage", worker can be run using docker runner (i.e. a container based on this image is started). If it contains both, the runner is chosen according to `job.runners` settings (`[docker, process]` by default).
 
 For security reason, if worker definitions fetched from remote url (http/https) contain command, they are ignored.
 
-You can control the number of simultaneous jobs that Cortex executes in parallel using the
+You can control the number of simultaneous jobs that Energy SOAR Automation executes in parallel using the
 `analyzer.fork-join-executor` configuration item. The value depends on the
 number of CPU cores (`parallelism-factor` * nbCores), with a minimum
 (`parallelism-min`) and a maximum (`parallelism-max`).
@@ -159,9 +159,9 @@ Similar settings can also be applied to responders.
 Authentication
 ^^^^^^^^^^^^^^
 
-Like TheHive, Cortex supports local, LDAP, Active Directory (AD), X.509 SSO and/or API keys for authentication and OAuth2.
+Like EnergySOAR Base, Energy SOAR Automation plugin supports local, LDAP, Active Directory (AD), X.509 SSO and/or API keys for authentication and OAuth2.
 
-Please note that API keys can only be used to interact with the Cortex API (for example when TheHive is interfaced with a Cortex instance, it must use an API key to authenticate to it). API keys cannot be used to authenticate to the Web UI. By default, Cortex relies on local credentials stored in Elasticsearch.
+Please note that API keys can only be used to interact with the Energy SOAR Automation API (for example when Energy SOAR Base is interfaced with a Energy SOAR Automation instance, it must use an API key to authenticate to it). API keys cannot be used to authenticate to the Web UI. By default, Energy SOAR Automation relies on local credentials stored in Elasticsearch.
 
 Authentication methods are stored in the `auth.provider` parameter, which is
 multi-valued. When a user logs in, each authentication method is tried in order
@@ -188,7 +188,7 @@ The default values within the configuration file are:
             # The name of the Microsoft Windows domain using the DNS format. This parameter is required.
             #domainFQDN = "mydomain.local"
 
-            # Optionally you can specify the host names of the domain controllers. If not set, Cortex uses "domainFQDN".
+            # Optionally you can specify the host names of the domain controllers. If not set, Energy SOAR Automation uses "domainFQDN".
             #serverNames = [ad1.mydomain.local, ad2.mydomain.local]
 
             # The Microsoft Windows domain name using the short format. This parameter is required.
@@ -209,7 +209,7 @@ The default values within the configuration file are:
             #useSSL = true
 
             # Account to use to bind on LDAP server. This parameter is required.
-            #bindDN = "cn=cortex,ou=services,dc=mydomain,dc=local"
+            #bindDN = "cn=automation,ou=services,dc=mydomain,dc=local"
 
             # Password of the binding account. This parameter is required.
             #bindPW = "***secret*password***"
@@ -225,7 +225,7 @@ The default values within the configuration file are:
         # URL of the authorization server
         #clientId = "client-id"
         #clientSecret = "client-secret"
-        #redirectUri = "https://my-cortex-instance.example/api/ssoLogin"
+        #redirectUri = "https://my-automation-instance.example/api/ssoLogin"
         #responseType = "code"
         #grantType = "authorization_code"
 
@@ -305,7 +305,7 @@ Authenticate the user using an external OAuth2 authenticator server. The configu
 
 - clientId (string) client ID in the OAuth2 server.
 - clientSecret (string) client secret in the OAuth2 server.
-- redirectUri (string) the url of TheHive AOuth2 page (.../api/ssoLogin).
+- redirectUri (string) the url of Energy SOAR Base AOuth2 page (.../api/ssoLogin).
 - responseType (string) type of the response. Currently only "code" is accepted.
 - grantType (string) type of the grant. Currently only "authorization_code" is accepted.
 - authorizationUrl (string) the url of the OAuth2 server.
@@ -357,7 +357,7 @@ Authenticate the user using an external OAuth2 authenticator server. The configu
 Performance
 ^^^^^^^^^^^
 
-In order to increase Cortex performance, a cache is configured to prevent
+In order to increase Energy SOAR Automation performance, a cache is configured to prevent
 repetitive database solicitation. Cache retention time can be configured for
 users and organizations (default is 5 minutes). If a user is updated, the cache is
 automatically invalidated.
@@ -383,7 +383,7 @@ if the second job occurs within `cache.job` (the default is 10 minutes).
 
 .. note::
 
-   It is possible to bypass the cache altogether (for example to get extra fresh results) through the API as explained in the `API Guide <../08-0-0-API/08-0-0-API.html#run>`_ or by setting the cache to *Custom* in the Cortex UI for each analyzer and specifying `0` as the number of minutes.
+   It is possible to bypass the cache altogether (for example to get extra fresh results) through the API as explained in the `API Guide <../08-0-0-API/08-0-0-API.html#run>`_ or by setting the cache to *Custom* in the Energy SOAR Automation UI for each analyzer and specifying `0` as the number of minutes.
 
 Streaming (a.k.a The Flow)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -421,7 +421,7 @@ The default values are:
 Entity Size Limit
 ^^^^^^^^^^^^^^^^^
 
-The Play framework used by Cortex sets the HTTP body size limit to 100KB by
+The Play framework used by Energy SOAR Automation sets the HTTP body size limit to 100KB by
 default for textual content (json, xml, text, form data) and 10MB for file
 uploads. This could be too small in some cases so you may want to change it with
 the following settings in the `application.conf` file:
@@ -435,22 +435,22 @@ the following settings in the `application.conf` file:
 
 
 .. note::
-   If you are using a NGINX reverse proxy in front of Cortex, be aware that it doesn't distinguish between text data and a file upload. So, you should also set the `client_max_body_size` parameter in your NGINX server configuration to the highest value among the two: file upload and text size as defined in Cortex `application.conf` file.
+   If you are using a NGINX reverse proxy in front of Energy SOAR Automation, be aware that it doesn't distinguish between text data and a file upload. So, you should also set the `client_max_body_size` parameter in your NGINX server configuration to the highest value among the two: file upload and text size as defined in Energy SOAR Automation `application.conf` file.
 
 HTTPS
 ^^^^^
 
-Enable HTTPS directly on Cortex is not supported anymore. You must install a reverse proxy in front of Cortex.
+Enable HTTPS directly on Energy SOAR Automation is not supported anymore. You must install a reverse proxy in front of Energy SOAR Automation.
 Below an example of NGINX configuration:
 
 .. code-block::
 
     server {
         listen 443 ssl;
-        server_name cortex.example.com;
+        server_name automation.example.com;
 
-        ssl_certificate         ssl/cortex_cert.pem;
-        ssl_certificate_key     ssl/cortex_key.pem;
+        ssl_certificate         ssl/energysoar-automation_cert.pem;
+        ssl_certificate_key     ssl/energysoar-automation_key.pem;
 
         proxy_connect_timeout   600;
         proxy_send_timeout      600;
@@ -468,13 +468,13 @@ Below an example of NGINX configuration:
         }
     }
 
-TheHive
+EnergySOAR Base
 -------
 
 `secret.conf` file
 ^^^^^^^^^^^^^^^^^^
 
-This file contains a secret that is used to define cookies used to manage the users session. As a result, one instance of TheHive should use a unique secret key.
+This file contains a secret that is used to define cookies used to manage the users session. As a result, one instance of EnergySOAR Base should use a unique secret key.
 
 **Example**
 
@@ -494,7 +494,7 @@ License
 
 **License path**
 
-License path is set in configuration file ` /etc/thehive/application.conf.d/license.conf`. By default it is ` license.path: "/etc/thehive/"`.
+License path is set in configuration file ` /etc/energysoar-base/application.conf.d/license.conf`. By default it is ` license.path: "/etc/energysoar-base/"`.
 
 Listen address & port
 ^^^^^^^^^^^^^^^^^^^^^
@@ -509,13 +509,13 @@ By default the application listens on all interfaces and port 9000. This is poss
 Context
 ^^^^^^^
 
-If you are using a reverse proxy, and you want to specify a location (ex: /thehive), updating the configuration of TheHive is also required
+If you are using a reverse proxy, and you want to specify a location (ex: /energysoar-base), updating the configuration of Energy SOAR Base is also required
 
 **Example**
 
 .. code-block::
 
-   play.http.context: "/thehive"
+   play.http.context: "/energysoar-base"
    
    
 Specific configuration for streams
@@ -550,33 +550,33 @@ These values are set with default parameters:
    # Max textual content length
    play.http.parser.maxMemoryBuffer: 256kB
     
-If you feel that these should be updated, edit /etc/thehive/application.conf file and update these parameters accordingly.
+If you feel that these should be updated, edit /etc/energysoar-base/application.conf file and update these parameters accordingly.
 
 .. tip::
 
    If you are using a NGINX reverse proxy in front of Energy SOAR, be aware that it doesn't distinguish between text data and a file upload.
 
-   So, you should also set the client_max_body_size parameter in your NGINX server configuration to the highest value among the two: file upload and text size defined in TheHive application.conf file.
+   So, you should also set the client_max_body_size parameter in your NGINX server configuration to the highest value among the two: file upload and text size defined in EnergySOAR Base application.conf file.
 
 Manage configuration files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Energy SOAR uses HOCON as configuration file format. This format gives enough flexibility to structure and organise the configuration of Energy SOAR.
+Energy SOAR Base uses HOCON as configuration file format. This format gives enough flexibility to structure and organise the configuration of Energy SOAR Base.
 
-TheHive is delivered with following files, in the folder `/etc/thehive`:
+Energy SOAR Base is delivered with following files, in the folder `/etc/energysoar-base`:
 
 `logback.xml` containing the log policy
 
 `secret.conf` containing a secret key used to create sessions. This key should be unique per instance (in the case of a cluster, this key should be the same for all nodes of this cluster)
 `application.conf` 
 
-HOCON file format let you organise the configuration to have separate files for each purpose. It is the possible to create a /etc/thehive/application.conf.d folder and have several files inside that will be included in the main file `/etc/thehive/application.conf`.
+HOCON file format let you organise the configuration to have separate files for each purpose. It is the possible to create a /etc/energysoar-base/application.conf.d folder and have several files inside that will be included in the main file `/etc/energysoar-base/application.conf`.
 
 At the end, the following configuration structure is possible:
 
 .. code-block::
 
-   /etc/thehive
+   /etc/energysoar-base
    |-- application.conf
    |-- application.conf.d
    |   |-- secret.conf
@@ -585,55 +585,55 @@ At the end, the following configuration structure is possible:
    |   |-- storage.conf
    |   |-- cluster.conf
    |   |-- authentication.conf
-   |   |-- cortex.conf
+   |   |-- automation.conf
    |   |-- misp.conf
    |   |-- webhooks.conf
    |-- logback.xml
 
 
-And the content of `/etc/thehive/application.conf`:
+And the content of `/etc/energysoar-base/application.conf`:
 
 .. code-block::
 
     ## Include Play secret key
     # More information on secret key at https://www.playframework.com/documentation/2.8.x/ApplicationSecret
-    include "/etc/thehive/application.conf.d/secret.conf"
+    include "/etc/energysoar-base/application.conf.d/secret.conf"
 
     ## Service
-    include "/etc/thehive/application.conf.d/service.conf"
+    include "/etc/energysoar-base/application.conf.d/service.conf"
 
     ## Database
-    include "/etc/thehive/application.conf.d/database.conf"
+    include "/etc/energysoar-base/application.conf.d/database.conf"
 
     ## Storage
-    include "/etc/thehive/application.conf.d/storage.conf"
+    include "/etc/energysoar-base/application.conf.d/storage.conf"
 
     ## Cluster
-    include "/etc/thehive/application.conf.d/cluster.conf"
+    include "/etc/energysoar-base/application.conf.d/cluster.conf"
 
     ## Authentication
-    include "/etc/thehive/application.conf.d/authentication.conf"
+    include "/etc/energysoar-base/application.conf.d/authentication.conf"
 
-    ## Cortex
-    include "/etc/thehive/application.conf.d/cortex.conf"
+    ## Energy SOAR Automation
+    include "/etc/energysoar-base/application.conf.d/automation.conf"
 
     ## MISP
-    include "/etc/thehive/application.conf.d/misp.conf"
+    include "/etc/energysoar-base/application.conf.d/misp.conf"
 
     ## Webhooks
-    include "/etc/thehive/application.conf.d/webhooks.conf"
+    include "/etc/energysoar-base/application.conf.d/webhooks.conf"
 
 SSL
 ----
 
-Energy SOAR instalation script create self-signed certificates. Those certificates are stored under `/etc/thehive/ssl/` directory.
+Energy SOAR instalation script create self-signed certificates. Those certificates are stored under `/etc/energysoar-base/ssl/` directory.
 
 You can setup your own path in `/etc/nginx/conf.d/energysoar.conf`.
 
 .. code-block::
 
-    ssl_certificate     /etc/thehive/ssl/nginx-selfsigned.crt;
-    ssl_certificate_key /etc/thehive/ssl/nginx-selfsigned.key;
+    ssl_certificate     /etc/energysoar-base/ssl/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/energysoar-base/ssl/nginx-selfsigned.key;
 
 
 Change system language

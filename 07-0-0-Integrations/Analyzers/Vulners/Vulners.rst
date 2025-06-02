@@ -95,7 +95,7 @@ Add your Vulners API in Cortex settings:
    :alt: API key in Cortex
 
 
-Add Observable type in TheHive
+Add Observable type in Energy SOAR Base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default theHive does not have a "cve" type to be observables, so we have to add it to Administrator Settings:
@@ -106,7 +106,7 @@ By default theHive does not have a "cve" type to be observables, so we have to a
    :alt: add observable
 ​
 
-Run the Analyzer in TheHive
+Run the Analyzer in Energy SOAR Base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Network IOCs:

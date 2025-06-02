@@ -47,7 +47,7 @@ When you submit observables to WildFire, they are analyzed in a sandboxed enviro
 * Static analysis provides instant identification of malware variants
 * Uses a custom hypervisor to prevent malware evasion techniques
 
-This analyzer supports "file", "url", and "hash" observables to be submitted to WildFire and produces a nicely formatted report in TheHive with all the pertinent information.
+This analyzer supports "file", "url", and "hash" observables to be submitted to WildFire and produces a nicely formatted report in Energy SOAR Base with all the pertinent information.
 
 Product website: https://www.paloaltonetworks.com/network-security/wildfire
 

@@ -177,7 +177,7 @@ Extracted Observables
 ~~~~~~~~~~~~~~~~~~~~~
 
 Moreover, these domains, IP addresses, URLs as well as detection YARA and IDS rules reported are added to the extracted Observables, ready
-to be imported and actioned in TheHive.
+to be imported and actioned in Energy SOAR Base.
 
 
 .. image:: assets/virustotal-extracted-observables.png

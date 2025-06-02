@@ -13,7 +13,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `Virustotal_Downloader <https://virustotal.com>`_
 ===========================  =================================================
 
@@ -26,8 +26,8 @@ Download a file from Virustotal by its hash
 =================  ===============================================================================
 Name               Description
 virustotal_apikey  Virustotal API key which should be used to download files
-thehive_url        URL pointing to your TheHive installation, e.g. 'http://127.0.0.1:9000'
-thehive_apikey     TheHive API key which is used to add the downloaded file back to the alert/case
+thehive_url        URL pointing to your Energy SOAR Base installation, e.g. 'http://127.0.0.1:9000'
+thehive_apikey     Energy SOAR Base API key which is used to add the downloaded file back to the alert/case
 =================  ===============================================================================
 
 
@@ -43,5 +43,5 @@ Requirements
 ~~~~~~~~~~~~
 
 This responder need a valid Premium API key from VirusTotal as the ``virustotal_apikey`` parameter in the configuration. 
-To add the sample in Observables in TheHive, the responder also requires the URL of TheHive as the ``thehive_url`` paramenter and a valid API key as the ``thehive_apikey`` parameter.
+To add the sample in Observables in Energy SOAR Base, the responder also requires the URL of Energy SOAR Base as the ``thehive_url`` paramenter and a valid API key as the ``thehive_apikey`` parameter.
 

@@ -161,7 +161,7 @@ Instance configuration
 
 Enter the file ``/opt/synapse/conf/exchange.conf`` and make the following changes.
 
-Set the API key and user in TheHive section.
+Set the API key and user in Energy SOAR Base section.
 
 .. code-block:: none
 

@@ -16,7 +16,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `PaloAltoCortexXDR_isolate <https://www.paloaltonetworks.com/cortex/cortex-xdr>`_
 ===========================  =================================================================================
 
@@ -50,7 +50,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `PaloAltoCortexXDR_scan <https://www.paloaltonetworks.com/cortex/cortex-xdr>`_
 ===========================  ==============================================================================
 
@@ -83,7 +83,7 @@ License                      AGPL-V3
 Requires Registration        Yes
 Requires Subscription        Yes
 Free Subscription Available  No
-DataType Supported           thehive:case_artifact
+DataType Supported           energysoar:case_artifact
 Service Homepage             `PaloAltoCortexXDR_unisolate <https://www.paloaltonetworks.com/cortex/cortex-xdr>`_
 ===========================  ===================================================================================
 
