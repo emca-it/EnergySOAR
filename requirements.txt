@@ -2,9 +2,9 @@ sphinx-tabs
 myst-parser
 recommonmark
 sphinx-rtd-theme
-Sphinx
+Sphinx>=4.0
 docutils>=0.20,<0.22
-Jinja2<3.1
+Jinja2
 MarkupSafe
 alabaster
 sphinx-design
