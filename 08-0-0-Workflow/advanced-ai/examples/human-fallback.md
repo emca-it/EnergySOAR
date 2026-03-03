@@ -21,6 +21,6 @@ This workflow uses:
 
 ## Using the example
 
-```{include} /_snippets/examples-color-key.md"
+```{include} /_snippets/examples-color-key.md
 ```
 
