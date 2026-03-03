@@ -58,7 +58,7 @@ pieces of information. For example, to use the VirusTotal analyzer's
 `d41d8cd98f00b204e9800998ecf8427e`, you must submit input such as:
 
 
-```json
+```
 {
     "data":"d41d8cd98f00b204e9800998ecf8427e",
     "dataType":"hash",
@@ -67,7 +67,7 @@ pieces of information. For example, to use the VirusTotal analyzer's
         "key":"1234567890abcdef",
         "max_tlp":3,
         "check_tlp":true,
-        "service":"GetReport"
+        "service":"GetReport",
         [..]
     },
     "proxy":{
@@ -86,7 +86,7 @@ example again.
 
 #### Example: VirusTotal Get Report's Input
 
-```json
+```
 {
     "data":"d41d8cd98f00b204e9800998ecf8427e",
     "dataType":"hash",
@@ -98,7 +98,7 @@ example again.
 #### Example: Service Interaction File for VirusTotal GetReport
 The `<==` sign and anything after it are comments that do no appear in the
 original file.
-```json
+```
 {
   "name": "VirusTotal_GetReport",
   "version": "3.0",
@@ -280,7 +280,7 @@ If the analyzer **fails** to execute:
 
 If the analyzer **succeeds** (i.e. it runs without any error):
 
-```json
+```
 {
     "success":true,
     "artifacts":[..],

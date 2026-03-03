@@ -24,11 +24,12 @@ Add 'Clicked Event' to User via User Events API.
 
 ============  ====================================================================================================
 Name          Description
-api_url       Base API url
-energysoar_url      Specify Energy SOAR Base  Instance URL
-api_key       Api Key
-required_tag  Specify a tag that must be present for responder to run.
-event_type    Specify the Event Type for the new event. https://developer.knowbe4.com/events/#tag/Event-Types
-risk_level    Specify the desired risk level. https://developer.knowbe4.com/events/#tag/Events/paths/~1events/post
 ============  ====================================================================================================
 
+api_url       Base API url
+energysoar_url Specify Energy SOAR Base Instance URL
+api_key       Api Key
+required_tag  Specify a tag that must be present for responder to run.
+event_type    Specify the Event Type for the new event. `Event Types <https://developer.knowbe4.com/events/#tag/Event-Types>`_
+risk_level    Specify the desired risk level. `Events API <https://developer.knowbe4.com/events/#tag/Events/paths/~1events/post>`_
+============  ====================================================================================================

@@ -23,20 +23,20 @@ Energy SOAR Automation to create a ticket in RT4 from Energy SOAR Base observabl
 
 .. rubric:: Configuration
 
-===================  ====================================================================================================================================================
-Name                 Description
-server               RT4 Base URL, e.g., https://rt.domain.local
-username             RT4 username for authentication
-password             RT4 password for user account
-Queue                Default queue in which to create new tickets
-Owner                Default owner to assign newly created tickets (optional)
-Status               Default ticket status to assign newly created tickets (optional)
-custom_field_list    Name:Value of Custom Fields in RT to set on every ticket created (e.g.: 'How Reported:TheHive' sets CF.{How Reported} = Energy SOAR Base on every new ticket)
-tag_to_template_map  Mapping table of tags to templates (e.g.: 'phishing:phish_letter' maps anything tagged as 'phishing' to the 'phish_letter' template)
-energysoar_cf_rtticket  Name of a case custom field in Energy SOAR Base in which RT ticket #s will be saved upon successful case-level Responder run (optional)
-energysoar_url          Energy SOAR Base Base URL, e.g., https://energysoar.domain.local:9000 (optional: only needed to process Cases)
-energysoar_token        Energy SOAR Base API token for authentication (optional: only needed to process Cases)
-===================  ====================================================================================================================================================
+====================  =========================================================================================================
+Name                  Description
+====================  =========================================================================================================
+server                RT4 Base URL, e.g., https://rt.domain.local
+username              RT4 username for authentication
+password              RT4 password for user account
+Queue                 Default queue in which to create new tickets
+Owner                 Default owner to assign newly created tickets (optional)
+Status                Default ticket status to assign newly created tickets (optional)
+custom_field_list     Name:Value of Custom Fields in RT to set on every ticket created (e.g.: 'How Reported:TheHive' sets CF.{How Reported} = Energy SOAR Base on every new ticket)
+tag_to_template_map   Mapping table of tags to templates (e.g.: 'phishing:phish_letter' maps anything tagged as 'phishing' to the 'phish_letter' template) energysoar_cf_rtticket Name of a case custom field in Energy SOAR Base in which RT ticket numbers will be saved                      upon successful case-level Responder run (optional)
+energysoar_url        Energy SOAR Base URL, e.g., https://energysoar.domain.local:9000 (optional: only needed to process Cases)
+energysoar_token      Energy SOAR Base API token for authentication (optional: only needed to process Cases)
+====================  =========================================================================================================
 
 
 .. rubric:: Additional details from the README file:

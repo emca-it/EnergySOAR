@@ -5,12 +5,15 @@ Configuration
 Automation
 ------
 
-As described in the section above, Analyzers can only be configured using the Web interface and their associated configuration is stored in the underlying Elasticsearch database. However, the Energy SOAR Automation appplication configuration is stored in the `/etc/energysoar-automation/application.conf` file.
+Analyzers can only be configured using the Web interface and their associated configuration is stored in the underlying Logserver database. However, the Energy SOAR Automation application configuration is stored in the `/etc/cortex/application.conf` file.
 
 Database
 ^^^^^^^^
 
-Energy SOAR Automation can utilize the Elasticsearch 7.x search engine to store persistent data, but its use is not mandatory.
+Energy SOAR Automation by default utilize the Energy Logserver data node 7.8+ search engine to store persistent data.
+This is prefered method used during non interactive instalation.
+
+Energy SOAR Automation can also utilize the Elasticsearch 7.x search engine to store persistent data, but its use is not mandatory.
 Elasticsearch is not part of the Energy SOAR Automation package. It must be installed and configured
 as a standalone instance which can be located on the same machine.
 
@@ -88,15 +91,13 @@ same cluster name:
     }
 
 
-Energy SOAR Automation uses the [TCP transport](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/modules-network.html#_transport_and_http_protocols)
-port (9300/tcp by default). Energy SOAR Automation cannot use the HTTP transport as of this writing (9200/tcp).
+Energy SOAR Automation uses the port 9300/tcp by default. Energy SOAR Automation cannot use the HTTP transport as of this writing (9200/tcp).
 
-Energy SOAR Automation creates specific index schema (mapping) versions in Elasticsearch. Version numbers are
+Energy SOAR Automation creates specific index schema (mapping) versions in Energy Logserver. Version numbers are
 appended to the index base name (the 8th version of the schema uses the index
 `automation_8` if `search.index = automation`). When too many documents are requested, it uses the
-[scroll](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-scroll.html)
-feature: the results are retrieved through pagination. You can specify the size
-of the page (`search.pagesize`) and how long pages are kept in Elasticsearch
+scroll feature: the results are retrieved through pagination. You can specify the size
+of the page (`search.pagesize`) and how long pages are kept in Logserver
 (`search.keepalive`) before purging.
 
 XPack and SearchGuard are optional and exclusive. If Energy SOAR Automation finds a valid configuration for XPack, SearchGuard configuration is ignored.
@@ -107,7 +108,7 @@ Analyzers and Responders
 
 Energy SOAR Automation is able to run workers (analyzers and responders) installed locally or available as Docker image. Settings `analyzer.urls` and in `responder.urls` list paths or urls where Energy SOAR Automation looks for analyzers and responders. Theses settings accept:
 1. a path to a directory that Energy SOAR Automation scans to locate workers
-1. a path or an URL to a JSON file containing a JSON array of worker definitions
+2. a path or an URL to a JSON file containing a JSON array of worker definitions
 
 Worker definition is a JSON object that describe the worker, how to configure it and how to run it. If it contains a field "command", worker can be run using process runner (i.e. the command is executed). If it contains a field "dockerImage", worker can be run using docker runner (i.e. a container based on this image is started). If it contains both, the runner is chosen according to `job.runners` settings (`[docker, process]` by default).
 
@@ -161,7 +162,7 @@ Authentication
 
 Like EnergySOAR Base, Energy SOAR Automation plugin supports local, LDAP, Active Directory (AD), X.509 SSO and/or API keys for authentication and OAuth2.
 
-Please note that API keys can only be used to interact with the Energy SOAR Automation API (for example when Energy SOAR Base is interfaced with a Energy SOAR Automation instance, it must use an API key to authenticate to it). API keys cannot be used to authenticate to the Web UI. By default, Energy SOAR Automation relies on local credentials stored in Elasticsearch.
+Please note that API keys can only be used to interact with the Energy SOAR Automation API (for example when Energy SOAR Base is interfaced with a Energy SOAR Automation instance, it must use an API key to authenticate to it). API keys cannot be used to authenticate to the Web UI. By default, Energy SOAR Automation relies on local credentials stored in Logserver.
 
 Authentication methods are stored in the `auth.provider` parameter, which is
 multi-valued. When a user logs in, each authentication method is tried in order
@@ -173,121 +174,115 @@ The default values within the configuration file are:
 .. code-block::
 
     auth {
-        # "provider" parameter contains authentication provider. It can be multi-valued (useful for migration)
-        # available auth types are:
-        # services.LocalAuthSrv : passwords are stored in user entity (in Elasticsearch). No configuration is required.
-        # ad : use ActiveDirectory to authenticate users. Configuration is under "auth.ad" key
-        # ldap : use LDAP to authenticate users. Configuration is under "auth.ldap" key
-        # oauth2 : use OAuth/OIDC to authenticate users. Configuration is under "auth.oauth2" and "auth.sso" keys
-        provider = [local]
-
-        # By default, basic authentication is disabled. You can enable it by setting "method.basic" to true.
-        method.basic = false
-
-        ad {
-            # The name of the Microsoft Windows domain using the DNS format. This parameter is required.
-            #domainFQDN = "mydomain.local"
-
-            # Optionally you can specify the host names of the domain controllers. If not set, Energy SOAR Automation uses "domainFQDN".
-            #serverNames = [ad1.mydomain.local, ad2.mydomain.local]
-
-            # The Microsoft Windows domain name using the short format. This parameter is required.
-            #domainName = "MYDOMAIN"
-
-            # Use SSL to connect to the domain controller(s).
-            #useSSL = true
-        }
-
-        ldap {
-            # LDAP server name or address. Port can be specified (host:port). This parameter is required.
-            #serverName = "ldap.mydomain.local:389"
-
-            # If you have multiple ldap servers, use the multi-valued settings.
-            #serverNames = [ldap1.mydomain.local, ldap2.mydomain.local]
-
-            # Use SSL to connect to directory server
-            #useSSL = true
-
-            # Account to use to bind on LDAP server. This parameter is required.
-            #bindDN = "cn=automation,ou=services,dc=mydomain,dc=local"
-
-            # Password of the binding account. This parameter is required.
-            #bindPW = "***secret*password***"
-
-            # Base DN to search users. This parameter is required.
-            #baseDN = "ou=users,dc=mydomain,dc=local"
-
-            # Filter to search user {0} is replaced by user name. This parameter is required.
-            #filter = "(cn={0})"
-        }
-
-      oauth2 {
-        # URL of the authorization server
-        #clientId = "client-id"
-        #clientSecret = "client-secret"
-        #redirectUri = "https://my-automation-instance.example/api/ssoLogin"
-        #responseType = "code"
-        #grantType = "authorization_code"
-
-        # URL from where to get the access token
-        #authorizationUrl = "https://auth-site.com/OAuth/Authorize"
-        #tokenUrl = "https://auth-site.com/OAuth/Token"
-
-        # The endpoint from which to obtain user details using the OAuth token, after successful login
-        #userUrl = "https://auth-site.com/api/User"
-        #scope = ["openid profile"]
-      }
-
-      # Single-Sign On
-      sso {
-        # Autocreate user in database?
-        #autocreate = false
-
-        # Autoupdate its profile and roles?
-        #autoupdate = false
-
-        # Autologin user using SSO?
-        #autologin = false
-
-        # Name of mapping class from user resource to backend user ('simple' or 'group')
-        #mapper = group
-        #attributes {
-        #  login = "user"
-        #  name = "name"
-        #  groups = "groups"
-        #  organization = "org"
-        #}
-        #defaultRoles = ["read"]
-        #defaultOrganization = "csirt"
-        #groups {
-        #  # URL to retreive groups (leave empty if you are using OIDC)
-        #  #url = "https://auth-site.com/api/Groups"
-        #  # Group mappings, you can have multiple roles for each group: they are merged
-        #  mappings {
-        #    admin-profile-name = ["admin"]
-        #    editor-profile-name = ["write"]
-        #    reader-profile-name = ["read"]
-        #  }
-        #}
-
-        #mapper = simple
-        #attributes {
-        #  login = "user"
-        #  name = "name"
-        #  roles = "roles"
-        #  organization = "org"
-        #}
-        #defaultRoles = ["read"]
-        #defaultOrganization = "csirt"
-      }
-
+      providers = [
+        {name: session}
+        {name: basic, realm: thehive}
+        {name: local}
+        {name: key}
+      ]
     }
 
-    ### Maximum time between two requests without requesting authentication
-    session {
-      warning = 5m
-      inactivity = 1h
+Details of each authentication method are explained below.
+
+session
+"""""""""
+Authenticates HTTP requests using a cookie. This module manages cookie creation and expiration.
+
+Configuration parameters:
+
+- `inactivity` (duration): Maximum time of user inactivity before the session is closed.
+- `warning` (duration): Time before expiration when TheHive returns a warning message.
+
+local
+""""""""
+Creates a session if the provided login and password, or API key, is valid according to the local user database.
+
+key
+"""""""""
+Authenticates HTTP requests using an API key provided in the authorization header. The format is "Authorization: Bearer xxx" (xxx is replaced by the API key). The key is searched using other authentication modules (currently, only the local authentication module can validate the key).
+
+basic
+"""""""""
+Authenticates HTTP requests using the login and password provided in the authorization header using basic authentication format (Base64). Passwords are checked against the local user database.
+
+Configuration parameters:
+
+- `realm` (string): Name of the realm. Without this parameter, the browser does not ask to authenticate.
+
+header
+"""""""""
+Authenticates HTTP requests using an HTTP header containing the user login. This is used to delegate authentication in a reverse proxy.
+
+- `userHeader` (string): Name of the header that contains the user login.
+
+ad
+"""""""""
+Uses Microsoft Active Directory to authenticate users.
+
+- `winDomain` (string): Windows domain name (MYDOMAIN).
+- `dnsDomain` (string): Windows domain name in DNS format (mydomain.local).
+- `useSSL` (boolean): Use SSL to connect to domain controllers. The JVM trust store is used to validate the remote certificate (JAVA_OPTS="-Djavax.net.ssl.trustStore=/path/to/truststore.jks").
+- `hosts` (list of string): Addresses of the domain controllers. If missing, `dnsDomain` is used.
+
+ldap
+"""""""""
+Uses an LDAP directory server to authenticate users.
+
+Configuration parameters:
+
+- `bindDN` (string): DN of the service account in LDAP. This account is used to search the user.
+- `bindPW` (string): Password of the service account.
+- `baseDN` (string): DN where the users are located.
+- `filter` (string): Filter used to search the user. "{0}" is replaced by the user login. A valid filter is:
+  (&(uid={0})(objectClass=posixAccount)).
+- `useSSL` (boolean): Use SSL to connect to the LDAP server. The JVM trust store is used to validate the
+  remote certificate (JAVA_OPTS="-Djavax.net.ssl.trustStore=/path/to/truststore.jks").
+- `hosts` (list of string): Addresses of the LDAP servers.
+
+oauth2
+"""""""
+Authenticates the user using an external OAuth2 authenticator server.
+
+Configuration parameters:
+
+- `clientId` (string): Client ID in the OAuth2 server.
+- `clientSecret` (string): Client secret in the OAuth2 server.
+- `redirectUri` (string): URL of the TheHive OAuth2 page (.../api/ssoLogin).
+- `responseType` (string): Type of the response. Currently only "code" is accepted.
+- `grantType` (string): Type of the grant. Currently only "authorization_code" is accepted.
+- `authorizationUrl` (string): URL of the OAuth2 server.
+- `authorizationHeader` (string): Prefix of the authorization header to get user info (Bearer, token, ...).
+- `tokenUrl` (string): Token URL of the OAuth2 server.
+- `userUrl` (string): URL to get user information in the OAuth2 server.
+- `scope` (list of string): List of scopes.
+- `userIdField` (string): Field that contains the ID of the user in user info.
+- `organisationField` (string, optional): Field that contains the organisation name in user info.
+- `defaultOrganisation` (string, optional): Default organisation used to log in if not present in user info.
+
+
+
+Keycloak example
+.. code-block::
+  {
+      name: oauth2
+      clientId: "CLIENT_ID"
+      clientSecret: "CLIENT_SECRET" # or empty
+      redirectUri: "http://energysoar/api/ssoLogin"
+      responseType: "code"
+      grantType: "authorization_code"
+      authorizationUrl: "http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/auth"
+      authorizationHeader: "Bearer"
+      tokenUrl: "http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/token"
+      userUrl: "http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/userinfo"
+      scope: ["openid", "email"]
+      userIdField: "email"
     }
+
+User autocreation
+""""""""""""""""""
+To allow users to log in without previously creating them, enable autocreation by adding
+`user.autoCreateOnSso=true` to the top level of your configuration.
+
 
 OAuth2/OpenID Connect
 ^^^^^^^^^^^^^^^^^^^^^
@@ -298,60 +293,6 @@ To enable authentication using OAuth2/OpenID Connect, edit the `application.conf
 - `auth.sso.attributes.name`: name of the attribute containing the OAuth2 user's name in retreived user info (mandatory)
 - `auth.sso.attributes.groups`: name of the attribute containing the OAuth2 user's groups (mandatory using groups mappings)
 - `auth.sso.attributes.roles`: name of the attribute containing the OAuth2 user's roles in retreived user info (mandatory using simple mapping)
-
-**Important notes**
-
-Authenticate the user using an external OAuth2 authenticator server. The configuration is:
-
-- clientId (string) client ID in the OAuth2 server.
-- clientSecret (string) client secret in the OAuth2 server.
-- redirectUri (string) the url of Energy SOAR Base AOuth2 page (.../api/ssoLogin).
-- responseType (string) type of the response. Currently only "code" is accepted.
-- grantType (string) type of the grant. Currently only "authorization_code" is accepted.
-- authorizationUrl (string) the url of the OAuth2 server.
-- authorizationHeader (string) prefix of the authorization header to get user info: Bearer, token, ...
-- tokenUrl (string) the token url of the OAuth2 server.
-- userUrl (string) the url to get user information in OAuth2 server.
-- scope (list of string) list of scope.
-
-**Example**
-
-.. code-block::
-
-    auth {
-            
-      provider = [local, oauth2]
-
-      [..]
-
-      sso {
-        autocreate: false
-        autoupdate: false
-        mapper: "simple"
-        attributes {
-          login: "login"
-          name: "name"
-          roles: "role"
-        }
-        defaultRoles: ["read", "analyze"]
-        defaultOrganization: "demo"
-      }  
-      oauth2 {
-        name: oauth2
-        clientId: "Client_ID"
-        clientSecret: "Client_ID"
-        redirectUri: "http://localhost:9001/api/ssoLogin"
-        responseType: code
-        grantType: "authorization_code"
-        authorizationUrl: "https://github.com/login/oauth/authorize"
-        authorizationHeader: "token"
-        tokenUrl: "https://github.com/login/oauth/access_token"
-        userUrl: "https://api.github.com/user"
-        scope: ["user"]
-      }
-
-      [..]
-    }
 
 
 Performance
@@ -449,8 +390,8 @@ Below an example of NGINX configuration:
         listen 443 ssl;
         server_name automation.example.com;
 
-        ssl_certificate         ssl/energysoar-automation_cert.pem;
-        ssl_certificate_key     ssl/energysoar-automation_key.pem;
+        ssl_certificate         /etc/energysoar/ssl/energysoar-automation_cert.pem;
+        ssl_certificate_key     /etc/energysoar/ssl/energysoar-automation_key.pem;
 
         proxy_connect_timeout   600;
         proxy_send_timeout      600;
@@ -494,7 +435,7 @@ License
 
 **License path**
 
-License path is set in configuration file ` /etc/energysoar-base/application.conf.d/license.conf`. By default it is ` license.path: "/etc/energysoar-base/"`.
+License path is set in configuration file ` /etc/energysoar/application.conf.d/license.conf`. By default it is ` license.path: "/etc/energysoar/"`.
 
 Listen address & port
 ^^^^^^^^^^^^^^^^^^^^^
@@ -509,13 +450,13 @@ By default the application listens on all interfaces and port 9000. This is poss
 Context
 ^^^^^^^
 
-If you are using a reverse proxy, and you want to specify a location (ex: /energysoar-base), updating the configuration of Energy SOAR Base is also required
+If you are using a reverse proxy, and you want to specify a location (ex: /energysoar), updating the configuration of Energy SOAR Base is also required
 
 **Example**
 
 .. code-block::
 
-   play.http.context: "/energysoar-base"
+   play.http.context: "/energysoar"
    
    
 Specific configuration for streams
@@ -550,7 +491,7 @@ These values are set with default parameters:
    # Max textual content length
    play.http.parser.maxMemoryBuffer: 256kB
     
-If you feel that these should be updated, edit /etc/energysoar-base/application.conf file and update these parameters accordingly.
+If you feel that these should be updated, edit /etc/energysoar/application.conf file and update these parameters accordingly.
 
 .. tip::
 
@@ -563,20 +504,20 @@ Manage configuration files
 
 Energy SOAR Base uses HOCON as configuration file format. This format gives enough flexibility to structure and organise the configuration of Energy SOAR Base.
 
-Energy SOAR Base is delivered with following files, in the folder `/etc/energysoar-base`:
+Energy SOAR Base is delivered with following files, in the folder `/etc/energysoar`:
 
 `logback.xml` containing the log policy
 
 `secret.conf` containing a secret key used to create sessions. This key should be unique per instance (in the case of a cluster, this key should be the same for all nodes of this cluster)
 `application.conf` 
 
-HOCON file format let you organise the configuration to have separate files for each purpose. It is the possible to create a /etc/energysoar-base/application.conf.d folder and have several files inside that will be included in the main file `/etc/energysoar-base/application.conf`.
+HOCON file format let you organise the configuration to have separate files for each purpose. It is the possible to create a /etc/energysoar/application.conf.d folder and have several files inside that will be included in the main file `/etc/energysoar/application.conf`.
 
 At the end, the following configuration structure is possible:
 
 .. code-block::
 
-   /etc/energysoar-base
+   /etc/energysoar
    |-- application.conf
    |-- application.conf.d
    |   |-- secret.conf
@@ -591,49 +532,49 @@ At the end, the following configuration structure is possible:
    |-- logback.xml
 
 
-And the content of `/etc/energysoar-base/application.conf`:
+And the content of `/etc/energysoar/application.conf`:
 
 .. code-block::
 
     ## Include Play secret key
     # More information on secret key at https://www.playframework.com/documentation/2.8.x/ApplicationSecret
-    include "/etc/energysoar-base/application.conf.d/secret.conf"
+    include "/etc/energysoar/application.conf.d/secret.conf"
 
     ## Service
-    include "/etc/energysoar-base/application.conf.d/service.conf"
+    include "/etc/energysoar/application.conf.d/service.conf"
 
     ## Database
-    include "/etc/energysoar-base/application.conf.d/database.conf"
+    include "/etc/energysoar/application.conf.d/database.conf"
 
     ## Storage
-    include "/etc/energysoar-base/application.conf.d/storage.conf"
+    include "/etc/energysoar/application.conf.d/storage.conf"
 
     ## Cluster
-    include "/etc/energysoar-base/application.conf.d/cluster.conf"
+    include "/etc/energysoar/application.conf.d/cluster.conf"
 
     ## Authentication
-    include "/etc/energysoar-base/application.conf.d/authentication.conf"
+    include "/etc/energysoar/application.conf.d/authentication.conf"
 
     ## Energy SOAR Automation
-    include "/etc/energysoar-base/application.conf.d/automation.conf"
+    include "/etc/energysoar/application.conf.d/automation.conf"
 
     ## MISP
-    include "/etc/energysoar-base/application.conf.d/misp.conf"
+    include "/etc/energysoar/application.conf.d/misp.conf"
 
     ## Webhooks
-    include "/etc/energysoar-base/application.conf.d/webhooks.conf"
+    include "/etc/energysoar/application.conf.d/webhooks.conf"
 
 SSL
 ----
 
-Energy SOAR instalation script create self-signed certificates. Those certificates are stored under `/etc/energysoar-base/ssl/` directory.
+Energy SOAR instalation script create self-signed certificates. Those certificates are stored under `/etc/energysoar/ssl/` directory.
 
 You can setup your own path in `/etc/nginx/conf.d/energysoar.conf`.
 
 .. code-block::
 
-    ssl_certificate     /etc/energysoar-base/ssl/nginx-selfsigned.crt;
-    ssl_certificate_key /etc/energysoar-base/ssl/nginx-selfsigned.key;
+    ssl_certificate     /etc/energysoar/ssl/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/energysoar/ssl/nginx-selfsigned.key;
 
 
 Change system language

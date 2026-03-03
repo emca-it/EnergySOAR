@@ -93,11 +93,10 @@ url      Intelligence center URL
 
 .. rubric:: Additional details from the README file:
 
+Get more context around domain names, IP adresses, urls and file hashes using the
+`SEKOIA.IO <https://sekoia.io>`_ Intelligence Database.
 
- Get more context around domain names, IP adresses, urls and file hashes using the
- `SEKOIA.IO <https://sekoia.io>`_ Intelligence Database.
-
- The analyzer comes in 3 flavors:
+The analyzer comes in 3 flavors:
 
 
 * SEKOIAIntelligenceCenter\ ***Indicators**\ : Find indicators matching the observable provided.

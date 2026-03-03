@@ -84,19 +84,21 @@ Setting up analyzer
 * restart Cortex to initialize the new Responder "\ **systemctl restart cortex**\ "
 
 Get your Vulners api key: 
+
 .. image:: assets/vulners_api.png
    :target: assets/vulners_api.png
    :alt: Vulners API
 
 
 Add your Vulners API in Cortex settings: 
+
 .. image:: assets/Cortex_settings.PNG
    :target: assets/Cortex_settings.PNG
    :alt: API key in Cortex
 
 
 Add Observable type in Energy SOAR Base
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default theHive does not have a "cve" type to be observables, so we have to add it to Administrator Settings:
 
@@ -104,10 +106,10 @@ By default theHive does not have a "cve" type to be observables, so we have to a
 .. image:: assets/theHive_add_cve.png
    :target: assets/theHive_add_cve.png
    :alt: add observable
-​
+
 
 Run the Analyzer in Energy SOAR Base
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Network IOCs:
 """""""""""""

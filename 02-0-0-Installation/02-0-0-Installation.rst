@@ -26,6 +26,7 @@ Supported OSes:
 
       * Energy SOAR Base
       * Energy SOAR Automation
+      * Energy Logserver Data Node
       
       After service installation it load some sample data. 
       
@@ -50,11 +51,14 @@ Supported OSes:
 
       * Energy SOAR Base
       * Energy SOAR Automation
+      * Energy Logserver Data Node
 
       Example *interactive* installation
 
       .. code-block:: console
    
+         ====> Do You wish to install the Energy Logserver data-node? [y/n] y
+         [..]
          ====> Do You wish to install the ENERGY SOAR Base, as well as the other Energy SOAR Base dependencies? [y/n] y
          [..]
          ====> Do You wish to install the ENERGY SOAR Automation, as well as the other Energy SOAR Automation dependencies? [y/n] y

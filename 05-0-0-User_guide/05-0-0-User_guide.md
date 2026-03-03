@@ -6,11 +6,10 @@
 Energy SOAR will display the analysis summary the same way for all analyzers: display a tag using taxonomies and level color.
 
 ##### List analyzer templates
-The management page is accessible from the header menu through the Admin > Analyzer templates menu and required a use with the manageAnalyzerTemplate permission (refer to Profiles and permissions).
+The management page can be accessed from the header menu under Admin organization > Analyzer templates and requires the manageAnalyzerTemplate permission (see Profiles and Permissions).
 ![](/media/05-3-0-analyzer-template.png)
 
 Analyzer templates are still customisable via the UI and can also be imported.
-
 
 #### User Profiles management
 
@@ -69,11 +68,6 @@ Default profiles are:
 - org-admin: all permissions except those related to global objects
 - read-only: no permission
 
-##### Observable types
-You can edit observable types in the administrator panel.
-
-Admin > Observable
-![](/media/05-0-0-7-observable-edit.png)
 
 #### Kill user session
 Everytime you can manage logged user sessions as admin user. In organizations administration page you can kill user session. This user will be immediatelly logout.
@@ -189,6 +183,14 @@ user-agent
 </tbody>
 </table>
 
+##### Observable types
+You can edit observable types in the administrator panel.
+
+Admin > Observable
+
+![](/media/05-0-0-7-observable-edit.png)
+
+
 ##### How to add observables into Case
 
 
@@ -202,6 +204,7 @@ Perform the following steps to add an observable:
 
 3.	Select type e.g. ip, domain, url, mail.
 If you choose file type, you can upload a file. Zipped archives are supported.
+
 ![](/media/05-0-1-drop-observable-file.png)
 
 4.	You can add one single observables or many observables at once - one observable per line.
@@ -227,9 +230,160 @@ If you want to download file observable, it will be zipped and password protecte
 
 You can run various analyzers (e.g. VirusTotal, MaxMind_GeoIP) and responders (e.g. block IP, domain, e-mail) against observables.
 
-### Organisation
+#### Case Templates
 
-### Reports
+Some cases may share the same structure (`customfields`, `tags`, `tasks`, `description`, ...). Templates are here to automatically add tasks, description, metrics and custom fields while creating a new case. A user can choose to create an empty case or based on a registered template.
+
+##### List case templates
+
+The management of the case templates is accessible through the menu *Organisation > Case Templates* . To manage them your profile must have the permission 'manageCaseTemplate'.
+
+##### Create or upload template
+
+###### Create a case template
+
+In the case templates management page, clic the `New template` button (*Organisation > Case Templates > New Template*). 
+
+![Case template creation pop-up](../media/create-case-template2.png)
+
+In the case template you can set:
+
+- Title prefix
+- Severity
+- TLP/PAP
+- Tags
+- Description
+- Tasks
+- Customfields 
+
+Two fields are mandatory: 
+
+- Template name (should be unique)
+- Description
+
+###### Import a case template
+
+You can also import your case template using a file in JSON format by clicking on the `Import template` button (*Organisation > Case templates > Import template*)
+
+##### Edit a case template
+
+To edit a case template, open the case template list and clic the edit button on the actions column (*Organisation > Case Templates > Edit*).
+
+![Case template edit button](../media/edit-case-template.png)
+
+##### Export a case template
+
+To export a case template, open the case template list and clic the export button on the actions column (*Organisation > Case Templates > Export*).
+
+![Case template export button](../media/export-case-template.png)
+
+##### Delete a case template
+
+To delete a case template, open the case template list and clic the export button on the actions column (*Organisation > Case Templates > Export*).
+
+![Case template delete button](../media/delete-case-template.png)
+
+##### Case Template list
+
+- Suspicious User Activity
+- User authentication from multiple devices
+- Data Theft
+- Mass deleting files or folders
+- Malware
+- Admin creation
+- Unauthorized Access
+- Denial of Service (DoS)
+- Short-lived account
+- Suspicious VPN connection
+- Suspicious e-mail
+- Suspicious Network Activity
+- IRM-5-MaliciousNetworkBehaviour
+- Vulnerability
+
+
+### Organization
+
+Organization allows using a single instance of EnergySOAR with separation among clients.
+
+Multi-tenancy in EnergySOAR enables a single instance of the platform to support multiple organizations, each operating independently.
+
+Every organization has its own set of users, roles, cases, alerts, and analyzers, ensuring that data and workflows remain isolated.
+This separation allows organizations to collaborate securely within the same system without risking unauthorized access to other organizations’ information.
+Administrators can centrally manage the instance while maintaining strict boundaries between tenants, simplifying both operational oversight and compliance with data privacy requirements.
+
+A user in EnergySOAR can belong to multiple organizations, allowing them to access and contribute to different tenants within the same instance. 
+Users can easily switch between organizations without needing to log out, with their permissions and data access automatically adjusted for each tenant. 
+
+This flexibility enables administrators and analysts to collaborate across multiple organizations while maintaining strict separation of cases, alerts, and other sensitive information.
+
+#### User
+
+In EnergySOAR, a user is a member of one or more organisations. One user has a profile **for each** organisation and can have different profiles for different organisations. For example:
+
+- “*analyst*” in “*organisationA*”;
+- and “*admin*” in “*organisationB*”;
+- and “*read-only*” in “*organisationC*”.
+
+#### Organization and Case sharing
+
+EnergySOAR comes with a default organisation named "admin" and is dedicated to users with administrator permissions of EnergySOAR instance. This organisation is very specific so that it can manage global objects and cannot contain cases or any other related elements. 
+
+By default, organisations can’t see each other, and can't share with any. To do so, an organisation must be "linked" with another one.  Only super administrators or users with **manageOrganisation** permissions can give the ability of a organisation to see an other one. This ability named “*link*” is unidirectional. 
+
+To share a case with another organisation, a user must be able to see it: its organisation must be "linked" with the targeted organisation. 
+
+![List organisations](../media/admin-list-organisation.png)
+
+![Link organisations](../media/admin-link-organisation.png)
+
+#####  Share and effective permissions
+
+When a user creates a case, the case is linked to the user’s organisation with the profile “org-admin”. It means that there is no restriction, the effective permissions are the permissions the user has in his organisation.
+
+If he decides to share that case with another organisation, he must choose the profile applied on that share.
+
+![Case sharing](../media/case-share.png)
+
+To exerce a action on a case, the related permission must be present in the user profile and in the case share.
+
+When you share a case, you can share its tasks or observables but it is not mandatory. Tasks (and observables) can be unitary shared.
+
+They can be shared only with organisations for which case is already shared. A case can be shared only once for a given organisation. Thus a case an its tasks/observables are shared with the same permissions for the same organisation.
+
+
+#### Custom Tags
+
+`custom tags` are `tags` manually created (out of libraries). 
+
+You must have the permission `manageTag` on your profile to manage custom tags.
+
+##### List custom tags
+
+You can find the list of your `custom tags` in *Organization > Custom tags*.
+
+The list contains the following information, for each `tag`:
+
+- Number of `cases` tagged
+- Number of `alerts` tagged
+- Number of `observables` tagged
+- Number of `case templates` containing the tag
+
+
+##### Modify a custom-tag border colour
+
+You can modify your custom tags border colours. 
+
+In the `custom tags` list (*Organization > Custom tags*), in the *Colour* column, clic on the square or colour code value to modify it. This will apply to all `cases`, `alerts` and `observables` that contains the `tag`.
+
+![Custom tags colour modification](../media/modify-color-custom-tag.png)
+
+##### Delete a custom tag
+
+You can also delete a custom tag. 
+
+In the `custom tags` list (*Organization > Custom tags*), in the *Actions* column, clic on the delete button
+
+
 
 ### Workflows
 SOC analysts have to handle many repetitive tasks. With Energy SOAR you can build workflows to automatically execute all relevant actions.
@@ -238,7 +392,7 @@ Workflows helps you to interconnect different apps with an API with each other t
 A workflow is a collection of nodes connected together to automate a process.
 A workflow can be started manually (with the Start node) or by Trigger nodes. When a workflow is started, it executes all the active and connected nodes. The workflow execution ends when all the nodes have processed their data. You can view your workflow executions in the Execution log, which can be helpful for debugging.
 
-![](/05-0-0-User_guide/execute_workflow.gif)
+![](/05-0-0-User_guide/exec_workflow.gif)
 
 **Activating a workflow**
 Workflows that start with a Trigger node or a Webhook node need to be activated in order to be executed. This is done via the Active toggle in the Workflow UI.
@@ -259,7 +413,7 @@ You can import JSON files as workflows in two ways:
 
 On each workflow, it is possible to set some custom settings and overwrite some of the global default settings from the Workflow > Settings menu.
 
-![](/05-0-0-User_guide/workflow-settings.png)
+![](/05-0-0-User_guide/workflow_settings.png)
  
 The following settings are available:
 *	Error Workflow: Select a workflow to trigger if the current workflow fails. 
@@ -281,7 +435,7 @@ If your workflow execution fails, you can retry the execution. To retry a failed
 *	Retry with original workflow: If you want to retry the execution without making changes to your workflow, you can select this option to retry the execution with the previous execution data.
 
 You can also use the Error Trigger node, which triggers a workflow when another workflow has an error. Once a workflow fails, this node gets details about the failed workflow and the errors.
-
+<!-- 
 #### Crate your first workflow
 
 ##### Automate Incident Reporting with Typeform
@@ -328,7 +482,7 @@ This workflow would use the following nodes:
 
 The final workflow should look like the following image:
 
-![](workflow-getting-started-final.png)
+![](workflow-getting-started-final3.png)
 
 1.	Typeform Trigger node
 
@@ -442,7 +596,7 @@ Green checkmarks indicate successful workflow execution:
 
 ![](workflow-getting-started-final2.png)
 
-Congratulations on creating you first workflow with Energy SOAR.
+Congratulations on creating you first workflow with Energy SOAR. -->
 
 
 #### Connection
@@ -455,7 +609,7 @@ To create a connection between two nodes, click on the grey dot on the right sid
 
 An IF node has two connections to different nodes: one for when the statement is true and one for when the statement is false.
 
-![](/media/Connection_ifnode.8e006dce.gif)
+![](/05-0-0-User_guide/if_node.gif)
 
 #### Workflows List
 
@@ -499,6 +653,89 @@ There are three types of nodes:
 * Regular Nodes
 * Trigger Nodes
 
+
+Nodes are the building blocks of workflows. They are an entry point for retrieving data, a function to process data, or an exit for sending data. The data process includes filtering, recomposing, and changing data. Connect multiple nodes to create complex workflows.
+
+For a complete list of available integrations, including:
+
+* {doc}`Actions (App) nodes <../08-0-0-Workflow/integrations/builtin/app-nodes/index>` - 270+ integrations with external services like Slack, Google Drive, GitHub, and more
+* {doc}`Core nodes <../08-0-0-Workflow/integrations/builtin/core-nodes/index>` - Essential workflow building blocks for logic, data transformation, HTTP requests, and scheduling
+* {doc}`Trigger nodes <../08-0-0-Workflow/integrations/builtin/trigger-nodes/index>` - 80+ event-based workflow starters that listen for changes in external services
+* {doc}`Credentials <../08-0-0-Workflow/integrations/builtin/credentials/index>` - 300+ authentication configurations for all integrations
+* {doc}`Cluster nodes <../08-0-0-Workflow/integrations/builtin/cluster-nodes/index>` - Advanced AI and LangChain integrations for building complex AI workflows
+* {doc}`Community nodes <../08-0-0-Workflow/integrations/community-nodes/usage>` - Nodes contributed by the community
+* {doc}`Create your own node <../08-0-0-Workflow/integrations/creating-nodes/overview>` - Build a custom node for your specific needs
+
+```{toctree}
+:maxdepth: 1
+:caption: Built-in App Nodes
+
+../08-0-0-Workflow/integrations/builtin/app-nodes/index
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Built-in Core Nodes
+
+../08-0-0-Workflow/integrations/builtin/core-nodes/index
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Built-in Trigger Nodes
+
+../08-0-0-Workflow/integrations/builtin/trigger-nodes/index
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Community Nodes
+
+../08-0-0-Workflow/integrations/community-nodes/index
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Built-in Credentials
+
+../08-0-0-Workflow/integrations/builtin/credentials/index
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Built-in Cluster Nodes
+
+../08-0-0-Workflow/integrations/builtin/cluster-nodes/index
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Create Your Own Node
+
+../08-0-0-Workflow/integrations/creating-nodes/overview
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Rate Limits
+
+../08-0-0-Workflow/integrations/builtin/rate-limits
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Advanced AI
+
+../08-0-0-Workflow/advanced-ai/index
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Glossary
+
+../08-0-0-Workflow/glossary
+```
+
 ##### Core nodes
 
 Core nodes are functions or services that can be used to control how workflows are run or to provide generic API support.
@@ -512,19 +749,19 @@ If an application you need does not have a dedicated Node yet, you can access th
 
 Regular nodes perform an action, like fetching data or creating an entry in a calendar. Regular nodes are named for the application they represent and are listed under Regular Nodes in the Editor UI.
 
-![](/media/Regular_nodes.d3cec3e9.png)
+![](/media/Regular_nodes.d3cec3e92.png)
 
 ###### Example
 
 A Google Sheets node can be used to retrieve or write data to a Google Sheet.
 
-![](/media/Google_sheets.d9ee72a3.png)
+![](/05-0-0-User_guide/Google_sheets_new.png)
 
 ##### Trigger nodes
 
 Trigger nodes start workflows and supply the initial data.
 
-![](/media/Trigger_nodes.5bd536aa.png)
+![](/media/Trigger_nodes.5bd536aa2.png)
 
 Trigger nodes can be app or core nodes.
 
@@ -532,7 +769,7 @@ Trigger nodes can be app or core nodes.
 
 * **App Trigger nodes** start the workflow when an event happens in an app. App Trigger nodes are named like the application they represent followed by "Trigger" and are listed under Trigger Nodes in the Editor. For example, a Telegram trigger node can be used to trigger a workflow when a message is sent in a Telegram chat.
 
-![](/media/telegram_trigger.fae8dcd9.png)
+![](/05-0-0-User_guide/telegram_trigger.png)
 
 ##### Node settings
 
@@ -546,7 +783,7 @@ The node operations are illustrated with icons that appear on top of the node wh
 * **Copy**: Duplicate the selected node
 * **Play**: Run the selected node
 
-![](/media/Node_settings.36ddf764.gif)
+![](/media/node_settings2.gif)
 
 To access the node parameters and settings, double-click on the node.
 
@@ -566,352 +803,10 @@ The node settings allow you to configure the look and execution of the node. The
 * **Retry On Fail**: If active, the node tries to execute a failed attempt multiple times until it succeeds
 * **Continue On Fail**: If active, the workflow continues even if the execution of the node fails. When this happens, the node passes along input data from previous nodes, so the workflow should account for unexpected output data.
 
-![](/media/Node_parameters.090b2d35.gif)
+![](/media/node_parameters2.gif)
 
 If a node is not correctly configured or is missing some required information, a **warning sign** is displayed on the top right corner of the node. To see what parameters are incorrect, double-click on the node and have a look at fields marked with red and the error message displayed in the respective warning symbol.
 
-![](/media/Node_error.e189f05d.gif)
+![](/media/node_error2.gif)
 
-#### Workflow integration nodes
-To boost your workflow automation you can connect with widely external nodes.
 
-List of automation nodes:
-- Action Network
-- Activation Trigger
-- ActiveCampaign
-- ActiveCampaign Trigger
-- Acuity Scheduling Trigger
-- Affinity
-- Affinity Trigger
-- Agile CRM
-- Airtable
-- Airtable Trigger
-- AMQP Sender
-- AMQP Trigger
-- APITemplate.io
-- Asana
-- Asana Trigger
-- Automizy
-- Autopilot
-- Autopilot Trigger
-- AWS Comprehend
-- AWS DynamoDB
-- AWS Lambda
-- AWS Rekognition
-- AWS S3
-- AWS SES
-- AWS SNS
-- AWS SNS Trigger
-- AWS SQS
-- AWS Textract
-- AWS Transcribe
-- Bannerbear
-- Baserow
-- Beeminder
-- Bitbucket Trigger
-- Bitly
-- Bitwarden
-- Box
-- Box Trigger
-- Brandfetch
-- Bubble
-- Calendly Trigger
-- Chargebee
-- Chargebee Trigger
-- CircleCI
-- Clearbit
-- ClickUp
-- ClickUp Trigger
-- Clockify
-- Clockify Trigger
-- Cockpit
-- Coda
-- CoinGecko
-- Compression
-- Contentful
-- ConvertKit
-- ConvertKit Trigger
-- Copper
-- Copper Trigger
-- Cortex
-- CrateDB
-- Cron
-- Crypto
-- Customer Datastore (n8n training)
-- Customer Messenger (n8n training)
-- Customer Messenger (n8n training)
-- Customer.io
-- Customer.io Trigger
-- Date & Time
-- DeepL
-- Demio
-- DHL
-- Discord
-- Discourse
-- Disqus
-- Drift
-- Dropbox
-- Dropcontact
-- E-goi
-- Edit Image
-- Elastic Security
-- Elasticsearch
-- EmailReadImap
-- Emelia
-- Emelia Trigger
-- ERPNext
-- Error Trigger
-- Eventbrite Trigger
-- Execute Command (a.o. Python, Bash scripts)
-- Execute Workflow
-- Facebook Graph API
-- Facebook Trigger
-- Figma Trigger (Beta)
-- FileMaker
-- Flow
-- Flow Trigger
-- Form.io Trigger
-- Formstack Trigger
-- Freshdesk
-- Freshservice
-- Freshworks CRM
-- FTP
-- Function
-- Function Item
-- G Suite Admin
-- GetResponse
-- GetResponse Trigger
-- Ghost
-- Git
-- GitHub
-- Github Trigger
-- GitLab
-- GitLab Trigger
-- Gmail
-- Google Analytics
-- Google BigQuery
-- Google Books
-- Google Calendar
-- Google Calendar Trigger
-- Google Cloud Firestore
-- Google Cloud Natural Language
-- Google Cloud Realtime Database
-- Google Contacts
-- Google Docs
-- Google Drive
-- Google Drive Trigger
-- Google Perspective
-- Google Sheets
-- Google Slides
-- Google Tasks
-- Google Translate
-- Gotify
-- GoToWebinar
-- Grafana
-- GraphQL
-- Grist
-- Gumroad Trigger
-- Hacker News
-- Harvest
-- HelpScout
-- HelpScout Trigger
-- Home Assistant
-- HTML Extract
-- HTTP Request
-- HubSpot
-- HubSpot Trigger
-- Humantic AI
-- Hunter
-- iCalendar
-- IF
-- Intercom
-- Interval
-- Invoice Ninja
-- Invoice Ninja Trigger
-- Item Lists
-- Iterable
-- Jira Software
-- Jira Trigger
-- JotForm Trigger
-- Kafka
-- Kafka Trigger
-- Keap
-- Keap Trigger
-- Kitemaker
-- Lemlist
-- Lemlist Trigger
-- Line
-- LingvaNex
-- LinkedIn
-- Local File Trigger
-- Magento 2
-- Mailcheck
-- Mailchimp
-- Mailchimp Trigger
-- MailerLite
-- MailerLite Trigger
-- Mailgun
-- Mailjet
-- Mailjet Trigger
-- Mandrill
-- Marketstack
-- Matrix
-- Mattermost
-- Mautic
-- Mautic Trigger
-- Medium
-- Merge
-- MessageBird
-- Microsoft Dynamics CRM
-- Microsoft Excel
-- Microsoft OneDrive
-- Microsoft Outlook
-- Microsoft SQL
-- Microsoft Teams
-- Microsoft To Do
-- Mindee
-- MISP
-- Mocean
-- Monday.com
-- MongoDB
-- Monica CRM
-- Move Binary Data
-- MQTT
-- MQTT Trigger
-- MSG91
-- MySQL
-- n8n Trigger
-- NASA
-- Netlify
-- Netlify Trigger
-- Nextcloud
-- No Operation, do nothing
-- NocoDB
-- Notion (Beta)
-- Notion Trigger (Beta)
-- One Simple API
-- OpenThesaurus
-- OpenWeatherMap
-- Orbit
-- Oura
-- Paddle
-- PagerDuty
-- PayPal
-- PayPal Trigger
-- Peekalink
-- Phantombuster
-- Philips Hue
-- Pipedrive
-- Pipedrive Trigger
-- Plivo
-- Postgres
-- PostHog
-- Postmark Trigger
-- ProfitWell
-- Pushbullet
-- Pushcut
-- Pushcut Trigger
-- Pushover
-- QuestDB
-- Quick Base
-- QuickBooks Online
-- RabbitMQ
-- RabbitMQ Trigger
-- Raindrop
-- Read Binary File
-- Read Binary Files
-- Read PDF
-- Reddit
-- Redis
-- Rename Keys
-- Respond to Webhook
-- RocketChat
-- RSS Read
-- Rundeck
-- S3
-- Salesforce
-- Salesmate
-- SeaTable
-- SeaTable Trigger
-- SecurityScorecard
-- Segment
-- Send Email
-- SendGrid
-- Sendy
-- Sentry.io
-- ServiceNow
-- Set
-- Shopify
-- Shopify Trigger
-- SIGNL4
-- Slack
-- sms77
-- Snowflake
-- Split In Batches
-- Splunk
-- Spontit
-- Spotify
-- Spreadsheet File
-- SSE Trigger
-- SSH
-- Stackby
-- Start
-- Stop and Error
-- Storyblok
-- Strapi
-- Strava
-- Strava Trigger
-- Stripe
-- Stripe Trigger
-- SurveyMonkey Trigger
-- Switch
-- Taiga
-- Taiga Trigger
-- Tapfiliate
-- Telegram
-- Telegram Trigger
-- Energy SOAR Base
-- Energy SOAR Base Trigger
-- TimescaleDB
-- Todoist
-- Toggl Trigger
-- TravisCI
-- Trello
-- Trello Trigger
-- Twake
-- Twilio
-- Twist
-- Twitter
-- Typeform Trigger
-- Unleashed Software
-- Uplead
-- uProc
-- UptimeRobot
-- urlscan.io
-- Vero
-- Vonage
-- Wait
-- Webex by Cisco
-- Webex by Cisco Trigger
-- Webflow
-- Webflow Trigger
-- Webhook
-- Wekan
-- Wise
-- Wise Trigger
-- WooCommerce
-- WooCommerce Trigger
-- Wordpress
-- Workable Trigger
-- Workflow Trigger
-- Write Binary File
-- Wufoo Trigger
-- Xero
-- XML
-- Yourls
-- YouTube
-- Zendesk
-- Zendesk Trigger
-- Zoho CRM
-- Zoom
-- Zulip

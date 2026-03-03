@@ -51,7 +51,7 @@ If the email is compromised then it returns:
 * Exposure rating: The comparative data exposure and risk rating assigned to this email address.
 
 Testing Inoitsu analyzer (Cortex)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 You need first to enable the analyzer.
 
@@ -86,7 +86,7 @@ Test Inoitsu analyzer on an uncompromised email address.
 
 
 Testing Inoitsu analyzer (TheHive)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 In the observables section add emails to test.
 

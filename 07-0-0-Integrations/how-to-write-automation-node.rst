@@ -45,6 +45,7 @@ Cloning the Repository
 In Energy SOAR repository `download <https://repo.energysoar.com/developers/n8n-latest.tar.gz>`_ n8n development package by running the following command in your terminal (don't forget to replace ``<USERNAME>`` and ``<PASSWORD>`` wih your repository credentials:
 
 .. code-block:: bash
+
 	curl -O -u'<USERNAME>:<PASSWORD>' https://repo.energysoar.com/developers/n8n-latest.tar.gz
 
 n8n is built from five main packages:

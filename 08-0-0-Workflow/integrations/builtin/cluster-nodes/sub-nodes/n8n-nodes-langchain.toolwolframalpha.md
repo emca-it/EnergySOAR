@@ -1,0 +1,36 @@
+﻿---
+title: Wolfram|Alpha tool node documentation
+description: Learn how to use the Wolfram|Alpha tool node in n8n. Follow technical documentation to integrate Wolfram|Alpha tool node into your workflows.
+contentType: [integration, reference]
+priority: medium
+---
+
+# Wolfram|Alpha tool node
+
+Use the Wolfram|Alpha tool node to connect your [agents](/08-0-0-Workflow/glossary.md#ai-agent) and [chains](/08-0-0-Workflow/glossary.md#ai-chain) to Wolfram|Alpha's computational intelligence engine.
+
+```{note} Credentials
+You can find authentication information for this node [here](/08-0-0-Workflow/integrations/builtin/credentials/wolframalpha.md).
+```
+
+```{include} ../../../../../_snippets/integrations/builtin/cluster-nodes/sub-node-expression-resolution.md
+
+```
+
+## Templates and examples
+<!--
+   see https://www.notion.so/n8n/Pull-in-templates-for-the-integrations-pages-37c716837b804d30a33b47475f6e3780
+[[ templatesWidget(page.title, '[^']*') ]]
+-->
+
+## Related resources
+
+Refer to [Wolfram|Alpha's documentation](https://products.wolframalpha.com/api) for more information about the service. You can also view [LangChain's documentation on their WolframAlpha Tool](https://js.langchain.com/docs/integrations/tools/wolframalpha/).
+
+```{include} ../../../../../_snippets/integrations/builtin/cluster-nodes/langchain-overview-link.md
+
+```
+
+
+
+

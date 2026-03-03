@@ -1,0 +1,71 @@
+﻿---
+title: Microsoft Teams node documentation
+description: Learn how to use the Microsoft Teams node in n8n. Follow technical documentation to integrate Microsoft Teams node into your workflows.
+contentType: [integration, reference]
+priority: medium
+---
+
+# Microsoft Teams node
+
+Use the Microsoft Teams node to automate work in Microsoft Teams, and integrate Microsoft Teams with other applications. n8n has built-in support for a wide range of Microsoft Teams features, including creating and deleting, channels, messages, and tasks. 
+
+On this page, you'll find a list of operations the Microsoft Teams node supports and links to more resources.
+
+```{note} Credentials
+Refer to [Microsoft credentials](/08-0-0-Workflow/integrations/builtin/credentials/microsoft.md) for guidance on setting up authentication.
+```
+
+```{tip} Government Cloud Support
+If you're using a government cloud tenant (US Government, US Government DOD, or China), make sure to select the appropriate **Microsoft Graph API Base URL** in your Microsoft credentials configuration.
+```
+
+```{include} ../../../../_snippets/integrations/builtin/app-nodes/ai-tools.md
+
+```
+
+```{include} ../../../../_snippets/integrations/builtin/app-nodes/hitl-tools.md
+
+```
+
+## Operations
+
+* Channel
+    * Create
+    * Delete
+    * Get
+    * Get Many
+    * Update
+* Channel Message
+    * Create
+    * Get Many
+* Chat Message
+	* Create
+	* Get
+	* Get Many
+	* Send and Wait for Response
+* Task
+    * Create
+    * Delete
+    * Get
+    * Get Many
+    * Update
+
+```{include} ../../../../_snippets/integrations/builtin/send-and-wait-operation.md
+
+```
+
+## Templates and examples
+<!--
+   see https://www.notion.so/n8n/Pull-in-templates-for-the-integrations-pages-37c716837b804d30a33b47475f6e3780
+[[ templatesWidget(page.title, '[^']*') ]]
+-->
+
+## Related resources
+
+Refer to [Microsoft Teams' API documentation](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0) for more information about the service.
+
+```{include} ../../../../_snippets/integrations/builtin/app-nodes/operation-not-supported.md
+
+```
+
+

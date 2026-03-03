@@ -6,8 +6,7 @@ Energy SOAR is builded from scallable services. Depending on the requirements, i
 
 Additional services in case High avability archtecture:
 
-- Redis
-- MySQL or Postgres 13+
+- Peacemaker
 - Min.io
 
 Logical architecture
@@ -15,3 +14,4 @@ Logical architecture
 
 .. image:: /media/03-0-0-architecture.png
    :alt: Logical architecture
+

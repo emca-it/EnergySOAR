@@ -36,8 +36,7 @@ safe_categories        List of Forcepoint categories you would consider as safe
 
 .. rubric:: Additional details from the README file:
 
-
- Categorize domain names, URL, fqdn, IP addresses using the popular  `Forcepoint Master Database <https://www.forcepoint.com/it/product/feature/master-database-url-categories>`_ service .
+Categorize domain names, URL, fqdn, IP addresses using the popular  `Forcepoint Master Database <https://www.forcepoint.com/it/product/feature/master-database-url-categories>`_ service .
 
 Requirements
 ~~~~~~~~~~~~

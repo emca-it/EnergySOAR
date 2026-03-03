@@ -227,7 +227,7 @@ Hostname_PaloAltoNGFW                                Hostname PaloAltoNGFW
 User_PaloAltoNGFW                                    User PaloAltoNGFW
 Password_PaloAltoNGFW                                User PaloAltoNGFW
 Security_rule_for_block_port_external_communication  Name external security rule for port communications
-EnergySOARBase_instance                       URL of the Energy SOAR Base instance to query
+EnergySOARBase_instance                              URL of the Energy SOAR Base instance to query
 EnergySOARBase_API_key                               Energy SOAR Base API key with read access
 ===================================================  ===================================================
 
@@ -260,7 +260,7 @@ Hostname_PaloAltoNGFW                                Hostname PaloAltoNGFW
 User_PaloAltoNGFW                                    User PaloAltoNGFW
 Password_PaloAltoNGFW                                User PaloAltoNGFW
 Security_rule_for_block_port_internal_communication  Name internal security rule for port communications
-EnergySOARBase_instance                       URL of the Energy SOAR Base instance to query
+EnergySOARBase_instance                              URL of the Energy SOAR Base instance to query
 EnergySOARBase_API_key                               Energy SOAR Base API key with read access
 ===================================================  ===================================================
 

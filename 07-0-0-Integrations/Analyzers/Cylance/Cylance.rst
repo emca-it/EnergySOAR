@@ -48,7 +48,7 @@ FAQ
 ===
 
 Q: Why only SHA256
-^^^^^^^^^^^^^^^^^^
+------------------
 
 Sadly, although the response data contains an MD5 hash, the API only allows you to query with a SHA256
 

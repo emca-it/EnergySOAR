@@ -33,7 +33,7 @@ Copy the API key
 Edit Alert
 ^^^^^^^^^^
 
-Add configuration in the Alert service config.
+On Energy Logserver add configuration in the Alert service config.
 
 .. code-block:: bash
 
@@ -42,8 +42,8 @@ Add configuration in the Alert service config.
 .. code-block:: yaml
 
    hive_connection:
-     hive_host: https://<Energy_SOAR_IP>/base
-     hive_apikey: <api_key>
+      hive_host: https://<Energy_SOAR_IP>/base
+      hive_apikey: <api_key>
 
 Restart the Alert service
 

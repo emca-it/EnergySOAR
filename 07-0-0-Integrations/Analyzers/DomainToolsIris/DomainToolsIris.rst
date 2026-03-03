@@ -65,11 +65,10 @@ key       DomainTools Iris API credentials
 
 .. rubric:: Additional details from the README file:
 
+Look up domain names, IP addresses, e-mail addresses, and SSL hashes using the popular
+`DomainTools Iris <https://www.domaintools.com/resources/api-documentation/iris-investigate/>`_ service API.
 
- Look up domain names, IP addresses, e-mail addresses, and SSL hashes using the popular
- `DomainTools Iris <https://www.domaintools.com/resources/api-documentation/iris-investigate/>`_ service API.
-
- The analyzer comes in 2 flavors:
+The analyzer comes in 2 flavors:
 
 
 * DomainToolsIris\ ***Investigate**\ : Use DomainTools Iris API to investigate a domain.
