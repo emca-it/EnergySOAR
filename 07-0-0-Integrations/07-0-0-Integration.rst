@@ -1,6 +1,69 @@
 Integrations
 ============
 
+The platform provides a broad ecosystem of integrations that enable security process automation and seamless data exchange between systems used across an organization's security and IT infrastructure. Integrations are implemented through three main component types, each serving a different role in the automation and incident response workflow.
+
+Workflow Nodes — 500+
+---------------------
+
+Workflow Nodes are building blocks used to design and execute automated workflows. Each node represents a specific integration, action, or data-processing step that can be used within an automated playbook.
+
+Workflow nodes enable, for example:
+
+- Communication with external systems and APIs
+- Integration with security and IT platforms
+- Data transformation and processing
+- Logical operations and conditional execution
+- Orchestration of multi-step security processes
+
+These nodes allow organizations to create complex automation scenarios that streamline SOC operations and connect multiple tools into a single coordinated workflow.
+
+See the full Workflow Nodes list: `Workflow Nodes </05-0-0-User_guide/05-0-0-User_guide.html#node>`_.
+
+Analyzers — 130+
+----------------
+
+Analyzers are used to enrich and analyze security-related data. They automatically gather additional context about artifacts such as IP addresses, domains, files, URLs, or email addresses.
+
+Typical analyzer use cases include:
+
+- IOC reputation checks
+- File and malware analysis
+- Threat intelligence enrichment
+- Gathering contextual data from external intelligence sources
+
+By automatically enriching artifacts with contextual information, analyzers significantly accelerate the investigation process and help analysts make faster and more informed decisions.
+
+See the full Analyzers list: :doc:`Analyzers <Analyzers>`.
+
+Responders — 50+
+----------------
+
+Responders are responsible for executing response actions in external systems and security platforms. They are used when a specific action must be taken based on the outcome of analysis or a defined workflow.
+
+Examples of responder actions include:
+
+- Blocking IP addresses or domains
+- Isolating hosts or user accounts
+- Updating security platform rules
+- Creating tickets in incident management systems
+- Sending alerts or notifications
+
+Responders enable automated or semi-automated incident response, helping reduce response time and minimize the impact of security threats.
+
+See the full Responders list: :doc:`Responders <Responders>`.
+
+Summary
+-------
+
+The platform currently provides:
+
+- **500+ Workflow Nodes**
+- **130+ Analyzers**
+- **50+ Responders**
+
+This results in **more than 680 available integrations**, enabling comprehensive automation, enrichment, and response capabilities within a unified security orchestration environment.
+
 
 .. toctree::
     :maxdepth: 1
