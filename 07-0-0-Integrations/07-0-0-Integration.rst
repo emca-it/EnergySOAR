@@ -3,7 +3,7 @@ Integrations
 
 The platform provides many integrations that help automate security work and exchange data smoothly between systems used in an organization's security and IT environment. These integrations are grouped into three main types, and each type has a different role in workflow automation and incident response.
 
-Workflow Nodes — 500+
+Workflow Nodes
 ---------------------
 
 Workflow Nodes are building blocks used to create and run automated workflows. Each node is a specific integration, action, or data-processing step that can be used in an automated playbook.
@@ -20,7 +20,7 @@ These nodes let organizations build advanced automation flows that simplify SOC 
 
 See the full Workflow Nodes list: `Workflow Nodes <../05-0-0-User_guide/05-0-0-User_guide.html#node>`_.
 
-Analyzers — 130+
+Analyzers
 ----------------
 
 Analyzers are used to add context to and analyze security data. They automatically collect extra details about artifacts such as IP addresses, domains, files, URLs, or email addresses.
@@ -36,7 +36,7 @@ By automatically adding context to artifacts, analyzers speed up investigations 
 
 See the full Analyzers list: :doc:`Analyzers <Analyzers>`.
 
-Responders — 50+
+Responders
 ----------------
 
 Responders run response actions in external systems and security platforms. They are used when a specific action must be taken based on analysis results or a defined workflow.
