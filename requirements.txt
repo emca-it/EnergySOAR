@@ -4,7 +4,7 @@ recommonmark
 sphinx-rtd-theme
 Sphinx
 docutils>=0.20,<0.22
-Jinja2<3.1
+Jinja2
 MarkupSafe
 alabaster
 sphinx-design
