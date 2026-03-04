@@ -18,7 +18,7 @@ Workflow nodes enable, for example:
 
 These nodes allow organizations to create complex automation scenarios that streamline SOC operations and connect multiple tools into a single coordinated workflow.
 
-See the full Workflow Nodes list: `Workflow Nodes </05-0-0-User_guide/05-0-0-User_guide.html#node>`_.
+See the full Workflow Nodes list: `Workflow Nodes <../05-0-0-User_guide/05-0-0-User_guide.html#node>`_.
 
 Analyzers — 130+
 ----------------
